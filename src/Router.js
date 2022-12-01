@@ -28,6 +28,18 @@ const Router = () => {
           />
           <Route
             exact
+            path="/login"
+            element={<Login />}
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/account"
+            element={token ? <Account /> : <Navigate to="/" />}
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
             path="/license"
             element={<License />}
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
@@ -40,12 +52,6 @@ const Router = () => {
           />
           <Route
             exact
-            path="/login"
-            element={<Login />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
-          <Route
-            exact
             path="/forgot-password"
             element={<ForgotPassword />}
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
@@ -54,12 +60,6 @@ const Router = () => {
             exact
             path="/new-password"
             element={<NewPassword />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
-          <Route
-            exact
-            path="/account"
-            element={token ? <Account /> : <Navigate to="/" />}
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
