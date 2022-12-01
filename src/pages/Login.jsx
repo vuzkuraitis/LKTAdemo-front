@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import RegularSection from "../components/RegularSection/RegularSection";
 // import Loading from "../components/Loading/Loading";
 import Notification from "../components/Notification/Notification";
@@ -30,15 +30,12 @@ const Login = () => {
       }
 
       localStorage.setItem("token", data.token);
+
+      navigate("/account");
     } catch (err) {
       return setError(err.message);
     }
   };
-  useEffect(() => {
-    if (localStorage.length > 0) {
-      navigate("/account");
-    }
-  });
 
   return (
     <>
