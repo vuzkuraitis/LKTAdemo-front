@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import RegularSection from "../components/RegularSection/RegularSection";
-// import Loading from "../components/Loading/Loading";
 import Notification from "../components/Notification/Notification";
 import LoginForm from "../components/LoginForm/LoginForm";
 import { useNavigate } from "react-router-dom";
