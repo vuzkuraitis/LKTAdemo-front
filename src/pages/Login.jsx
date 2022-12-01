@@ -29,8 +29,11 @@ const Login = () => {
         return setError(data.err);
       }
 
-      await localStorage.setItem("token", data.token);
-      navigate("/account");
+      const token = localStorage.setItem("token", data.token);
+
+      if (token) {
+        navigate("/account");
+      }
     } catch (err) {
       return setError(err.message);
     }
