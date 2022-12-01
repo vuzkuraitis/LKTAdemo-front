@@ -3,6 +3,7 @@ import RegularSection from "../components/RegularSection/RegularSection";
 import HeroUser from "../components/HeroUser/HeroUser";
 import CardUser from "../components/CardUser/CardUser";
 import CardPayment from "../components/CardPayment/CardPayment";
+import Loading from "../components/Loading/Loading";
 
 const Account = () => {
   const [users, setUsers] = useState([]);
@@ -41,6 +42,10 @@ const Account = () => {
   useEffect(() => {
     getUserPaymentData();
   }, []);
+
+  if (!users) {
+    return <Loading />;
+  }
   return (
     <>
       <RegularSection>
