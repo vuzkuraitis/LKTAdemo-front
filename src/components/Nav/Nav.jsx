@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import * as S from "./Nav.styles";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 import Logo from "../../assets/Logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const [active, setActive] = useState(false);
@@ -23,17 +25,19 @@ const Nav = () => {
     },
   ];
 
-  const changeBackground = () => {
-    if (window.scrollY >= 10) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-  window.addEventListener("scroll", changeBackground);
+  const privateLinks = [
+    {
+      url: "/account",
+      title: "Account",
+    },
+    {
+      url: "/settings",
+      title: "Settings",
+    },
+  ];
 
-  // const navigate = useNavigate();
-  const links = publicLinks;
+  const navigate = useNavigate();
+  const links = localStorage.getItem("token") ? privateLinks : publicLinks;
   return (
     <S.Nav
       scrolled={scrolled}
@@ -62,6 +66,26 @@ const Nav = () => {
                 {link.title}
               </Link>
             ))}
+            {localStorage.getItem("token") ? (
+              <Button
+                handleClick={() => {
+                  localStorage.removeItem("token");
+                  navigate("/");
+                  setActive(null);
+                }}
+              >
+                Logout
+              </Button>
+            ) : (
+              <Button
+                handleClick={() => {
+                  navigate("/login");
+                  setActive(null);
+                }}
+              >
+                Login
+              </Button>
+            )}
           </S.BurgerMenu>
         )}
       </div>

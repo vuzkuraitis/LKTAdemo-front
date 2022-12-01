@@ -71,6 +71,17 @@ const RegisterForm = ({
                 updateRegisterValues({ ...registerValues, email: emailValue })
               }
             />
+            <TextInput
+              type="password"
+              label="Password"
+              placeholder="Password"
+              handleChange={(passwordValue) =>
+                updateRegisterValues({
+                  ...registerValues,
+                  password: passwordValue,
+                })
+              }
+            />
             <Checkbox
               type="checkbox"
               label="I agree with"

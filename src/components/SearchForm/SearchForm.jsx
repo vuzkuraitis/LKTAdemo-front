@@ -5,7 +5,7 @@ import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
 import Hero from "../Hero/Hero";
 
-const SearchForm = ({ handleSubmit, isShown, setIsShown }) => {
+const SearchForm = ({ handleSubmit, setSelectedUsers }) => {
   const [cardValues, updateCardValues] = useState();
 
   return (
@@ -18,7 +18,7 @@ const SearchForm = ({ handleSubmit, isShown, setIsShown }) => {
             e.target.reset();
 
             handleSubmit(cardValues.name);
-            setIsShown(!isShown);
+            setSelectedUsers([]);
             console.log(cardValues.name);
           }}
         >

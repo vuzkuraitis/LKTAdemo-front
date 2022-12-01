@@ -2,17 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./Table.styles";
 
-const Table = ({
-  options,
-  type,
-  users,
-  selectedUsers,
-  setSelectedUsers,
-  getSelectedUser,
-  isShown,
-  setIsShown,
-}) => {
-  // const [isShown, setIsShown] = useState(false);
+const Table = ({ options, type, users, setUsers, getSelectedUser }) => {
   return (
     <S.Table>
       <table>
@@ -36,14 +26,8 @@ const Table = ({
                   const findId = filteredUsers.find(
                     ({ id }) => id === Number(e.currentTarget.id)
                   );
-                  if (filteredUsers.length === 1) {
-                    getSelectedUser(filteredUsers[0].id);
-                  } else if (filteredUsers.length > 1) {
-                    getSelectedUser(findId.id);
-                  }
-                  setSelectedUsers(selectedUsers);
-                  setIsShown(!isShown);
-                  console.log(isShown);
+                  getSelectedUser(findId.id);
+                  setUsers([]);
                 }}
               >
                 <td>

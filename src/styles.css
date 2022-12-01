@@ -2,6 +2,7 @@
   margin-top: 6rem;
 } */
 html {
+  background: #f0f0f0;
   scroll-behavior: smooth;
 }
 .myswiper {
@@ -38,6 +39,12 @@ html {
   text-align: center;
   width: 50%;
   z-index: 9998;
+}
+
+@media screen and (min-width: 1024px) {
+  .lktalogo {
+    top: 25%;
+  }
 }
 
 .imagelogo {

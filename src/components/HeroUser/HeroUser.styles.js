@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Hero = styled.div`
+export const HeroUser = styled.div`
   align-items: center;
   border-bottom: 1px solid #000000;
   display: flex;

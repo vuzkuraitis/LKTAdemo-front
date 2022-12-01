@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./Hero.styles";
 
-const Hero = ({ title, subtitle, children }) => {
+const Hero = ({ title, children }) => {
   return (
     <S.Hero className="hero">
       <div className="hero-body">
@@ -15,7 +15,6 @@ const Hero = ({ title, subtitle, children }) => {
 
 Hero.propTypes = {
   title: PropTypes.string,
-  subtitle: PropTypes.string,
   children: PropTypes.node,
 };
 

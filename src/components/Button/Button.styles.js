@@ -8,4 +8,8 @@ export const Button = styled.button`
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   padding: 0.5rem 1rem;
+
+  :hover {
+    background: #3c3cab;
+  }
 `;

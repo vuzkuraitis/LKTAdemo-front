@@ -35,6 +35,7 @@ export const BurgerMenu = styled.div`
 
   .navbar-item {
     color: #ffffff;
+    position: relative;
     text-decoration: none;
     margin: 0 1rem;
     padding: 0.5rem;

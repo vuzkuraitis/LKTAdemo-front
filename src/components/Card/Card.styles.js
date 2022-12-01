@@ -7,9 +7,14 @@ export const Card = styled.div`
   font-size: 0.75rem;
   justify-content: center;
   color: #000000;
-  border: solid 2px #000000;
+  border: 1px solid #808080;
+  border-radius: 0.5rem;
   font-family: "Roboto", sans-serif;
   text-align: center;
+
+  :hover {
+    background: #e8e8e8;
+  }
 
   h3 {
     font-weight: 400;

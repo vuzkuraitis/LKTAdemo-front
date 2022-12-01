@@ -19,10 +19,17 @@ export const Popup = styled.div`
 
   .close-btn {
     cursor: pointer;
+    color: #808080;
+    border: 1px solid #808080;
     border-radius: 50%;
     position: fixed;
     right: 8%;
     top: 4rem;
+
+    :hover {
+      background: #707070;
+      color: #000000;
+    }
   }
 
   img {
