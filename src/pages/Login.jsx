@@ -13,13 +13,16 @@ const Login = () => {
 
   const loginUser = async (inputs) => {
     try {
-      const res = await fetch(`http://localhost:8080/v1/users/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inputs),
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/users/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(inputs),
+        }
+      );
       const data = await res.json();
 
       if (data.err) {
