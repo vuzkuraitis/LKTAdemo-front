@@ -38,7 +38,7 @@ const Login = () => {
     if (localStorage.length > 0) {
       navigate("/account");
     }
-  }, []);
+  });
 
   return (
     <>
