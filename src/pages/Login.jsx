@@ -28,9 +28,9 @@ const Login = () => {
         return setError(data.err);
       }
 
-      localStorage.setItem("token", data.token);
+      const token = localStorage.setItem("token", data.token);
 
-      navigate("/account");
+      token ? navigate("/account") : navigate("/");
     } catch (err) {
       return setError(err.message);
     }
