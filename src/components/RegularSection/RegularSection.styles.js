@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RegularSection = styled.div`
   font-family: "Roboto", sans-serif;
-  height: calc(100vh - (6rem + 8rem));
+  height: calc(100vh - (6rem));
   margin: 6rem auto 1rem auto;
   width: 80%;
 
