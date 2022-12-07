@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [error, setError] = useState();
-  const [users, setUsers] = useState();
 
   const navigate = useNavigate();
 
@@ -27,10 +26,9 @@ const Login = () => {
       if (data.err) {
         return setError(data.err);
       }
+      localStorage.setItem("token", data.token);
 
-      const token = localStorage.setItem("token", data.token);
-
-      token ? navigate("/account") : navigate("/");
+      navigate("/account");
     } catch (err) {
       return setError(err.message);
     }

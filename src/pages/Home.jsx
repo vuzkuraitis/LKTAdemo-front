@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Home1 from "../assets/LKTA5.jpeg";
 import Home2 from "../assets/LKTA4.jpeg";
@@ -8,38 +8,12 @@ import { Autoplay, Navigation, EffectFade } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import Loading from "../components/Loading/Loading";
 import InfoCard from "../components/InfoCard/InfoCard";
 import Button from "../components/Button/Button";
 
 const Home = () => {
-  // const [error, setError] = useState();
-  const [users, setUsers] = useState();
-
   const photos = [Home1, Home2];
   const lktalogo1 = Home3;
-
-  const getUsers = async (name) => {
-    const res = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/v1/users?name=${name}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const data = await res.json();
-
-    setUsers(data);
-    console.log(data);
-  };
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  if (!users) {
-    return <Loading />;
-  }
 
   return (
     <>
@@ -47,7 +21,6 @@ const Home = () => {
         <div className="homeswiper">
           <Swiper
             modules={[Autoplay, Navigation, EffectFade]}
-            // spaceBetween={50}
             navigation
             effect={"fade"}
             speed={600}
@@ -57,7 +30,6 @@ const Home = () => {
             }}
             slidesPerView={1}
             spaceBetween={0}
-            // scrollbar={{ draggable: true }}
             loop={true}
             className="myswiper"
           >

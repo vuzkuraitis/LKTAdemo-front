@@ -1,5 +1,11 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
@@ -14,7 +20,16 @@ const NewPassword = lazy(() => import("./pages/NewPassword"));
 const Settings = lazy(() => import("./pages/Settings"));
 
 const Router = () => {
-  const token = localStorage.getItem("token");
+  function RequireAuth({ children }) {
+    const token = localStorage.getItem("token");
+    let location = useLocation();
+
+    if (!token) {
+      return <Navigate to="/" state={{ from: location }} replace />;
+    }
+    return children;
+  }
+
   return (
     <BrowserRouter onUpdate={() => window.scrollTo({ left: 0, top: 50 })}>
       <Nav />
@@ -35,7 +50,11 @@ const Router = () => {
           <Route
             exact
             path="/account"
-            element={token ? <Account /> : <Navigate to="/" />}
+            element={
+              <RequireAuth>
+                <Account />
+              </RequireAuth>
+            }
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
@@ -65,7 +84,11 @@ const Router = () => {
           <Route
             exact
             path="/settings"
-            element={token ? <Settings /> : <Navigate to="/" />}
+            element={
+              <RequireAuth>
+                <Settings />
+              </RequireAuth>
+            }
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
         </Routes>
