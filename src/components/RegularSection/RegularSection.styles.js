@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const RegularSection = styled.div`
   font-family: "Roboto", sans-serif;
-  height: calc(100vh - (6rem));
   margin: 6rem auto 1rem auto;
   width: 80%;
 
@@ -24,9 +23,11 @@ export const RegularSection = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
+    height: calc(100% - (6rem));
     width: 70%;
     .account {
       display: flex;
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-between;
     }

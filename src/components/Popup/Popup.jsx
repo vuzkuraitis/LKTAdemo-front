@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./Popup.styles";
-import PopupInfo from "../PopupInfo/PopupInfo";
 
 const Popup = ({ handleClick }) => {
   return (
@@ -10,7 +9,6 @@ const Popup = ({ handleClick }) => {
         <button className="close-btn" onClick={handleClick}>
           x
         </button>
-        <PopupInfo />
       </div>
     </S.Popup>
   );

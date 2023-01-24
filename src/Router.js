@@ -18,8 +18,11 @@ const Account = lazy(() => import("./pages/Account"));
 const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const NewPassword = lazy(() => import("./pages/NewPassword"));
 const Settings = lazy(() => import("./pages/Settings"));
+const Payment = lazy(() => import("./pages/Payment"));
+const Clinics = lazy(() => import("./pages/Clinics"));
 
 const Router = () => {
+  console.log("router");
   function RequireAuth({ children }) {
     const token = localStorage.getItem("token");
     let location = useLocation();
@@ -53,6 +56,26 @@ const Router = () => {
             element={
               <RequireAuth>
                 <Account />
+              </RequireAuth>
+            }
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/payment"
+            element={
+              <RequireAuth>
+                <Payment />
+              </RequireAuth>
+            }
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/clinics"
+            element={
+              <RequireAuth>
+                <Clinics />
               </RequireAuth>
             }
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}

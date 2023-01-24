@@ -31,6 +31,10 @@ const Nav = () => {
       title: "Account",
     },
     {
+      url: "/clinics",
+      title: "Clinics",
+    },
+    {
       url: "/settings",
       title: "Settings",
     },

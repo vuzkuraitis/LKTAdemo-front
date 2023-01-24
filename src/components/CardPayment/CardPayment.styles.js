@@ -14,6 +14,9 @@ export const CardPayment = styled.div`
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
 
     :hover {
       background: #e8e8e8;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardUser = styled.div`
+export const CardClinics = styled.div`
   .carduser {
     background: #ffffff;
     display: flex;
@@ -43,10 +43,13 @@ export const CardUser = styled.div`
   span {
     font-weight: 700;
   }
+  ul {
+    text-align: left;
+  }
 
   @media screen and (min-width: 1024px) {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
   }
 `;

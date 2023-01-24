@@ -12,7 +12,6 @@ const Button = ({ type, children, handleClick }) => {
 
 Button.propTypes = {
   type: PropTypes.oneOf(["submit", "reset", "button"]),
-  children: PropTypes.string.isRequired,
   handleClick: PropTypes.func,
 };
 

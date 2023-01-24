@@ -11,7 +11,7 @@ const CardPayment = ({ payments, id }) => {
         payments.map((payment) => (
           <div key={payment.id} className="cardpayment">
             <h3 className="status">
-              Status:{" "}
+              Status:
               {payment.status === "success" ? (
                 <div className="green"></div>
               ) : (
@@ -19,7 +19,7 @@ const CardPayment = ({ payments, id }) => {
               )}
             </h3>
             {payment.status === "success" ? (
-              <div>
+              <div key={payment.id}>
                 <h3>
                   <span>Paid</span>
                 </h3>
@@ -29,7 +29,9 @@ const CardPayment = ({ payments, id }) => {
               </div>
             ) : (
               <h3>
-                <Button>Pay Here</Button>
+                <Button>
+                  <a href={payment.confirmLink}>Pay Here</a>
+                </Button>
               </h3>
             )}
           </div>

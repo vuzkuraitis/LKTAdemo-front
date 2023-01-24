@@ -12,4 +12,10 @@ export const Button = styled.button`
   :hover {
     background: #3c3cab;
   }
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem 2.5rem;
+  }
 `;

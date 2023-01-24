@@ -8,6 +8,7 @@ import SearchForm from "../components/SearchForm/SearchForm";
 import CardList from "../components/CardList/CardList";
 
 const Home = () => {
+  console.log("tikrinu");
   const [users, setUsers] = useState();
   const [selectedUsers, setSelectedUsers] = useState([]);
 

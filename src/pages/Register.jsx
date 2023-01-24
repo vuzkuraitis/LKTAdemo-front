@@ -4,6 +4,7 @@ import Loading from "../components/Loading/Loading";
 import Notification from "../components/Notification/Notification";
 import RegisterForm from "../components/RegisterForm/RegisterForm";
 import Popup from "../components/Popup/Popup";
+import PopupInfo from "../components/PopupInfo/PopupInfo";
 
 const Home = () => {
   const [error, setError] = useState();
@@ -78,6 +79,7 @@ const Home = () => {
         />
         {popupOpen && (
           <Popup handleClick={togglePopup}>
+            <PopupInfo />
             {/* {error && (
               <Notification handleClick={() => setError(null)}>
                 {error}
