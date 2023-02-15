@@ -1,19 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import * as S from "./CardClinics.styles";
 import SubmitClinicForm from "../SubmitClinicForm/SubmitClinicForm";
+import { useNavigate } from "react-router-dom";
 
-const CardClinics = ({
-  clinics,
-  handleClick,
-  handleChange,
-  selectedClinic,
-}) => {
-  // const [selectedClinicId, updateSelectedClinicId] = useState();
-  // console.log(selectedClinicId);
+const CardClinics = ({ clinics }) => {
+  const navigate = useNavigate();
+  const [selectedClinicId, updateSelectedClinicId] = useState(null);
+  console.log(selectedClinicId);
 
-  // const selectedClinic = clinics.find((item) => item.id === selectedClinicId);
-  // console.log(selectedClinic);
+  const selectedClinic = clinics.find((item) => item.id === selectedClinicId);
+  console.log(selectedClinic);
 
   return (
     <S.CardClinics>
@@ -35,8 +32,12 @@ const CardClinics = ({
         </div>
         <SubmitClinicForm
           clinics={clinics}
-          handleChange={handleChange}
-          handleClick={handleClick}
+          handleChange={(id) => {
+            updateSelectedClinicId(id);
+          }}
+          handleClick={() => {
+            navigate("/clinics");
+          }}
           selectedClinic={selectedClinic}
         />
         {selectedClinic ? (

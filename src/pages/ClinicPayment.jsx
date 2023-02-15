@@ -6,7 +6,7 @@ import Loading from "../components/Loading/Loading";
 import Countdown from "react-countdown";
 import Button from "../components/Button/Button";
 
-const Payment = () => {
+const ClinicPayment = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const paymentId = queryParams.get("paymentId");
   const status = queryParams.get("status");
@@ -22,10 +22,10 @@ const Payment = () => {
   const [error, setError] = useState();
   const navigate = useNavigate();
 
-  const checkParams = async () => {
+  const checkParamsClinic = async () => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/v1/license/account-payment-verification`,
+        `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic-payment-verification`,
         {
           method: "POST",
           headers: {
@@ -46,7 +46,7 @@ const Payment = () => {
     }
   };
   useEffect(() => {
-    checkParams();
+    checkParamsClinic();
   });
 
   if (!error) {
@@ -119,4 +119,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default ClinicPayment;

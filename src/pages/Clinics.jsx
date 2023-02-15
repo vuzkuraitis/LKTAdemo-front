@@ -3,20 +3,16 @@ import RegularSection from "../components/RegularSection/RegularSection";
 import HeroUser from "../components/HeroUser/HeroUser";
 import CardClinicsPayment from "../components/CardClinicsPayment/CardClinicsPayment";
 import Loading from "../components/Loading/Loading";
-// import Notification from "../components/Notification/Notification";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Clinics = () => {
+  const [error, setError] = useState();
   const [users, setUsers] = useState([]);
   const [clinics, setClinics] = useState([]);
-  // const [error, setError] = useState();
-  // const navigate = useNavigate();
+  const [clinicData, setClinicData] = useState([]);
+  const [clinicPayments, setClinicPayments] = useState([]);
 
-  const [selectedClinicId, updateSelectedClinicId] = useState();
-  console.log(selectedClinicId);
-
-  const selectedClinic = clinics.find((item) => item.id === selectedClinicId);
-  console.log(selectedClinic);
+  const navigate = useNavigate();
 
   const getUserData = async () => {
     const res = await fetch(
@@ -34,9 +30,25 @@ const Clinics = () => {
     getUserData();
   }, []);
 
+  const getUserClinicsData = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic-registration`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const data = await res.json();
+    setClinicData(data);
+  };
+  useEffect(() => {
+    getUserClinicsData();
+  }, []);
+
   const getClinics = async () => {
     const res = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/v1/users/clinics`,
+      `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic`,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -50,7 +62,37 @@ const Clinics = () => {
     getClinics();
   }, []);
 
-  if (!users && !clinics) {
+  const initiatePayment = async (id) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic-payment?id=${id}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+
+      if (data.err) {
+        return setError(data.err);
+      }
+
+      setClinicPayments(data);
+
+      navigate(`/clinics/clinic?id=${id}`, {
+        state: data,
+      });
+
+      return console.log(clinicPayments);
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
+
+  if (!users || !clinics || !clinicData) {
     <Loading />;
   }
 
@@ -61,8 +103,9 @@ const Clinics = () => {
         <div className="account">
           <CardClinicsPayment
             clinics={clinics}
-            handleChange={updateSelectedClinicId}
-            selectedClinic={selectedClinic}
+            clinicPayments={clinicPayments}
+            clinicData={clinicData}
+            initiatePayment={initiatePayment}
           />
         </div>
       </RegularSection>

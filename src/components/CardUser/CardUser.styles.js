@@ -48,5 +48,16 @@ export const CardUser = styled.div`
     display: flex;
     flex-direction: column;
     width: 60%;
+
+    .carduser {
+      :hover {
+        -webkit-transform: translateY(2px) translateZ(0px) scale(1.02);
+        -moz-transform: translateY(2px) translateZ(0px) scale(1.02);
+        -ms-transform: translateY(2px) translateZ(0px) scale(1.02);
+        -o-transform: translateY(2px) translateZ(0px) scale(1.02);
+        transform: translateY(2px) translateZ(0px) scale(1.02);
+        transition: 0.3s ease-in-out;
+      }
+    }
   }
 `;

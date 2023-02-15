@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ChangePassForm = styled.div`
+export const ChangeEmailForm = styled.div`
   .settingsSection {
     background: #ffffff;
     display: flex;

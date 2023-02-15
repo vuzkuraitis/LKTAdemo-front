@@ -69,5 +69,16 @@ export const CardPayment = styled.div`
 
   @media screen and (min-width: 1024px) {
     width: 30%;
+
+    .cardpayment {
+      :hover {
+        -webkit-transform: translateY(2px) translateZ(0px) scale(1.02);
+        -moz-transform: translateY(2px) translateZ(0px) scale(1.02);
+        -ms-transform: translateY(2px) translateZ(0px) scale(1.02);
+        -o-transform: translateY(2px) translateZ(0px) scale(1.02);
+        transform: translateY(2px) translateZ(0px) scale(1.02);
+        transition: 0.3s ease-in-out;
+      }
+    }
   }
 `;

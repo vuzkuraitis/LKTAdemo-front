@@ -19,7 +19,10 @@ const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const NewPassword = lazy(() => import("./pages/NewPassword"));
 const Settings = lazy(() => import("./pages/Settings"));
 const Payment = lazy(() => import("./pages/Payment"));
+const ClinicPayment = lazy(() => import("./pages/ClinicPayment"));
 const Clinics = lazy(() => import("./pages/Clinics"));
+const Clinic = lazy(() => import("./pages/Clinic"));
+const Cookies = lazy(() => import("./pages/Cookies"));
 
 const Router = () => {
   console.log("router");
@@ -72,10 +75,30 @@ const Router = () => {
           />
           <Route
             exact
+            path="/clinic-payment"
+            element={
+              <RequireAuth>
+                <ClinicPayment />
+              </RequireAuth>
+            }
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
             path="/clinics"
             element={
               <RequireAuth>
                 <Clinics />
+              </RequireAuth>
+            }
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/clinics/clinic"
+            element={
+              <RequireAuth>
+                <Clinic />
               </RequireAuth>
             }
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
@@ -112,6 +135,12 @@ const Router = () => {
                 <Settings />
               </RequireAuth>
             }
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/cookie-policy"
+            element={<Cookies />}
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
         </Routes>

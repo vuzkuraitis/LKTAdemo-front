@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import InfoCard from "../components/InfoCard/InfoCard";
 import Button from "../components/Button/Button";
+import CookiePopup from "../components/CookiePopup/CookiePopup";
 
 const Home = () => {
   const photos = [Home1, Home2];
@@ -18,6 +19,7 @@ const Home = () => {
   return (
     <>
       <div className="intro">
+        <CookiePopup />
         <div className="homeswiper">
           <Swiper
             modules={[Autoplay, Navigation, EffectFade]}

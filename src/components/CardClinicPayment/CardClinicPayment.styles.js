@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardClinicsPayment = styled.div`
+export const CardClinicPayment = styled.div`
   .carduserclinics {
     background: #ffffff;
     display: flex;
@@ -36,18 +36,6 @@ export const CardClinicsPayment = styled.div`
     display: flex;
     justify-content: space-between;
     width: 70%;
-  }
-  .completed {
-    border-radius: 2rem;
-    /* width: 0.75rem;
-    height: 0.75rem; */
-    background: #14d500;
-    border: 1px solid #808080;
-    padding: 0.5rem 1rem;
-  }
-  .icon {
-    color: #ffffff;
-    font-size: 1rem;
   }
   img {
     height: 5rem;
