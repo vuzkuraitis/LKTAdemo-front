@@ -13,30 +13,30 @@ const Nav = () => {
   const publicLinks = [
     {
       url: "/",
-      title: "Home",
+      title: "Pagrindinis",
     },
     {
       url: "/license",
-      title: "Find a License",
+      title: "Licenzijos",
     },
     {
       url: "/register",
-      title: "Register",
+      title: "Registracija",
     },
   ];
 
   const privateLinks = [
     {
       url: "/account",
-      title: "Account",
+      title: "Paskyra",
     },
     {
-      url: "/clinics",
-      title: "Clinics",
+      url: "/account/clinics",
+      title: "Seminarai",
     },
     {
-      url: "/settings",
-      title: "Settings",
+      url: "/account/settings",
+      title: "Nustatymai",
     },
   ];
 
@@ -78,7 +78,7 @@ const Nav = () => {
                   setActive(null);
                 }}
               >
-                Logout
+                Atsijungti
               </Button>
             ) : (
               <Button
@@ -87,7 +87,7 @@ const Nav = () => {
                   setActive(null);
                 }}
               >
-                Login
+                Prisijungti
               </Button>
             )}
           </S.BurgerMenu>

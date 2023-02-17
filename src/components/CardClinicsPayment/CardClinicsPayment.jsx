@@ -17,10 +17,10 @@ const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
   }
   return (
     <S.CardClinicsPayment>
-      <h5>Clinics Information</h5>
+      <h5>Seminarų informacija</h5>
       <div className="carduserclinics">
         <div>
-          <h3>Clinics Status</h3>
+          <h3>Seminaro statusas</h3>
           {newClinicData.length > 0 ? (
             <div className="cliniccards">
               {newClinicData &&
@@ -36,23 +36,23 @@ const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
                       alt="LKTRALogo"
                     ></img>
                     <div className="cliniccarditem">
-                      <h4>City:</h4>
+                      <h4>Miestas:</h4>
                       <p>{clinic.name}</p>
                     </div>
                     <div className="cliniccarditem">
-                      <h4>Place:</h4>
+                      <h4>Vieta:</h4>
                       <p>{clinic.place}</p>
                     </div>
                     <div className="cliniccarditem">
-                      <h4>Address:</h4>
+                      <h4>Adresas:</h4>
                       <p>{clinic.address}</p>
                     </div>
                     <div className="cliniccarditem">
-                      <h4>Duaration:</h4>
+                      <h4>Trukmė:</h4>
                       <p>{clinic.hours} h</p>
                     </div>
                     <div className="cliniccarditem">
-                      <h4>Price:</h4>
+                      <h4>Kaina:</h4>
                       <p>{clinic.price} EUR</p>
                     </div>
                     {clinic.clinicData.length > 0 &&
@@ -74,7 +74,7 @@ const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
                           initiatePayment(Number(e.currentTarget.value));
                         }}
                       >
-                        Confirm Registration
+                        Registruotis
                       </PaymentButton>
                     )}
                   </div>
@@ -91,6 +91,9 @@ const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
 
 CardClinicsPayment.propTypes = {
   name: PropTypes.string,
+  place: PropTypes.string,
+  address: PropTypes.string,
+  hours: PropTypes.number,
   price: PropTypes.number,
 };
 

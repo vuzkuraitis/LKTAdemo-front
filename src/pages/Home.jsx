@@ -13,7 +13,10 @@ import Button from "../components/Button/Button";
 import CookiePopup from "../components/CookiePopup/CookiePopup";
 
 const Home = () => {
-  const photos = [Home1, Home2];
+  const photos = [
+    { id: 1, name: Home1 },
+    { id: 2, name: Home2 },
+  ];
   const lktalogo1 = Home3;
 
   return (
@@ -36,34 +39,32 @@ const Home = () => {
             className="myswiper"
           >
             {photos.map((photo) => (
-              <SwiperSlide className="swiperslide">
-                <img src={photo} alt="lkta" />
+              <SwiperSlide className="swiperslide" key={photo.id}>
+                <img src={photo.name} alt="lkta" id={photo.id} key={photo.id} />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
         <div className="lktalogo">
-          <h2>Lithuanian Basketball Coaches Association</h2>
+          <h2>Lietuvos Krepšinio Trenerių Asociacija</h2>
           <img src={lktalogo1} alt="lktalogo" className="imagelogo" />
         </div>
       </div>
       <InfoCard
-        title="Check your license availability"
-        subtitle="If you are already a member of our organisation, you can easily
-              check your license availability and the upcoming clinics."
+        title="Licenzijos Galiojimas"
+        subtitle="Jeigu jau esate prisiregistravęs, čia galite labai lengvai patikrinti savo lincezijos statusą."
       >
         <Link to="/license">
-          <Button type="button">Check Here</Button>
+          <Button type="button">Tikrinti</Button>
         </Link>
       </InfoCard>
       <InfoCard
-        title="Become a member of our organisation"
-        subtitle="If you are not a member of our organisation, you can become one.
-        Just follow simple steps."
-        buttonText="Click Here"
+        title="Tapk mūsų Asociacijos nariu"
+        subtitle="Jeigu esate Asociacijos narys, bet dar nesate prisiregistravę, tai galite atlikti labai paprastai."
+        buttonText="Registruotis"
       >
         <Link to="/register">
-          <Button type="button">Click Here</Button>
+          <Button type="button">Registruotis</Button>
         </Link>
       </InfoCard>
     </>

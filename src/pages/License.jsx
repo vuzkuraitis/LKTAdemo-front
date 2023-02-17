@@ -48,11 +48,11 @@ const Home = () => {
           handleSubmit={getUsers}
           setSelectedUsers={setSelectedUsers}
         />
-        <h2>Search results</h2>
+        <h2>Paieškos rezultatai</h2>
         {users &&
           users.length === 0 &&
           selectedUsers &&
-          selectedUsers.length === 0 && <div>No Coaches found</div>}
+          selectedUsers.length === 0 && <div>Paieškos rezultatai</div>}
         {users && users.length > 0 && (
           <Table
             users={users}

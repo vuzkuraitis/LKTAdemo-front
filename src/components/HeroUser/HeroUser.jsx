@@ -8,7 +8,7 @@ const HeroUser = ({ users }) => {
       {users &&
         users.map((user) => (
           <div className="hero-body" key={user.name}>
-            <h1>Hello Coach {user.name},</h1>
+            <h1>Sveiki {user.name},</h1>
           </div>
         ))}
     </S.HeroUser>

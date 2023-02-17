@@ -10,7 +10,7 @@ const SearchForm = ({ handleSubmit, setSelectedUsers }) => {
 
   return (
     <S.SearchForm>
-      <Hero title="Find a Coach" />
+      <Hero title="Surasti Trenerio Licenziją" />
       <div className="formSection">
         <form
           onSubmit={(e) => {
@@ -25,13 +25,13 @@ const SearchForm = ({ handleSubmit, setSelectedUsers }) => {
           <TextInput
             className="always"
             type="text"
-            label="Search"
-            placeholder="Search by name..."
+            label="Paieška"
+            placeholder="Paieška pagal Vardą..."
             handleChange={(nameValue) =>
               updateCardValues({ ...cardValues, name: nameValue })
             }
           />
-          <Button type="submit">Search</Button>
+          <Button type="submit">Ieškoti</Button>
         </form>
       </div>
     </S.SearchForm>

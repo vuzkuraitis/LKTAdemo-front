@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./CookiePopup.styles";
-import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
 import { Link } from "react-router-dom";
 
 const CookiePopup = ({ handleClick }) => {
-  console.log(getCookieConsentValue());
   return (
     <S.CookiePopup>
       <CookieConsent

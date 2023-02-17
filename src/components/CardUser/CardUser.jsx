@@ -5,21 +5,21 @@ import * as S from "./CardUser.styles";
 const CardUser = ({ users, id }) => {
   return (
     <S.CardUser id={id} users={users}>
-      <h5>License information:</h5>
+      <h5>Licenzijos informacija:</h5>
       {users &&
         users.map((user) => (
           <div key={user.id} className="carduser">
             <h3>
-              Name
+              Vardas, Pavardė
               <span>
                 {user.name} {user.surname}
               </span>
             </h3>
             <h3>
-              Email<span>{user.email}</span>
+              El Paštas<span>{user.email}</span>
             </h3>
             <h3>
-              License Nr.<span>{user.license_nr}</span>
+              Licenzijos Nr.<span>{user.license_nr}</span>
             </h3>
           </div>
         ))}

@@ -18,7 +18,7 @@ const RegisterForm = ({
 
   return (
     <S.RegisterForm>
-      <Hero title="Register" />
+      <Hero title="Registracija" />
       <Section>
         <div className="formSection">
           <form
@@ -31,8 +31,8 @@ const RegisterForm = ({
           >
             <TextInput
               type="text"
-              label="Name"
-              placeholder="Name"
+              label="Vardas"
+              placeholder="Vardas"
               handleChange={(nameValue) =>
                 updateRegisterValues({
                   ...registerValues,
@@ -48,8 +48,8 @@ const RegisterForm = ({
             />
             <TextInput
               type="text"
-              label="Surname"
-              placeholder="Surname"
+              label="Pavardė"
+              placeholder="Pavardė"
               handleChange={(surnameValue) =>
                 updateRegisterValues({
                   ...registerValues,
@@ -65,7 +65,7 @@ const RegisterForm = ({
             />
             <TextInput
               type="email"
-              label="Email"
+              label="El Paštas"
               placeholder="email@email.com"
               handleChange={(emailValue) =>
                 updateRegisterValues({ ...registerValues, email: emailValue })
@@ -73,8 +73,8 @@ const RegisterForm = ({
             />
             <TextInput
               type="password"
-              label="Password"
-              placeholder="Password"
+              label="Slaptažodis"
+              placeholder="Slaptažodis"
               handleChange={(passwordValue) =>
                 updateRegisterValues({
                   ...registerValues,
@@ -84,11 +84,11 @@ const RegisterForm = ({
             />
             <Checkbox
               type="checkbox"
-              label="I agree with"
+              label="Aš sutinku su"
               handleChange={() => setChecked(!checked)}
               handleClick={togglePopup}
             />
-            <Button type="submit">Register</Button>
+            <Button type="submit">Registruotis</Button>
           </form>
         </div>
       </Section>

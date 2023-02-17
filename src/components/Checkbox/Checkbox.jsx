@@ -25,7 +25,7 @@ const Checkbox = ({
           <label className="label" htmlFor={label}>
             {label}
           </label>
-          <span onClick={handleClick}> Terms and Conditions*</span>
+          <span onClick={handleClick}> Sąlygomis ir Nustatymais*</span>
         </div>
       </div>
     </S.Checkbox>

@@ -12,7 +12,7 @@ const LoginForm = ({ handleSubmit }) => {
   const [loginValues, updateLoginValues] = useState();
   return (
     <S.LoginForm>
-      <Hero title="Personal Area" />
+      <Hero title="Asmeninė Paskyra" />
       <div className="login">
         <Section>
           <div className="formSection">
@@ -26,7 +26,7 @@ const LoginForm = ({ handleSubmit }) => {
             >
               <TextInput
                 type="email"
-                label="Email"
+                label="El Paštas"
                 placeholder="email@email.com"
                 handleChange={(emailValue) =>
                   updateLoginValues({ ...loginValues, email: emailValue })
@@ -34,39 +34,39 @@ const LoginForm = ({ handleSubmit }) => {
               />
               <TextInput
                 type="password"
-                label="Password"
-                placeholder="Password"
+                label="Slaptažodis"
+                placeholder="Slaptažodis"
                 handleChange={(passwordValue) =>
                   updateLoginValues({ ...loginValues, password: passwordValue })
                 }
               />
-              <Button type="submit">Login</Button>
+              <Button type="submit">Įeiti</Button>
             </form>
             <p>
-              Not a member?
+              Neturite paskyros?
               <Link to="/register" title="Register" className="loginLink">
-                Register
+                Registruotis
               </Link>
             </p>
             <p>
-              Forgot password?
+              Pamiršote slaptažodį?
               <Link
                 to="/forgot-password"
                 title="Forgot Password"
                 className="forgotPassLink"
               >
-                Click Here
+                Spausti čia
               </Link>
             </p>
           </div>
         </Section>
         <CardInfo>
-          <p>Here you can access your account where you will be able:</p>
+          <p>Prisijungę į savo asmeninę paskyrą jūs galėsite:</p>
           <ul>
-            <li>Check your license availability</li>
-            <li>Subscribe to upcoming clinics</li>
-            <li>Pay directly for your License or Clinics</li>
-            <li>Stay up to date with our news</li>
+            <li>Patikrinti savo licenzijos galiojimo laiką</li>
+            <li>Registruotis į būsimus seminarus</li>
+            <li>Iškart susimokėti už savo licenziją ir seminarus</li>
+            <li>Nepraleisti galimybės dalyvauti naujausiuose seminaruose</li>
           </ul>
         </CardInfo>
       </div>

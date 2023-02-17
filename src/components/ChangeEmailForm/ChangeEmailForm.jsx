@@ -8,7 +8,7 @@ const ChangeEmailForm = ({ handleSubmit }) => {
   const [changeemailValues, updateChangeemailValues] = useState();
   return (
     <S.ChangeEmailForm>
-      <h5>Change Email:</h5>
+      <h5>Pakeisti El paštą:</h5>
       <div className="settingsSection">
         <form
           onSubmit={(e) => {
@@ -20,8 +20,8 @@ const ChangeEmailForm = ({ handleSubmit }) => {
         >
           <TextInput
             type="email"
-            label="Old Email"
-            placeholder="Old Email"
+            label="Senas El paštas"
+            placeholder="Senas El paštas"
             handleChange={(emailValue) =>
               updateChangeemailValues({
                 ...changeemailValues,
@@ -31,8 +31,8 @@ const ChangeEmailForm = ({ handleSubmit }) => {
           />
           <TextInput
             type="email"
-            label="New Email"
-            placeholder="New Email"
+            label="Naujas El paštas"
+            placeholder="Naujas El paštas"
             handleChange={(emailValue) =>
               updateChangeemailValues({
                 ...changeemailValues,
@@ -42,8 +42,8 @@ const ChangeEmailForm = ({ handleSubmit }) => {
           />
           <TextInput
             type="password"
-            label="Current Password"
-            placeholder="Current Password"
+            label="Slaptažodis"
+            placeholder="Slaptažodis"
             handleChange={(passwordValue) =>
               updateChangeemailValues({
                 ...changeemailValues,
@@ -51,7 +51,7 @@ const ChangeEmailForm = ({ handleSubmit }) => {
               })
             }
           />
-          <Button type="submit">Change Email</Button>
+          <Button type="submit">Patvirtinti</Button>
         </form>
       </div>
     </S.ChangeEmailForm>

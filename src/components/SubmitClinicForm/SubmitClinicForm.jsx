@@ -13,18 +13,11 @@ const SubmitClinicForm = ({
   return (
     <S.SubmitClinicForm>
       <div className="formSection">
-        <form
-        // onSubmit={(e) => {
-        //   e.preventDefault();
-        //   e.target.reset();
-
-        //   handleSubmit(clinicValues);
-        // }}
-        >
+        <form>
           <SelectInput
             title="Clinic"
             options={clinics}
-            label="Select Clinic"
+            label="Seminarai"
             type="number"
             name="clinic"
             handleChange={(clinic_idValue) =>
@@ -33,7 +26,7 @@ const SubmitClinicForm = ({
           />
           {selectedClinic ? (
             <Button type="button" handleClick={handleClick}>
-              Register
+              Registruotis
             </Button>
           ) : null}
         </form>

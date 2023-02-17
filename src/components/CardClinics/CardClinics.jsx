@@ -14,18 +14,18 @@ const CardClinics = ({ clinics }) => {
 
   return (
     <S.CardClinics>
-      <h5>Information for Coach:</h5>
+      <h5>Informacija treneriui:</h5>
       <div className="carduser">
         <h3>
-          Anual License fee: <span>0.01 EUR</span>
+          Metinis licenzijos mokestis: <span>0.01 EUR</span>
         </h3>
         <div>
-          <h3>Available Clinics</h3>
+          <h3>Seminarai</h3>
           <ul>
             {clinics &&
               clinics.map((clinic) => (
                 <li id={clinic.id} value={clinic.id} key={clinic.id}>
-                  {clinic.name} <span>Price: {clinic.price} EUR</span>
+                  {clinic.name} <span>Kaina: {clinic.price} EUR</span>
                 </li>
               ))}
           </ul>
@@ -36,26 +36,26 @@ const CardClinics = ({ clinics }) => {
             updateSelectedClinicId(id);
           }}
           handleClick={() => {
-            navigate("/clinics");
+            navigate("/account/clinics");
           }}
           selectedClinic={selectedClinic}
         />
         {selectedClinic ? (
           <div>
             <h3>
-              <span>Date</span> {selectedClinic.name}
+              <span>Data</span> {selectedClinic.name}
             </h3>
             <h3>
-              <span>Place</span> {selectedClinic.place}
+              <span>Vieta</span> {selectedClinic.place}
             </h3>
             <h3>
-              <span>Address</span> {selectedClinic.address}
+              <span>Adresas</span> {selectedClinic.address}
             </h3>
             <h3>
-              <span>Clinic Hours</span> {selectedClinic.hours}
+              <span>Valandų skaičius</span> {selectedClinic.hours}
             </h3>
             <h3>
-              <span>Price</span> {selectedClinic.price} EUR
+              <span>Kaina</span> {selectedClinic.price} EUR
             </h3>
           </div>
         ) : null}

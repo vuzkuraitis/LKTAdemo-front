@@ -11,7 +11,7 @@ const Footer = ({ children }) => {
   const year = new Date().getFullYear();
   return (
     <S.Footer>
-      <p>Follow us on:</p>
+      <p>Sekite mus:</p>
       <div className="socialMedia">
         <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faFacebook} className="footer-item" />

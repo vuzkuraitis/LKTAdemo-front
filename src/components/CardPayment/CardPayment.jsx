@@ -6,12 +6,12 @@ import Button from "../Button/Button";
 const CardPayment = ({ payments, id }) => {
   return (
     <S.CardPayment id={id} payments={payments}>
-      <h5>License validation:</h5>
+      <h5>Licenzijos statusas:</h5>
       {payments &&
         payments.map((payment) => (
           <div key={payment.id} className="cardpayment">
             <h3 className="status">
-              Status:
+              Statusas:
               {payment.status === "success" ? (
                 <div className="green"></div>
               ) : (
@@ -21,16 +21,16 @@ const CardPayment = ({ payments, id }) => {
             {payment.status === "success" ? (
               <div key={payment.id}>
                 <h3>
-                  <span>Paid</span>
+                  <span>Apmokėta</span>
                 </h3>
                 <h3>
-                  Valid for year:<span>{payment.year}</span>
+                  Galioja:<span>{payment.year}</span> metams
                 </h3>
               </div>
             ) : (
               <h3>
                 <Button>
-                  <a href={payment.confirmLink}>Pay Here</a>
+                  <a href={payment.confirmLink}>Mokėti</a>
                 </Button>
               </h3>
             )}

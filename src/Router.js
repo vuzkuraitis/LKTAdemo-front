@@ -85,7 +85,7 @@ const Router = () => {
           />
           <Route
             exact
-            path="/clinics"
+            path="/account/clinics"
             element={
               <RequireAuth>
                 <Clinics />
@@ -129,7 +129,7 @@ const Router = () => {
           />
           <Route
             exact
-            path="/settings"
+            path="/account/settings"
             element={
               <RequireAuth>
                 <Settings />

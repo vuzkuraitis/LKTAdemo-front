@@ -16,10 +16,27 @@ export const RegularSection = styled.div`
   .paymentexpl > p > span {
     color: #808080;
     font-weight: 700;
+    display: flex;
   }
 
   .cookies {
     text-align: justify;
+  }
+  .red {
+    width: 0.75rem;
+    height: 0.75rem;
+    background: #ff0000;
+    border: 1px solid #808080;
+    border-radius: 2rem;
+    margin-left: 0.5rem;
+  }
+  .green {
+    width: 0.75rem;
+    height: 0.75rem;
+    background: #14d500;
+    border: 1px solid #808080;
+    border-radius: 2rem;
+    margin-left: 0.5rem;
   }
 
   @media screen and (min-width: 768px) {

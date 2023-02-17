@@ -39,7 +39,7 @@ const Settings = () => {
             {error}
           </Notification>
         )}
-        <Hero title="Settings" />
+        <Hero title="Nustatymai" />
         <div className="settings">
           <ChangeEmailForm></ChangeEmailForm>
           <ChangePassForm handleSubmit={changePassword}></ChangePassForm>

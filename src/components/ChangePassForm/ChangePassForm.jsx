@@ -9,7 +9,7 @@ const ChangePassForm = ({ handleSubmit, exercises }) => {
   const [changepassValues, updateChangepassValues] = useState();
   return (
     <S.ChangePassForm>
-      <h5>Change Password:</h5>
+      <h5>Pakeisti slaptažodį:</h5>
       <div className="settingsSection">
         <form
           onSubmit={(e) => {
@@ -21,8 +21,8 @@ const ChangePassForm = ({ handleSubmit, exercises }) => {
         >
           <TextInput
             type="password"
-            label="Old Password"
-            placeholder="Old Password"
+            label="Senas slaptažodis"
+            placeholder="Senas slaptažodis"
             handleChange={(passwordValue) =>
               updateChangepassValues({
                 ...changepassValues,
@@ -32,8 +32,8 @@ const ChangePassForm = ({ handleSubmit, exercises }) => {
           />
           <TextInput
             type="password"
-            label="New Password"
-            placeholder="New Password"
+            label="Naujas slaptažodis"
+            placeholder="Naujas slaptažodis"
             handleChange={(passwordValue) =>
               updateChangepassValues({
                 ...changepassValues,
@@ -41,7 +41,7 @@ const ChangePassForm = ({ handleSubmit, exercises }) => {
               })
             }
           />
-          <Button type="submit">Change Password</Button>
+          <Button type="submit">Patvirtinti</Button>
         </form>
       </div>
     </S.ChangePassForm>

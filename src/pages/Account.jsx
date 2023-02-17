@@ -75,11 +75,17 @@ const Account = () => {
         </div>
         <div className="paymentexpl">
           <p>
-            <span>Status: Red,</span> License is not valid, because the payment
-            was not received or still pending.
+            <span>
+              Statusas: <span className="red"></span>
+            </span>
+            Licenzija yra neaktyvi todėl, kad yra neapmokėta, arba mokėjimas vis
+            dar vykdomas.
           </p>
           <p>
-            <span>Status: Green,</span> License is valid.
+            <span>
+              Statusas: <span className="green"></span>
+            </span>
+            Licenzija yra aktyvi.
           </p>
         </div>
       </RegularSection>
