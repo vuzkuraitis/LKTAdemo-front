@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 import * as S from "./CardPayment.styles";
 import Button from "../Button/Button";
 
-const CardPayment = ({ payments, id }) => {
+const CardPayment = ({ payments, id, handleClick, active, setActive }) => {
   return (
     <S.CardPayment id={id} payments={payments}>
-      <h5>Licenzijos statusas:</h5>
       {payments &&
         payments.map((payment) => (
-          <div key={payment.id} className="cardpayment">
+          <div key={1} className="cardpayment">
             <h3 className="status">
               Statusas:
               {payment.status === "success" ? (
@@ -19,21 +18,48 @@ const CardPayment = ({ payments, id }) => {
               )}
             </h3>
             {payment.status === "success" ? (
-              <div key={payment.id}>
+              <div key={payment.id} className="licensestatus">
                 <h3>
                   <span>Apmokėta</span>
                 </h3>
                 <h3>
-                  Galioja:<span>{payment.year}</span> metams
+                  Galioja: <span>{payment.year}</span> metams
                 </h3>
               </div>
             ) : (
               <h3>
-                <Button>
-                  <a href={payment.confirmLink}>Mokėti</a>
-                </Button>
+                {active !== true ? (
+                  <Button handleClick={handleClick} type="button">
+                    Mokėti
+                  </Button>
+                ) : (
+                  <Button
+                    type="button"
+                    handleClick={() => {
+                      setActive(active);
+                      window.location.reload();
+                    }}
+                  >
+                    Uždaryti
+                  </Button>
+                )}
               </h3>
             )}
+            <div className="paymentexpl">
+              <p>
+                <span>
+                  Statusas: <span className="red"></span>
+                </span>
+                Licenzija yra neaktyvi todėl, kad yra neapmokėta, arba mokėjimas
+                vis dar vykdomas.
+              </p>
+              <p>
+                <span>
+                  Statusas: <span className="green"></span>
+                </span>
+                Licenzija yra aktyvi.
+              </p>
+            </div>
           </div>
         ))}
     </S.CardPayment>

@@ -2,23 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./PaymentButton.styles";
 
-const PaymentButton = ({
-  type,
-  children,
-  handleClick,
-  handleSubmit,
-  handleChange,
-  id,
-  value,
-}) => {
+const PaymentButton = ({ type, children, handleClick, id, value }) => {
   return (
-    <S.PaymentButton
-      type={type}
-      onClick={handleClick}
-      // onSubmit={handleSubmit}
-      id={id}
-      value={value}
-    >
+    <S.PaymentButton type={type} onClick={handleClick} id={id} value={value}>
       {children}
     </S.PaymentButton>
   );

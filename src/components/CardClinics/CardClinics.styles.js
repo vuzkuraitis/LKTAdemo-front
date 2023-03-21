@@ -8,7 +8,6 @@ export const CardClinics = styled.div`
     font-size: 0.75rem;
     justify-content: center;
     color: #000000;
-    border: 1px solid #808080;
     border-radius: 0.5rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
@@ -50,17 +49,16 @@ export const CardClinics = styled.div`
   @media screen and (min-width: 1024px) {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
 
     .carduser {
-      :hover {
-        -webkit-transform: translateY(2px) translateZ(0px) scale(1.02);
-        -moz-transform: translateY(2px) translateZ(0px) scale(1.02);
-        -ms-transform: translateY(2px) translateZ(0px) scale(1.02);
-        -o-transform: translateY(2px) translateZ(0px) scale(1.02);
-        transform: translateY(2px) translateZ(0px) scale(1.02);
-        transition: 0.3s ease-in-out;
-      }
+      height: 55vh;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-radius: 0.5rem 0 0 0.5rem;
+      box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
     }
   }
 `;

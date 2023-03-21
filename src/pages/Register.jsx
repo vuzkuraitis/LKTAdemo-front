@@ -12,8 +12,6 @@ const Home = () => {
   const [checked, setChecked] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
 
-  console.log(checked);
-
   const getUsers = async (name) => {
     const res = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/v1/users?name=${name}`,

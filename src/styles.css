@@ -1,13 +1,10 @@
-/* .homeswiper {
-  margin-top: 6rem;
-} */
 html {
   background: #f0f0f0;
   scroll-behavior: smooth;
 }
-body {
+/* body {
   margin-bottom: 8rem;
-}
+} */
 .myswiper {
   width: 100%;
   height: 100vh;

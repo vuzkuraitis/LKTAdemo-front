@@ -20,7 +20,6 @@ const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
       <h5>Seminarų informacija</h5>
       <div className="carduserclinics">
         <div>
-          <h3>Seminaro statusas</h3>
           {newClinicData.length > 0 ? (
             <div className="cliniccards">
               {newClinicData &&

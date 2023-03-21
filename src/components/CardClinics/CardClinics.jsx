@@ -14,7 +14,6 @@ const CardClinics = ({ clinics }) => {
 
   return (
     <S.CardClinics>
-      <h5>Informacija treneriui:</h5>
       <div className="carduser">
         <h3>
           Metinis licenzijos mokestis: <span>0.01 EUR</span>

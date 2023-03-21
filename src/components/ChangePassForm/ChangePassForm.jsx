@@ -3,7 +3,6 @@ import * as S from "./ChangePassForm.styles";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
-import Section from "../Section/Section";
 
 const ChangePassForm = ({ handleSubmit, exercises }) => {
   const [changepassValues, updateChangepassValues] = useState();

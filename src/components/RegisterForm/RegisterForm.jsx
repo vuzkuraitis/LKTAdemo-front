@@ -6,27 +6,28 @@ import Button from "../Button/Button";
 import Section from "../Section/Section";
 import Hero from "../Hero/Hero";
 import Checkbox from "../Checkbox/Checkbox";
+import Loading from "../Loading/Loading";
 
-const RegisterForm = ({
-  handleSubmit,
-  handleChange,
-  togglePopup,
-  setChecked,
-  checked,
-}) => {
+const RegisterForm = ({ handleSubmit, togglePopup, setChecked, checked }) => {
   const [registerValues, updateRegisterValues] = useState();
+  const [loading, setLoading] = useState(false);
 
   return (
     <S.RegisterForm>
       <Hero title="Registracija" />
+      {loading && <Loading />}
       <Section>
         <div className="formSection">
           <form
             onSubmit={(e) => {
+              setLoading(true);
               e.preventDefault();
               e.target.reset();
 
               handleSubmit(registerValues);
+              setTimeout(() => {
+                setLoading(false);
+              }, 2000);
             }}
           >
             <TextInput

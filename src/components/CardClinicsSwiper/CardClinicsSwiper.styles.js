@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardClinicsPayment = styled.div`
+export const CardClinicsSwiper = styled.div`
   .carduserclinics {
     display: flex;
     flex-direction: column;
@@ -30,29 +30,10 @@ export const CardClinicsPayment = styled.div`
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
   }
   .cliniccarditem {
+    font-size: 0.75rem;
     display: flex;
     justify-content: space-between;
     width: 70%;
-  }
-  .completed {
-    border-radius: 2rem;
-    /* width: 0.75rem;
-    height: 0.75rem; */
-    background: #14d500;
-    border: 1px solid #808080;
-    padding: 0.5rem 1rem;
-  }
-  .icon {
-    color: #ffffff;
-    font-size: 1rem;
-  }
-  img {
-    height: 5rem;
-    border-radius: 0.5rem;
-    margin: 0.5rem;
-    box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
   }
   p {
     margin: 0.5rem 0 0.5rem 0;
@@ -85,23 +66,16 @@ export const CardClinicsPayment = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    h5 {
-      text-align: center;
-    }
 
     .cliniccards {
       display: flex;
       width: 100%;
       justify-content: space-around;
-
-      img {
-        height: 15rem;
-      }
     }
 
     .cliniccard {
       display: flex;
-      width: 45%;
+      width: 100%;
     }
   }
 `;

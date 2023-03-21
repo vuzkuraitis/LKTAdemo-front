@@ -7,21 +7,28 @@ import Section from "../Section/Section";
 import Hero from "../Hero/Hero";
 import CardInfo from "../CardInfo/CardInfo";
 import { Link } from "react-router-dom";
+import Loading from "../Loading/Loading";
 
 const LoginForm = ({ handleSubmit }) => {
   const [loginValues, updateLoginValues] = useState();
+  const [loading, setLoading] = useState(false);
   return (
     <S.LoginForm>
       <Hero title="Asmeninė Paskyra" />
       <div className="login">
         <Section>
+          {loading && <Loading />}
           <div className="formSection">
             <form
               onSubmit={(e) => {
+                setLoading(true);
                 e.preventDefault();
                 e.target.reset();
 
                 handleSubmit(loginValues);
+                setTimeout(() => {
+                  setLoading(false);
+                }, 2000);
               }}
             >
               <TextInput

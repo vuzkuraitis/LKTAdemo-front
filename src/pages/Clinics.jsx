@@ -4,6 +4,14 @@ import HeroUser from "../components/HeroUser/HeroUser";
 import CardClinicsPayment from "../components/CardClinicsPayment/CardClinicsPayment";
 import Loading from "../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import * as MyPOSEmbedded from "mypos-embedded-checkout";
+import Notification from "../components/Notification/Notification";
+import CardClinicsSwiper from "../components/CardClinicsSwiper/CardClinicsSwiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, EffectFade } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 const Clinics = () => {
   const [error, setError] = useState();
@@ -80,6 +88,7 @@ const Clinics = () => {
         return setError(data.err);
       }
 
+      data[0].urlNotify = MyPOSEmbedded.IPC_URL + "/client/ipcNotify";
       setClinicPayments(data);
 
       navigate(`/clinics/clinic?id=${id}`, {
@@ -99,8 +108,49 @@ const Clinics = () => {
   return (
     <>
       <RegularSection>
+        {error && (
+          <Notification handleClick={() => setError(null)}>
+            {error}
+          </Notification>
+        )}
         <HeroUser users={users}></HeroUser>
         <div className="account">
+          <div className="accountClinics">
+            <Swiper
+              modules={[Autoplay, Navigation, EffectFade]}
+              navigation
+              effect
+              loop={true}
+              speed={9000}
+              autoplay={{
+                delay: 1,
+                disableOnInteraction: false,
+              }}
+              slidesPerView={1}
+              spaceBetween={50}
+              breakpoints={{
+                1024: {
+                  slidesPerView: 2,
+                  spaceBetween: 25,
+                },
+              }}
+              className="myswiper"
+            >
+              {clinics.map((clinic) => (
+                <SwiperSlide className="swiperslide" key={clinic.id}>
+                  <CardClinicsSwiper
+                    id={clinic.id}
+                    value={clinic.id}
+                    name={clinic.name}
+                    place={clinic.place}
+                    address={clinic.address}
+                    hours={clinic.hours}
+                    price={clinic.price}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
           <CardClinicsPayment
             clinics={clinics}
             clinicPayments={clinicPayments}
