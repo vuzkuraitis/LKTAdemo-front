@@ -37,7 +37,10 @@ const Router = () => {
   }
 
   return (
-    <BrowserRouter onUpdate={() => window.scrollTo({ left: 0, top: 50 })}>
+    <BrowserRouter
+      forceRefresh={true}
+      onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+    >
       <Nav />
       <Suspense fallback={<Loading />}>
         <Routes>
