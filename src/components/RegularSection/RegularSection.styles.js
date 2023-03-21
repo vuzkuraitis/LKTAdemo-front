@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ballPhoto1 from "../../assets/kamuolys.jpg";
 
 export const RegularSection = styled.div`
+  min-height: calc(100vh - 6rem);
   font-family: "Roboto", sans-serif;
   margin: 6rem auto 1rem auto;
   width: 80%;
@@ -79,6 +80,12 @@ export const RegularSection = styled.div`
       color: #808080;
     }
   }
+
+  /* .searchPage,
+  .registerPage,
+  .loginPage {
+    min-height: calc(100vh - 6rem);
+  } */
 
   @media screen and (min-width: 768px) {
     width: 70%;

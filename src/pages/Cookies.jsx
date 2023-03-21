@@ -9,7 +9,7 @@ const Cookies = () => {
         <Hero title="Cookie Policy for LKTRA" />
         <div className="cookies">
           <p>
-            This is the Cookie Policy for LKTRA, accessible from www.belekas.lt
+            This is the Cookie Policy for LKTRA, accessible from www.lktra.lt
           </p>
           <h4>What Are Cookies</h4>
           <p>
@@ -121,27 +121,6 @@ const Cookies = () => {
                 in their respective privacy policies.
               </p>
             </li>
-          </ul>
-          <h4>More Information</h4>
-          <p>
-            Hopefully that has clarified things for you and as was previously
-            mentioned if there is something that you aren't sure whether you
-            need or not it's usually safer to leave cookies enabled in case it
-            does interact with one of the features you use on our site.
-          </p>
-          <p>
-            For more general information on cookies, please read{" "}
-            <a href="https://www.cookiepolicygenerator.com/sample-cookies-policy/">
-              the Cookies Policy article
-            </a>
-            .
-          </p>
-          <p>
-            However if you are still looking for more information then you can
-            contact us through one of our preferred contact methods:
-          </p>
-          <ul>
-            <li>By visiting this link: www.belekas.lt</li>
           </ul>
         </div>
       </RegularSection>

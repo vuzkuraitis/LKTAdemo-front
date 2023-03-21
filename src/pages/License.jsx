@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
 import RegularSection from "../components/RegularSection/RegularSection";
 import Table from "../components/Table/Table";
 import SearchForm from "../components/SearchForm/SearchForm";

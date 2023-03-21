@@ -96,10 +96,6 @@ export const Footer = styled.div`
     }
   }
   @media screen and (min-width: 1024px) {
-    /* position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0; */
     .footerInfo {
       flex-direction: row;
       margin: 0 auto;
