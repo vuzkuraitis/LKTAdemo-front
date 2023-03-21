@@ -17,7 +17,7 @@ import CardClinics from "../components/CardClinics/CardClinics";
 import Loading from "../components/Loading/Loading";
 import CardCheckOut from "../components/CardCheckOut/CardCheckOut";
 import * as MyPOSEmbedded from "mypos-embedded-checkout";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import Notification from "../components/Notification/Notification";
 
 const Account = () => {
@@ -201,7 +201,8 @@ const Account = () => {
             active={active}
             handleClick={() => {
               setActive(!active);
-              window.location.reload(false);
+              navigate(0);
+              // window.location.reload(false);
             }}
           />
 
