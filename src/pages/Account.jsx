@@ -17,7 +17,7 @@ import CardClinics from "../components/CardClinics/CardClinics";
 import Loading from "../components/Loading/Loading";
 import CardCheckOut from "../components/CardCheckOut/CardCheckOut";
 import * as MyPOSEmbedded from "mypos-embedded-checkout";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Notification from "../components/Notification/Notification";
 
 const Account = () => {
@@ -26,6 +26,7 @@ const Account = () => {
   const [payments, setPayments] = useState([]);
   const [clinics, setClinics] = useState([]);
   const [active, setActive] = useState(false);
+  const [paymentCard, setPaymentCard] = useState(false);
 
   const coachPhotos = [
     { id: 1, name: Coach1 },
@@ -37,7 +38,7 @@ const Account = () => {
     { id: 2, name: Clinic2 },
   ];
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const getUserData = async () => {
     const res = await fetch(
@@ -190,6 +191,7 @@ const Account = () => {
                   customization
                 );
                 setActive(!active);
+                console.log(active);
               }}
             />
             <div className="lktraBall"></div>
@@ -198,8 +200,9 @@ const Account = () => {
             id="embeddedCheckout"
             active={active}
             handleClick={() => {
-              setActive(active);
-              window.location.reload(true);
+              setActive(!active);
+              window.history.pushState({}, undefined, "/account");
+              window.location.reload();
             }}
           />
 
