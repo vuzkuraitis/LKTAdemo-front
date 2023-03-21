@@ -17,7 +17,7 @@ import CardClinics from "../components/CardClinics/CardClinics";
 import Loading from "../components/Loading/Loading";
 import CardCheckOut from "../components/CardCheckOut/CardCheckOut";
 import * as MyPOSEmbedded from "mypos-embedded-checkout";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Notification from "../components/Notification/Notification";
 
 const Account = () => {
@@ -37,7 +37,7 @@ const Account = () => {
     { id: 2, name: Clinic2 },
   ];
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const getUserData = async () => {
     const res = await fetch(
@@ -199,7 +199,7 @@ const Account = () => {
             active={active}
             handleClick={() => {
               setActive(active);
-              window.location.reload();
+              window.location.reload(true);
             }}
           />
 
