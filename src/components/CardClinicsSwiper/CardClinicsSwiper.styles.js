@@ -4,7 +4,7 @@ export const CardClinicsSwiper = styled.div`
   .carduserclinics {
     display: flex;
     flex-direction: column;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     justify-content: center;
     color: #000000;
     border-radius: 0.5rem;
@@ -30,7 +30,7 @@ export const CardClinicsSwiper = styled.div`
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
   }
   .cliniccarditem {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     display: flex;
     justify-content: space-between;
     width: 70%;

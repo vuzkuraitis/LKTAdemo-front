@@ -18,7 +18,7 @@ export const CardCheckOut = styled.div`
   .paymentDiv {
     border-radius: 4px;
     position: relative;
-    top: 2rem;
+    top: 0.75rem;
     background: #ffffff;
     margin: 0 auto;
     width: 90%;
