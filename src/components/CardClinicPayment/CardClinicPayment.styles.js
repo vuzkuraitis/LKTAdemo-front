@@ -2,26 +2,19 @@ import styled from "styled-components";
 
 export const CardClinicPayment = styled.div`
   .carduserclinics {
-    background: #ffffff;
     display: flex;
     flex-direction: column;
     font-size: 0.75rem;
     justify-content: center;
     color: #000000;
-    border: 1px solid #808080;
-    border-radius: 0.5rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-
-    :hover {
-      background: #e8e8e8;
-    }
   }
   .cliniccard {
     align-items: center;
-    background: #f0f0f0;
+    background: #ffffff;
     border: 1px solid #808080;
     border-radius: 0.5rem;
     display: flex;
@@ -31,6 +24,10 @@ export const CardClinicPayment = styled.div`
     box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
+
+    :hover {
+      background: #e8e8e8;
+    }
   }
   .cliniccarditem {
     display: flex;
@@ -90,14 +87,6 @@ export const CardClinicPayment = styled.div`
     .cliniccard {
       display: flex;
       width: 45%;
-      :hover {
-        -webkit-transform: translateY(2px) translateZ(0px) scale(1.02);
-        -moz-transform: translateY(2px) translateZ(0px) scale(1.02);
-        -ms-transform: translateY(2px) translateZ(0px) scale(1.02);
-        -o-transform: translateY(2px) translateZ(0px) scale(1.02);
-        transform: translateY(2px) translateZ(0px) scale(1.02);
-        transition: 0.3s ease-in-out;
-      }
     }
   }
 `;
