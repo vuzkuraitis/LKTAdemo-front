@@ -23,6 +23,10 @@ const ClinicPayment = lazy(() => import("./pages/ClinicPayment"));
 const Clinics = lazy(() => import("./pages/Clinics"));
 const Clinic = lazy(() => import("./pages/Clinic"));
 const Cookies = lazy(() => import("./pages/Cookies"));
+const Material = lazy(() => import("./pages/Material"));
+const News = lazy(() => import("./pages/News"));
+const Admin = lazy(() => import("./pages/Admin"));
+const AdminAccount = lazy(() => import("./pages/AdminAccount"));
 
 const Router = () => {
   console.log("router");
@@ -51,6 +55,22 @@ const Router = () => {
             exact
             path="/login"
             element={<Login />}
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/admin"
+            element={<Admin />}
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/admin/admin-account"
+            element={
+              <RequireAuth>
+                <AdminAccount />
+              </RequireAuth>
+            }
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
@@ -139,8 +159,24 @@ const Router = () => {
           />
           <Route
             exact
+            path="/account/material"
+            element={
+              <RequireAuth>
+                <Material />
+              </RequireAuth>
+            }
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
             path="/cookie-policy"
             element={<Cookies />}
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/news"
+            element={<News />}
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
         </Routes>

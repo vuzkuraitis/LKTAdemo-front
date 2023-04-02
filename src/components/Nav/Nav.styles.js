@@ -11,7 +11,7 @@ export const Nav = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 9997;
 
   img {
     display: block;

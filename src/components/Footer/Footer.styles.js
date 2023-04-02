@@ -89,7 +89,7 @@ export const Footer = styled.div`
       font-size: 1.25rem;
     }
     .navbar-item {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
     .footerContacts {
       font-size: 1.25rem;

@@ -22,6 +22,7 @@ import Notification from "../components/Notification/Notification";
 
 const Account = () => {
   const [error, setError] = useState();
+  const [paymentError, setPaymentError] = useState();
   const [users, setUsers] = useState([]);
   const [payments, setPayments] = useState([]);
   const [clinics, setClinics] = useState([]);
@@ -125,8 +126,11 @@ const Account = () => {
       console.log(data);
     },
     onError: function (data) {
-      console.log(data);
+      console.log(data.message.event);
       console.log("error");
+      if (data.message.event === "error") {
+        return setPaymentError("Mokėjimo klaida. Prašome pabandyti iš naujo");
+      }
     },
   };
   const customization = {
@@ -199,6 +203,7 @@ const Account = () => {
           <CardCheckOut
             id="embeddedCheckout"
             active={active}
+            paymentError={paymentError}
             handleClick={() => {
               setActive(!active);
               navigate(0);

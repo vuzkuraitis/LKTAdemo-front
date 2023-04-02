@@ -38,7 +38,7 @@ html {
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
   width: 50%;
-  z-index: 9998;
+  z-index: 9996;
 }
 
 @media screen and (min-width: 1024px) {

@@ -3,7 +3,7 @@ import * as S from "./Nav.styles";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/LogoNew.png";
 import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
@@ -13,11 +13,19 @@ const Nav = () => {
   const publicLinks = [
     {
       url: "/",
-      title: "Pagrindinis",
+      title: "Pradžia",
+    },
+    {
+      url: "/news",
+      title: "Naujienos",
     },
     {
       url: "/license",
       title: "Licenzijos",
+    },
+    {
+      url: "/studies",
+      title: "Studijos",
     },
     {
       url: "/register",
@@ -31,8 +39,12 @@ const Nav = () => {
       title: "Paskyra",
     },
     {
+      url: "/account/material",
+      title: "Metodinė Medžiaga",
+    },
+    {
       url: "/account/clinics",
-      title: "Seminarai",
+      title: "Kursai ir Seminarai",
     },
     {
       url: "/account/settings",
@@ -40,7 +52,23 @@ const Nav = () => {
     },
   ];
 
+  const adminLinks = [
+    {
+      url: "/admin/admin-account",
+      title: "Account",
+    },
+    {
+      url: "/admin/admin-clinics",
+      title: "Clinics",
+    },
+    {
+      url: "/admin/admin-news",
+      title: "News",
+    },
+  ];
+
   const navigate = useNavigate();
+  const admin = localStorage.getItem("admin");
   const links = localStorage.getItem("token") ? privateLinks : publicLinks;
   return (
     <S.Nav
@@ -58,40 +86,65 @@ const Nav = () => {
           <div />
           <div />
         </S.MenuIcon>
-        {links && (
-          <S.BurgerMenu active={active}>
-            {links.map((link) => (
-              <Link
-                to={link.url}
-                key={link.title}
-                className="navbar-item"
-                onClick={() => setActive(null)}
-              >
-                {link.title}
-              </Link>
-            ))}
-            {localStorage.getItem("token") ? (
-              <Button
-                handleClick={() => {
-                  localStorage.removeItem("token");
-                  navigate("/");
-                  setActive(null);
-                }}
-              >
-                Atsijungti
-              </Button>
-            ) : (
-              <Button
-                handleClick={() => {
-                  navigate("/login");
-                  setActive(null);
-                }}
-              >
-                Prisijungti
-              </Button>
+        {admin
+          ? adminLinks && (
+              <S.BurgerMenu active={active}>
+                {adminLinks.map((adminlink) => (
+                  <Link
+                    to={adminlink.url}
+                    key={adminlink.title}
+                    className="navbar-item"
+                    onClick={() => setActive(null)}
+                  >
+                    {adminlink.title}
+                  </Link>
+                ))}
+                <Button
+                  handleClick={() => {
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("admin");
+                    navigate("/");
+                    setActive(null);
+                  }}
+                >
+                  Sign Out
+                </Button>
+              </S.BurgerMenu>
+            )
+          : links && (
+              <S.BurgerMenu active={active}>
+                {links.map((link) => (
+                  <Link
+                    to={link.url}
+                    key={link.title}
+                    className="navbar-item"
+                    onClick={() => setActive(null)}
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+                {localStorage.getItem("token") ? (
+                  <Button
+                    handleClick={() => {
+                      localStorage.removeItem("token");
+                      navigate("/");
+                      setActive(null);
+                    }}
+                  >
+                    Atsijungti
+                  </Button>
+                ) : (
+                  <Button
+                    handleClick={() => {
+                      navigate("/login");
+                      setActive(null);
+                    }}
+                  >
+                    Prisijungti
+                  </Button>
+                )}
+              </S.BurgerMenu>
             )}
-          </S.BurgerMenu>
-        )}
       </div>
     </S.Nav>
   );

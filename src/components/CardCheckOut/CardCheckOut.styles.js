@@ -7,7 +7,7 @@ export const CardCheckOut = styled.div`
   top: 0;
   width: 100%;
   height: 100vh;
-  z-index: 9999;
+  z-index: 9998;
   border-radius: 4px;
   display: ${({ active }) => (active ? "block" : "none")};
   margin-top: 2rem;
@@ -22,6 +22,11 @@ export const CardCheckOut = styled.div`
     background: #ffffff;
     margin: 0 auto;
     width: 90%;
+
+    .paymentError {
+      text-align: center;
+      padding: 2rem 0;
+    }
   }
 
   .checkout {
