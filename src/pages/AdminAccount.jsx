@@ -35,7 +35,7 @@ const AdminAccount = () => {
           </Notification>
         )}
         <Hero title="Admin Dashboard" />
-        <div className="settings">
+        <div className="adminSettings">
           <CoachesTable users={users}></CoachesTable>
         </div>
       </RegularSection>

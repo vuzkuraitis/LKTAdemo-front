@@ -32,7 +32,7 @@ const TextInput = ({
 };
 
 TextInput.propTypes = {
-  type: PropTypes.oneOf(["text", "number", "email", "password"]),
+  type: PropTypes.oneOf(["text", "number", "email", "password", "date"]),
   label: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   value: PropTypes.string,

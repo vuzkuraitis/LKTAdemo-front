@@ -11,9 +11,9 @@ const CoachesTable = ({ users, id }) => {
             <th>Id</th>
             <th>Name</th>
             <th>Surname</th>
-            <th>Email</th>
+            <th className="notvisible">Email</th>
             <th>License Nr</th>
-            <th>Year</th>
+            <th className="notvisible">Year</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -24,22 +24,12 @@ const CoachesTable = ({ users, id }) => {
                 <td>{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.surname}</td>
-                <td>{user.email}</td>
+                <td className="notvisible">{user.email}</td>
                 <td>{user.license_nr}</td>
-                <td>{user.year}</td>
+                <td className="notvisible">{user.year}</td>
                 <td>{user.status}</td>
               </tr>
             ))}
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
         </tbody>
       </table>
     </S.CoachesTable>
