@@ -27,6 +27,7 @@ const Material = lazy(() => import("./pages/Material"));
 const News = lazy(() => import("./pages/News"));
 const Admin = lazy(() => import("./pages/Admin"));
 const AdminAccount = lazy(() => import("./pages/AdminAccount"));
+const AdminClinics = lazy(() => import("./pages/AdminClinics"));
 
 const Router = () => {
   console.log("router");
@@ -69,6 +70,16 @@ const Router = () => {
             element={
               <RequireAuth>
                 <AdminAccount />
+              </RequireAuth>
+            }
+            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/admin/admin-clinics"
+            element={
+              <RequireAuth>
+                <AdminClinics />
               </RequireAuth>
             }
             onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
