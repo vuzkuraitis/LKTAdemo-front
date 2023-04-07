@@ -1,23 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as S from "./InfoCard.styles";
+import * as S from "./NewsCard.styles";
 
-const InfoCard = ({ title, subtitle, children, className }) => {
+const NewsCard = ({ title, subtitle, children }) => {
   return (
-    <S.InfoCard className={className}>
+    <S.NewsCard>
       <div className="licenserequestintro">
         <h2>{title}</h2>
         <p>{subtitle}</p>
       </div>
       {children}
-    </S.InfoCard>
+    </S.NewsCard>
   );
 };
 
-InfoCard.propTypes = {
+NewsCard.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   children: PropTypes.node,
 };
 
-export default InfoCard;
+export default NewsCard;

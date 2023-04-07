@@ -37,13 +37,13 @@ const ClinicAddForm = ({ handleSubmit }) => {
               handleChange={(cityValue) =>
                 updateRegisterValues({
                   ...registerValues,
-                  name: cityValue,
-                  // .split()
-                  // .map(
-                  //   (e) =>
-                  //     e.charAt(0).toUpperCase() + e.substring(1).toLowerCase()
-                  // )
-                  // .toString(),
+                  name: cityValue
+                    .split()
+                    .map(
+                      (e) =>
+                        e.charAt(0).toUpperCase() + e.substring(1).toLowerCase()
+                    )
+                    .toString(),
                 })
               }
             />
@@ -54,13 +54,13 @@ const ClinicAddForm = ({ handleSubmit }) => {
               handleChange={(placeValue) =>
                 updateRegisterValues({
                   ...registerValues,
-                  place: placeValue,
-                  // .split()
-                  // .map(
-                  //   (e) =>
-                  //     e.charAt(0).toUpperCase() + e.substring(1).toLowerCase()
-                  // )
-                  // .toString(),
+                  place: placeValue
+                    .split()
+                    .map(
+                      (e) =>
+                        e.charAt(0).toUpperCase() + e.substring(1).toLowerCase()
+                    )
+                    .toString(),
                 })
               }
             />

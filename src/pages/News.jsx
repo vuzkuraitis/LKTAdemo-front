@@ -1,47 +1,88 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import RegularSection from "../components/RegularSection/RegularSection";
-import Notification from "../components/Notification/Notification";
 import Hero from "../components/Hero/Hero";
+import NewsCard from "../components/NewsCard/NewsCard";
+import Loading from "../components/Loading/Loading";
+import { useNavigate } from "react-router-dom";
 
-const Settings = () => {
-  const [error, setError] = useState();
+const News = () => {
+  const [news, setNews] = useState();
+  // const [selectedNews, setSelectedNews] = useState([]);
 
-  const changePassword = async (inputs) => {
-    try {
-      const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/v1/users/change-password`,
-        {
-          method: "POST",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("token")}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(inputs),
-        }
-      );
-      const data = await res.json();
+  const navigate = useNavigate();
 
-      if (data.err) {
-        return setError(data.err);
+  const getNews = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/users/news`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       }
-      return setError("Password was changed Successfully");
-    } catch (err) {
-      return setError(err.message);
-    }
+    );
+    const data = await res.json();
+    setNews(
+      data.sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      })
+    );
   };
+  useEffect(() => {
+    getNews();
+  }, []);
+
+  const getSelectedNews = async (id) => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/users/selected_news?id=${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await res.json();
+
+    navigate(`selected-news?=${id}`, {
+      state: data,
+    });
+  };
+
+  if (!news) {
+    <Loading />;
+  }
+
   return (
     <>
       <RegularSection>
-        {error && (
-          <Notification handleClick={() => setError(null)}>
-            {error}
-          </Notification>
-        )}
         <Hero title="Naujienos" />
-        <div className="settings"></div>
+        <div className="newsContainer">
+          {news &&
+            news.map((newsnew) => (
+              <NewsCard
+                className="news"
+                key={newsnew.id}
+                title={newsnew.title}
+                subtitle={newsnew.text}
+              >
+                <div>
+                  <Link
+                    to=""
+                    id={newsnew.id}
+                    onClick={(e) => {
+                      getSelectedNews(Number(e.currentTarget.id));
+                    }}
+                  >
+                    Skaityti
+                  </Link>
+                </div>
+                <p className="newsDate">{newsnew.date.slice(0, 10)}</p>
+              </NewsCard>
+            ))}
+        </div>
       </RegularSection>
     </>
   );
 };
 
-export default Settings;
+export default News;

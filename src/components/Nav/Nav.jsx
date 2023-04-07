@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Logo from "../../assets/LogoNew.png";
+import Logo2 from "../../assets/LKTA.jpeg";
 import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
@@ -79,6 +80,7 @@ const Nav = () => {
       <div className="navbarWrapper">
         <S.NavBrand>
           <img src={Logo} alt="LTU Basketball" />
+          <img src={Logo2} alt="LKTRA" />
         </S.NavBrand>
 
         <S.MenuIcon active={active} onClick={() => setActive(!active)}>

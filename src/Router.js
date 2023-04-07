@@ -9,6 +9,7 @@ import {
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
+import ScrollToTop from "./ScrollToTop";
 
 const Home = lazy(() => import("./pages/Home"));
 const License = lazy(() => import("./pages/License"));
@@ -28,6 +29,9 @@ const News = lazy(() => import("./pages/News"));
 const Admin = lazy(() => import("./pages/Admin"));
 const AdminAccount = lazy(() => import("./pages/AdminAccount"));
 const AdminClinics = lazy(() => import("./pages/AdminClinics"));
+const AdminNews = lazy(() => import("./pages/AdminNews"));
+const Studies = lazy(() => import("./pages/Studies"));
+const SelectedNews = lazy(() => import("./pages/SelectedNews"));
 
 const Router = () => {
   console.log("router");
@@ -42,28 +46,14 @@ const Router = () => {
   }
 
   return (
-    <BrowserRouter onUpdate={() => window.scrollTo({ left: 0, top: 50 })}>
+    <BrowserRouter>
+      <ScrollToTop />
       <Nav />
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={<Home />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
-          <Route
-            exact
-            path="/login"
-            element={<Login />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
-          <Route
-            exact
-            path="/admin"
-            element={<Admin />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/admin" element={<Admin />} />
           <Route
             exact
             path="/admin/admin-account"
@@ -72,7 +62,6 @@ const Router = () => {
                 <AdminAccount />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
             exact
@@ -82,7 +71,15 @@ const Router = () => {
                 <AdminClinics />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
+          />
+          <Route
+            exact
+            path="/admin/admin-news"
+            element={
+              <RequireAuth>
+                <AdminNews />
+              </RequireAuth>
+            }
           />
           <Route
             exact
@@ -92,7 +89,6 @@ const Router = () => {
                 <Account />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
             exact
@@ -102,7 +98,6 @@ const Router = () => {
                 <Payment />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
             exact
@@ -112,7 +107,6 @@ const Router = () => {
                 <ClinicPayment />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
             exact
@@ -122,7 +116,6 @@ const Router = () => {
                 <Clinics />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
             exact
@@ -132,32 +125,11 @@ const Router = () => {
                 <Clinic />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
-          <Route
-            exact
-            path="/license"
-            element={<License />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
-          <Route
-            exact
-            path="/register"
-            element={<Register />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
-          <Route
-            exact
-            path="/forgot-password"
-            element={<ForgotPassword />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
-          <Route
-            exact
-            path="/new-password"
-            element={<NewPassword />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
+          <Route exact path="/license" element={<License />} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/forgot-password" element={<ForgotPassword />} />
+          <Route exact path="/new-password" element={<NewPassword />} />
           <Route
             exact
             path="/account/settings"
@@ -166,7 +138,6 @@ const Router = () => {
                 <Settings />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
           <Route
             exact
@@ -176,20 +147,11 @@ const Router = () => {
                 <Material />
               </RequireAuth>
             }
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
           />
-          <Route
-            exact
-            path="/cookie-policy"
-            element={<Cookies />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
-          <Route
-            exact
-            path="/news"
-            element={<News />}
-            onUpdate={() => window.scrollTo({ left: 0, top: 50 })}
-          />
+          <Route exact path="/cookie-policy" element={<Cookies />} />
+          <Route exact path="/news" element={<News />} />
+          <Route exact path="/news/selected-news" element={<SelectedNews />} />
+          <Route exact path="/studies" element={<Studies />} />
         </Routes>
       </Suspense>
       <Footer />

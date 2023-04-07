@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as S from "./TextInput.styles";
+import * as S from "./TextareaInput.styles";
 
-const TextInput = ({
+const TextareaInput = ({
   type,
   label,
   placeholder,
@@ -11,15 +11,15 @@ const TextInput = ({
   className,
 }) => {
   return (
-    <S.TextInput className={className}>
+    <S.TextareaInput className={className}>
       <div className="field">
         <label className="label" htmlFor={label}>
           {label}
         </label>
-        <input
+        <textarea
           required
           active="true"
-          className="input"
+          className="areainput"
           id={label}
           type={type}
           placeholder={placeholder}
@@ -27,27 +27,20 @@ const TextInput = ({
           onChange={(e) => handleChange(e.target.value)}
         />
       </div>
-    </S.TextInput>
+    </S.TextareaInput>
   );
 };
 
-TextInput.propTypes = {
-  type: PropTypes.oneOf([
-    "text",
-    "number",
-    "email",
-    "password",
-    "date",
-    "textarea",
-  ]),
+TextareaInput.propTypes = {
+  type: PropTypes.oneOf(["text", "textarea"]),
   label: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   value: PropTypes.string,
   handleChange: PropTypes.func,
 };
 
-TextInput.defaultProps = {
-  type: "text",
+TextareaInput.defaultProps = {
+  type: "textarea",
 };
 
-export default TextInput;
+export default TextareaInput;

@@ -26,7 +26,13 @@ export const Nav = styled.div`
 `;
 
 export const NavBrand = styled.div`
-  display: block;
+  display: flex;
+
+  img:last-child {
+    margin-left: 0.5rem;
+    border-radius: 0.5rem;
+    background: red;
+  }
 `;
 
 export const BurgerMenu = styled.div`

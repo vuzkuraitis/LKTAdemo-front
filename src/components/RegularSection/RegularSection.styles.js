@@ -81,11 +81,9 @@ export const RegularSection = styled.div`
     }
   }
 
-  /* .searchPage,
-  .registerPage,
-  .loginPage {
-    min-height: calc(100vh - 6rem);
-  } */
+  .newsContainer:nth-last-child(1) {
+    border-bottom: none;
+  }
 
   @media screen and (min-width: 768px) {
     width: 70%;

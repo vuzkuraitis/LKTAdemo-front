@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import RegularSection from "../components/RegularSection/RegularSection";
 import Notification from "../components/Notification/Notification";
 import Hero from "../components/Hero/Hero";
-import ClinicAddForm from "../components/ClinicAddForm/ClinicAddForm";
-import ClinicsTable from "../components/ClinicsTable/ClinicsTable";
+import NewsAddForm from "../components/NewsAddForm/NewsAddForm";
 
 const AdminAccount = () => {
   const [error, setError] = useState();
-  const [clinics, setClinics] = useState([]);
+  const [news, setNews] = useState();
 
-  const getClinics = async () => {
+  const getNews = async () => {
     const res = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic`,
       {
@@ -19,16 +18,16 @@ const AdminAccount = () => {
       }
     );
     const data = await res.json();
-    setClinics(data);
+    setNews(data);
   };
   useEffect(() => {
-    getClinics();
+    getNews();
   }, []);
 
-  const postClinic = async (inputs) => {
+  const postNews = async (inputs) => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/v1/admin/post-clinic`,
+        `${process.env.REACT_APP_BACKEND_URL}/v1/admin/post-news`,
         {
           method: "POST",
           headers: {
@@ -40,7 +39,6 @@ const AdminAccount = () => {
       );
       const data = await res.json();
       console.log(data);
-      getClinics();
 
       if (data.err) {
         return setError(data.err);
@@ -59,10 +57,9 @@ const AdminAccount = () => {
             {error}
           </Notification>
         )}
-        <Hero title="Clinics" />
+        <Hero title="Add News" />
         <div className="adminSettings">
-          <ClinicsTable clinics={clinics}></ClinicsTable>
-          <ClinicAddForm handleSubmit={postClinic}></ClinicAddForm>
+          <NewsAddForm className="news" handleSubmit={postNews}></NewsAddForm>
         </div>
       </RegularSection>
     </>
