@@ -7,7 +7,9 @@ const Studies = () => {
     <>
       <RegularSection>
         <Hero title="Studijos" />
-        <h2>Jau greitai</h2>
+        <div className="settings">
+          <h4>Jau greitai</h4>
+        </div>
       </RegularSection>
     </>
   );

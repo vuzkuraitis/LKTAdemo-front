@@ -47,8 +47,8 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <Nav />
+      <ScrollToTop />
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route exact path="/" element={<Home />} />

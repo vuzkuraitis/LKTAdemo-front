@@ -31,6 +31,30 @@ const Settings = () => {
       return setError(err.message);
     }
   };
+
+  const changeEmailAccount = async (inputs) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/users/change-email`,
+        {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(inputs),
+        }
+      );
+      const data = await res.json();
+
+      if (data.err) {
+        return setError(data.err);
+      }
+      return setError("Email was changed Successfully");
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
   return (
     <>
       <RegularSection>
@@ -41,7 +65,7 @@ const Settings = () => {
         )}
         <Hero title="Nustatymai" />
         <div className="settings">
-          <ChangeEmailForm></ChangeEmailForm>
+          <ChangeEmailForm handleSubmit={changeEmailAccount}></ChangeEmailForm>
           <ChangePassForm handleSubmit={changePassword}></ChangePassForm>
         </div>
       </RegularSection>

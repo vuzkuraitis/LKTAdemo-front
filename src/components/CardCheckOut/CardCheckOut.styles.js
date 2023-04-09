@@ -10,7 +10,7 @@ export const CardCheckOut = styled.div`
   z-index: 9998;
   border-radius: 4px;
   display: ${({ active }) => (active ? "block" : "none")};
-  margin-top: 2rem;
+  padding-top: 2rem;
   box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
@@ -18,7 +18,7 @@ export const CardCheckOut = styled.div`
   .paymentDiv {
     border-radius: 4px;
     position: relative;
-    top: 0.2rem;
+    top: 2rem;
     background: #ffffff;
     margin: 0 auto;
     width: 90%;

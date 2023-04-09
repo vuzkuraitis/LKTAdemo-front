@@ -91,6 +91,7 @@ export const CardClinicsPayment = styled.div`
 
     .cliniccards {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
       justify-content: space-around;
 

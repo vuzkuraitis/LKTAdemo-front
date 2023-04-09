@@ -85,6 +85,10 @@ export const RegularSection = styled.div`
     border-bottom: none;
   }
 
+  .settings > h4 {
+    color: #808080;
+  }
+
   @media screen and (min-width: 768px) {
     width: 70%;
   }
@@ -114,7 +118,7 @@ export const RegularSection = styled.div`
       .accountClinics {
         width: 100%;
         .swiper {
-          width: 95%;
+          width: 100%;
         }
       }
 
