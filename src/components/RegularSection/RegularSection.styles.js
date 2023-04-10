@@ -7,6 +7,10 @@ export const RegularSection = styled.div`
   margin: 6rem auto 1rem auto;
   width: 80%;
 
+  h2 {
+    color: #012169;
+  }
+
   .cookies {
     text-align: justify;
   }
@@ -39,9 +43,10 @@ export const RegularSection = styled.div`
       -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     }
     h5 {
-      color: #808080;
+      color: #012169;
     }
   }
+
   .accountClinics {
     margin-top: 2rem;
     background: none;
@@ -67,7 +72,7 @@ export const RegularSection = styled.div`
 
   .accountStatus {
     h5 {
-      color: #808080;
+      color: #012169;
     }
   }
 
@@ -77,7 +82,7 @@ export const RegularSection = styled.div`
       height: 30vh;
     }
     h5 {
-      color: #808080;
+      color: #012169;
     }
   }
 
@@ -139,7 +144,6 @@ export const RegularSection = styled.div`
         width: 100%;
 
         h5 {
-          color: #808080;
           text-align: center;
           width: 100%;
         }

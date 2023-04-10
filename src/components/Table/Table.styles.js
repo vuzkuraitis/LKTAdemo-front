@@ -12,8 +12,12 @@ export const Table = styled.div`
   }
 
   thead {
-    background: #808080;
+    background: #009cde;
     color: #ffffff;
+  }
+
+  tbody > tr {
+    background: #ffffff;
   }
 
   th:nth-child(1) {

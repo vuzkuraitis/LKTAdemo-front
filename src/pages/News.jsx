@@ -68,12 +68,13 @@ const News = () => {
                 <div>
                   <Link
                     to=""
+                    className="newslink"
                     id={newsnew.id}
                     onClick={(e) => {
                       getSelectedNews(Number(e.currentTarget.id));
                     }}
                   >
-                    Skaityti
+                    Skaityti...
                   </Link>
                 </div>
                 <p className="newsDate">{newsnew.date.slice(0, 10)}</p>

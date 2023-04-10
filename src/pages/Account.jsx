@@ -207,7 +207,6 @@ const Account = () => {
             handleClick={() => {
               setActive(!active);
               navigate(0);
-              // window.location.reload(false);
             }}
           />
 

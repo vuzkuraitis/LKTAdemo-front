@@ -55,9 +55,14 @@ export const CardClinicsPayment = styled.div`
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
   }
   p {
+    color: #009cde;
     margin: 0.5rem 0 0.5rem 0;
   }
+  h2 {
+    text-align: center;
+  }
   h4 {
+    color: #012169;
     margin: 0.5rem 1rem 0.5rem 0;
   }
 

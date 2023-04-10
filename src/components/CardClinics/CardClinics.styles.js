@@ -7,7 +7,6 @@ export const CardClinics = styled.div`
     flex-direction: column;
     font-size: 0.75rem;
     justify-content: center;
-    color: #000000;
     border-radius: 0.5rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
@@ -27,11 +26,15 @@ export const CardClinics = styled.div`
   }
 
   h3 {
+    color: #012169;
     font-weight: 400;
     display: flex;
     flex-direction: column;
     margin: 0.5rem auto;
     width: 80%;
+    span {
+      color: #009cde;
+    }
   }
   input {
     display: flex;
@@ -41,9 +44,14 @@ export const CardClinics = styled.div`
   }
   span {
     font-weight: 700;
+    color: #012169;
   }
   ul {
+    color: #012169;
     text-align: left;
+    span {
+      color: #009cde;
+    }
   }
 
   @media screen and (min-width: 1024px) {

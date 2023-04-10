@@ -9,6 +9,7 @@ export const InfoCard = styled.div`
   padding-bottom: 1rem;
   width: 90%;
   h2 {
+    color: #009cde;
     font-size: 1.25rem;
   }
 `;

@@ -29,6 +29,7 @@ export const CardPayment = styled.div`
   .licensestatus {
   }
   h3 {
+    color: #012169;
     font-weight: 400;
     margin: 0.5rem auto;
     width: 80%;

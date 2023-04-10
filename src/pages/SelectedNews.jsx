@@ -18,15 +18,13 @@ const SelectedNews = () => {
     <>
       <RegularSection>
         <Hero title="Naujienos" />
-        <div className="newsContainer">
-          <SelectedNewsCard
-            className="news"
-            title={state[0].title}
-            subtitle={state[0].text}
-          >
-            <p className="newsDate">{state[0].date.slice(0, 10)}</p>
-          </SelectedNewsCard>
-        </div>
+        <SelectedNewsCard>
+          <div className="newsContainer">
+            <h2>{state[0].title}</h2>
+            <p>{state[0].text}</p>
+          </div>
+          <p className="newsDate">{state[0].date.slice(0, 10)}</p>
+        </SelectedNewsCard>
       </RegularSection>
     </>
   );

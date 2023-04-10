@@ -5,6 +5,7 @@ export const LoginForm = styled.div`
     margin: 0 auto;
   }
   .formSection > p {
+    color: #808080;
     display: flex;
     align-items: center;
     font-size: 0.75rem;

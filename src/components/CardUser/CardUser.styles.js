@@ -24,10 +24,11 @@ export const CardUser = styled.div`
   }
 
   h5 {
-    color: #808080;
+    color: #012169;
   }
 
   h3 {
+    color: #012169;
     font-weight: 400;
     display: flex;
     flex-direction: column;
@@ -41,6 +42,7 @@ export const CardUser = styled.div`
     margin-right: 1rem;
   }
   span {
+    color: #009cde;
     font-weight: 700;
   }
 

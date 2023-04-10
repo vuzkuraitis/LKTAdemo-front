@@ -7,7 +7,6 @@ export const CardInfo = styled.div`
   font-size: 0.75rem;
   justify-content: center;
   color: #808080;
-  border: 1px solid #808080;
   border-radius: 0.5rem;
   font-family: "Roboto", sans-serif;
   text-align: center;

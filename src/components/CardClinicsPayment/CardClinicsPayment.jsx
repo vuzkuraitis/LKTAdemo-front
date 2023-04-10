@@ -17,7 +17,7 @@ const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
   }
   return (
     <S.CardClinicsPayment>
-      <h5>Seminarų informacija</h5>
+      <h2>Seminarų informacija</h2>
       <div className="carduserclinics">
         <div>
           {newClinicData.length > 0 ? (

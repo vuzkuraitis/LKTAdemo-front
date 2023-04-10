@@ -6,16 +6,16 @@ const Card = ({ className, name, surname, email, license_nr, id }) => {
   return (
     <S.Card id={id} className={className}>
       <h3>
-        Name
+        Vardas, Pavardė
         <span>
           {name} {surname}
         </span>
       </h3>
       <h3>
-        Email<span>{email}</span>
+        El Paštas<span>{email}</span>
       </h3>
       <h3>
-        License Nr.<span>{license_nr}</span>
+        Licenzijos Nr.<span>{license_nr}</span>
       </h3>
     </S.Card>
   );

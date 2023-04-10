@@ -8,8 +8,8 @@ const Table = ({ options, type, users, setUsers, getSelectedUser }) => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>License Nr.</th>
+            <th>Vardas, Pavardė</th>
+            <th>Licenzijos Nr.</th>
           </tr>
         </thead>
         <tbody>

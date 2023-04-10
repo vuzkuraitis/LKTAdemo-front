@@ -49,7 +49,9 @@ const Home = () => {
         {users &&
           users.length === 0 &&
           selectedUsers &&
-          selectedUsers.length === 0 && <div>Paieškos rezultatai</div>}
+          selectedUsers.length === 0 && (
+            <div className="searchResults">Paieškos rezultatai: 0</div>
+          )}
         {users && users.length > 0 && (
           <Table
             users={users}

@@ -36,9 +36,11 @@ export const CardClinicsSwiper = styled.div`
     width: 70%;
   }
   p {
+    color: #009cde;
     margin: 0.5rem 0 0.5rem 0;
   }
   h4 {
+    color: #012169;
     margin: 0.5rem 1rem 0.5rem 0;
   }
 
