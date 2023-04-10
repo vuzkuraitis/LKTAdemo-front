@@ -13,5 +13,5 @@ export const CardList = styled.div`
 export const CardItem = styled(Card)`
   box-sizing: border-box;
   margin-bottom: 3rem;
-  width: 100%;
+  /* width: 100%; */
 `;
