@@ -4,13 +4,17 @@ import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
 import Hero from "../Hero/Hero";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const SearchForm = ({ handleSubmit, setSelectedUsers }) => {
   const [cardValues, updateCardValues] = useState();
 
   return (
     <S.SearchForm>
-      <Hero title="Surasti Trenerio Licenziją" />
+      <Hero title="Surasti Trenerio Licenziją">
+        <FontAwesomeIcon icon={faMagnifyingGlass} beatFade />
+      </Hero>
       <div className="formSection">
         <form
           onSubmit={(e) => {

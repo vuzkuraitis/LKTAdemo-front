@@ -4,6 +4,8 @@ import ChangePassForm from "../components/ChangePassForm/ChangePassForm";
 import Notification from "../components/Notification/Notification";
 import ChangeEmailForm from "../components/ChangeEmailForm/ChangeEmailForm";
 import Hero from "../components/Hero/Hero";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 const Settings = () => {
   const [error, setError] = useState();
@@ -63,7 +65,9 @@ const Settings = () => {
             {error}
           </Notification>
         )}
-        <Hero title="Nustatymai" />
+        <Hero title="Nustatymai">
+          <FontAwesomeIcon icon={faGear} beatFade />
+        </Hero>
         <div className="settings">
           <ChangeEmailForm handleSubmit={changeEmailAccount}></ChangeEmailForm>
           <ChangePassForm handleSubmit={changePassword}></ChangePassForm>

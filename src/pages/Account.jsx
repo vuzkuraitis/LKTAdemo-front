@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Coach1 from "../assets/Treneris1.jpeg";
-import Coach2 from "../assets/Treneris2.jpeg";
-import Coach3 from "../assets/Treneris3.jpeg";
-import Clinic1 from "../assets/seminaras1.jpeg";
-import Clinic2 from "../assets/seminaras2.jpeg";
+import Clinic1 from "../assets/Original.jpg";
+import Clinic2 from "../assets/LKTA.jpeg";
+import Clinic3 from "../assets/lkflogo.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectFade } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import RegularSection from "../components/RegularSection/RegularSection";
-import HeroUser from "../components/HeroUser/HeroUser";
+import Hero from "../components/Hero/Hero";
 import CardUser from "../components/CardUser/CardUser";
 import CardPayment from "../components/CardPayment/CardPayment";
 import CardClinics from "../components/CardClinics/CardClinics";
@@ -19,6 +17,8 @@ import CardCheckOut from "../components/CardCheckOut/CardCheckOut";
 import * as MyPOSEmbedded from "mypos-embedded-checkout";
 import { useNavigate } from "react-router";
 import Notification from "../components/Notification/Notification";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Account = () => {
   const [error, setError] = useState();
@@ -29,14 +29,10 @@ const Account = () => {
   const [active, setActive] = useState(false);
   // const [paymentCard, setPaymentCard] = useState(false);
 
-  const coachPhotos = [
-    { id: 1, name: Coach1 },
-    { id: 2, name: Coach2 },
-    { id: 3, name: Coach3 },
-  ];
   const clinicPhotos = [
     { id: 1, name: Clinic1 },
     { id: 2, name: Clinic2 },
+    { id: 3, name: Clinic3 },
   ];
 
   const navigate = useNavigate();
@@ -150,39 +146,13 @@ const Account = () => {
             {error}
           </Notification>
         )}
-        <HeroUser users={users}></HeroUser>
+        <Hero title="Tavo paskyra">
+          <FontAwesomeIcon icon={faUser} beatFade />
+        </Hero>
         <div className="account">
-          <CardUser users={users} />
-          <div className="accountSwiper">
-            <h5>Ką mes, Kur mes, Kaip mes:</h5>
-            <Swiper
-              modules={[Autoplay, Navigation, EffectFade]}
-              navigation
-              effect={"fade"}
-              speed={600}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              slidesPerView={1}
-              spaceBetween={0}
-              loop={true}
-              className="myswiper"
-            >
-              {coachPhotos.map((coachPhoto) => (
-                <SwiperSlide className="swiperslide" key={coachPhoto.id}>
-                  <img
-                    src={coachPhoto.name}
-                    alt="lkta"
-                    id={coachPhoto.id}
-                    key={coachPhoto.id}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
           <div className="accountStatus">
-            <h5>Licenzijos statusas:</h5>
+            <h2>Licenzijos informacija ir statusas</h2>
+            <CardUser users={users} />
             <CardPayment
               payments={payments}
               active={active}
@@ -198,7 +168,6 @@ const Account = () => {
                 console.log(active);
               }}
             />
-            <div className="lktraBall"></div>
           </div>
           <CardCheckOut
             id="embeddedCheckout"
@@ -209,9 +178,8 @@ const Account = () => {
               navigate(0);
             }}
           />
-
           <div className="clinicSwiper">
-            <h5>Informacija treneriui:</h5>
+            <h2>Informacija treneriui</h2>
             <CardClinics clinics={clinics} />
             <Swiper
               modules={[Autoplay, Navigation, EffectFade]}
@@ -229,12 +197,15 @@ const Account = () => {
             >
               {clinicPhotos.map((clinicPhoto) => (
                 <SwiperSlide className="swiperslide" key={clinicPhoto.id}>
-                  <img
-                    src={clinicPhoto.name}
-                    alt="lktraCinic"
-                    id={clinicPhoto.id}
-                    key={clinicPhoto.id}
-                  />
+                  <div className="logodiv">
+                    <img
+                      className="logoimg"
+                      src={clinicPhoto.name}
+                      alt="lktraCinic"
+                      id={clinicPhoto.id}
+                      key={clinicPhoto.id}
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./HeroUser.styles";
 
-const HeroUser = ({ users }) => {
+const HeroUser = ({ users, children }) => {
   return (
     <S.HeroUser className="hero">
       {users &&
@@ -11,6 +11,7 @@ const HeroUser = ({ users }) => {
             <h1>Sveiki {user.name},</h1>
           </div>
         ))}
+      {children}
     </S.HeroUser>
   );
 };

@@ -48,12 +48,6 @@ const CardClinics = ({ clinics }) => {
               <span>Vieta</span> {selectedClinic.place}
             </h3>
             <h3>
-              <span>Adresas</span> {selectedClinic.address}
-            </h3>
-            <h3>
-              <span>Valandų skaičius</span> {selectedClinic.hours}
-            </h3>
-            <h3>
               <span>Kaina</span> {selectedClinic.price} EUR
             </h3>
           </div>

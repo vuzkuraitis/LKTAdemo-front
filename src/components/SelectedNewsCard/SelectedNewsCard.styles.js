@@ -8,16 +8,14 @@ export const SelectedNewsCard = styled.div`
   margin: 2rem auto;
   padding-bottom: 1rem;
   width: 100%;
-
-  .newsContainer {
-    p {
-      text-align: left;
-      white-space: pre-wrap;
-    }
-    h2 {
-      color: #009cde;
-      font-size: 1rem;
-    }
+  p {
+    text-align: left;
+    white-space: pre-wrap;
+  }
+  h2 {
+    text-align: left;
+    color: #009cde;
+    font-size: 1rem;
   }
 
   .newsDate {
@@ -28,22 +26,17 @@ export const SelectedNewsCard = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    .newsContainer {
-      h2 {
-        font-size: 1.25rem;
-      }
-      p {
-        font-size: 1rem;
-      }
+    h2 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1rem;
     }
   }
 
   @media screen and (min-width: 1024px) {
-    .newsContainer {
-      max-height: 6rem;
-      h2 {
-        font-size: 1.5rem;
-      }
+    h2 {
+      font-size: 1.5rem;
     }
   }
 `;

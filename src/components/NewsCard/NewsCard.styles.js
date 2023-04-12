@@ -17,10 +17,11 @@ export const NewsCard = styled.div`
   }
 
   .licenserequestintro {
-    max-height: 4rem;
+    max-height: 3.7rem;
     overflow: hidden;
 
     h2 {
+      text-align: left;
       color: #009cde;
       font-size: 1rem;
     }

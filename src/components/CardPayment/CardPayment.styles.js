@@ -8,11 +8,11 @@ export const CardPayment = styled.div`
     font-size: 0.75rem;
     justify-content: center;
     color: #000000;
+    height: 15rem;
+    margin-top: 2rem;
     border-radius: 0.5rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
@@ -96,6 +96,7 @@ export const CardPayment = styled.div`
     .cardpayment {
       border-radius: 0 0.5rem 0.5rem 0;
       height: 50vh;
+      margin-top: 0;
       padding-top: 0;
       padding-bottom: 0;
       box-shadow: 5px 0px 14px -2px rgba(0, 0, 0, 0.75);

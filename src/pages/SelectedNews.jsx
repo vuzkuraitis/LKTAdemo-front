@@ -4,6 +4,8 @@ import RegularSection from "../components/RegularSection/RegularSection";
 import Hero from "../components/Hero/Hero";
 import SelectedNewsCard from "../components/SelectedNewsCard/SelectedNewsCard";
 import Loading from "../components/Loading/Loading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRss } from "@fortawesome/free-solid-svg-icons";
 
 const SelectedNews = () => {
   const { state } = useLocation();
@@ -17,13 +19,13 @@ const SelectedNews = () => {
   return (
     <>
       <RegularSection>
-        <Hero title="Naujienos" />
-        <SelectedNewsCard>
+        <Hero title="Naujienos">
+          <FontAwesomeIcon icon={faRss} beatFade />
+        </Hero>
+        <SelectedNewsCard title={state[0].title} subtitle={state[0].text}>
           <div className="newsContainer">
-            <h2>{state[0].title}</h2>
-            <p>{state[0].text}</p>
+            <p className="newsDate">{state[0].date.slice(0, 10)}</p>
           </div>
-          <p className="newsDate">{state[0].date.slice(0, 10)}</p>
         </SelectedNewsCard>
       </RegularSection>
     </>

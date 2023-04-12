@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RegularSection from "../components/RegularSection/RegularSection";
-import HeroUser from "../components/HeroUser/HeroUser";
+import Hero from "../components/Hero/Hero";
 import CardClinicsPayment from "../components/CardClinicsPayment/CardClinicsPayment";
 import Loading from "../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,8 @@ import { Autoplay, Navigation, EffectFade } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSchool } from "@fortawesome/free-solid-svg-icons";
 
 const Clinics = () => {
   const [error, setError] = useState();
@@ -113,7 +115,9 @@ const Clinics = () => {
             {error}
           </Notification>
         )}
-        <HeroUser users={users}></HeroUser>
+        <Hero title="Kursai ir Seminarai">
+          <FontAwesomeIcon icon={faSchool} beatFade />
+        </Hero>
         <div className="account">
           <div className="accountClinics">
             <Swiper

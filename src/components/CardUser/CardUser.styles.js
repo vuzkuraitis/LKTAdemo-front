@@ -12,8 +12,6 @@ export const CardUser = styled.div`
     border-radius: 0.5rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
-    /* padding-top: 1rem;
-    padding-bottom: 1rem; */
     box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
@@ -47,7 +45,6 @@ export const CardUser = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     width: 50%;

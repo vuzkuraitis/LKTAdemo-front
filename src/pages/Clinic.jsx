@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import RegularSection from "../components/RegularSection/RegularSection";
-import HeroUser from "../components/HeroUser/HeroUser";
+import Hero from "../components/Hero/Hero";
 import Loading from "../components/Loading/Loading";
 import CardClinicPayment from "../components/CardClinicPayment/CardClinicPayment";
 import CardCheckOut from "../components/CardCheckOut/CardCheckOut";
 import * as MyPOSEmbedded from "mypos-embedded-checkout";
 import Notification from "../components/Notification/Notification";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSchool } from "@fortawesome/free-solid-svg-icons";
 
 const Clinic = () => {
   const queryParams = new URLSearchParams(window.location.search);
@@ -21,7 +23,7 @@ const Clinic = () => {
   console.log(state);
 
   const [error, setError] = useState();
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [clinics, setClinics] = useState([]);
   const [clinicData, setClinicData] = useState([]);
   const [active, setActive] = useState(false);
@@ -29,21 +31,21 @@ const Clinic = () => {
 
   const navigate = useNavigate();
 
-  const getUserData = async () => {
-    const res = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/v1/users/account`,
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
-    const data = await res.json();
-    setUsers(data);
-  };
-  useEffect(() => {
-    getUserData();
-  }, []);
+  // const getUserData = async () => {
+  //   const res = await fetch(
+  //     `${process.env.REACT_APP_BACKEND_URL}/v1/users/account`,
+  //     {
+  //       headers: {
+  //         authorization: `Bearer ${localStorage.getItem("token")}`,
+  //       },
+  //     }
+  //   );
+  //   const data = await res.json();
+  //   setUsers(data);
+  // };
+  // useEffect(() => {
+  //   getUserData();
+  // }, []);
 
   const getUserClinicsData = async () => {
     const res = await fetch(
@@ -134,7 +136,9 @@ const Clinic = () => {
             {error}
           </Notification>
         )}
-        <HeroUser users={users}></HeroUser>
+        <Hero title="Kursai ir Seminarai">
+          <FontAwesomeIcon icon={faSchool} beatFade />
+        </Hero>
         <div className="account">
           <CardClinicPayment
             active={active}

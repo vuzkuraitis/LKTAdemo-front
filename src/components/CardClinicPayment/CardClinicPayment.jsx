@@ -28,10 +28,9 @@ const CardClinicPayment = ({
 
   return (
     <S.CardClinicPayment>
-      <h5>Informacija apie seminarą</h5>
       <div className="carduserclinics">
         <div>
-          <h3>Pasirinktas seminaras</h3>
+          <h2>Pasirinktas seminaras</h2>
           {selectedClinicData.length > 0 ? (
             <div className="cliniccards">
               <div

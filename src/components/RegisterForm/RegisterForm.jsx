@@ -7,6 +7,8 @@ import Section from "../Section/Section";
 import Hero from "../Hero/Hero";
 import Checkbox from "../Checkbox/Checkbox";
 import Loading from "../Loading/Loading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
 const RegisterForm = ({ handleSubmit, togglePopup, setChecked, checked }) => {
   const [registerValues, updateRegisterValues] = useState();
@@ -14,7 +16,9 @@ const RegisterForm = ({ handleSubmit, togglePopup, setChecked, checked }) => {
 
   return (
     <S.RegisterForm>
-      <Hero title="Registracija" />
+      <Hero title="Registracija">
+        <FontAwesomeIcon icon={faUserPlus} beatFade />
+      </Hero>
       {loading && <Loading />}
       <Section>
         <div className="formSection">

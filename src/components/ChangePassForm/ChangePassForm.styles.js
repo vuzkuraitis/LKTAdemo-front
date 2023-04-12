@@ -8,12 +8,9 @@ export const ChangePassForm = styled.div`
     font-size: 0.75rem;
     justify-content: center;
     color: #000000;
-    border: 1px solid #808080;
     border-radius: 0.5rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
-    /* padding-top: 1rem;
-  padding-bottom: 1rem; */
     box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);

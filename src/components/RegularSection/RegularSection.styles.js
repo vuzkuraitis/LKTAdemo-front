@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import ballPhoto1 from "../../assets/kamuolys.jpg";
 
 export const RegularSection = styled.div`
   min-height: calc(100vh - 6rem);
@@ -8,7 +7,13 @@ export const RegularSection = styled.div`
   width: 80%;
 
   h2 {
+    font-size: 1rem;
     color: #012169;
+    text-align: center;
+    width: 100%;
+  }
+  .account {
+    margin-top: 2rem;
   }
 
   .cookies {
@@ -33,6 +38,7 @@ export const RegularSection = styled.div`
 
   .accountSwiper,
   .clinicSwiper {
+    margin-top: 2rem;
     .swiper {
       height: 30vh;
       width: 100%;
@@ -42,7 +48,7 @@ export const RegularSection = styled.div`
       -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     }
-    h5 {
+    h2 {
       color: #012169;
     }
   }
@@ -57,21 +63,8 @@ export const RegularSection = styled.div`
     }
   }
 
-  .lktraBall {
-    background-image: url(${ballPhoto1});
-    background-position: center;
-    background-size: cover;
-    margin-top: 1.5rem;
-    border-radius: 0.5rem;
-    height: 15rem;
-    width: 100%;
-    box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
-  }
-
   .accountStatus {
-    h5 {
+    h2 {
       color: #012169;
     }
   }
@@ -83,6 +76,19 @@ export const RegularSection = styled.div`
     }
     h5 {
       color: #012169;
+    }
+    .logodiv {
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+
+      img {
+        display: block;
+        width: 80%;
+      }
     }
   }
 
@@ -96,6 +102,13 @@ export const RegularSection = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 70%;
+    .clinicSwiper {
+      .logodiv {
+        img {
+          width: 50%;
+        }
+      }
+    }
   }
 
   @media screen and (min-width: 1024px) {
@@ -127,15 +140,6 @@ export const RegularSection = styled.div`
         }
       }
 
-      .lktraBall {
-        border-radius: 0.5rem 0 0 0.5rem;
-        margin-top: 0;
-        height: 50vh;
-        width: 50%;
-        box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
-        -webkit-box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
-      }
       .clinicSwiper {
         margin-top: 5rem;
         display: flex;
@@ -143,7 +147,8 @@ export const RegularSection = styled.div`
         flex-wrap: wrap;
         width: 100%;
 
-        h5 {
+        h2 {
+          font-size: 1.25rem;
           text-align: center;
           width: 100%;
         }
@@ -155,6 +160,11 @@ export const RegularSection = styled.div`
           box-shadow: 5px 0px 14px -2px rgba(0, 0, 0, 0.75);
           -webkit-box-shadow: 5px 0px 14px -2px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: 5px 0px 14px -2px rgba(0, 0, 0, 0.75);
+        }
+        .logodiv {
+          img {
+            width: 80%;
+          }
         }
       }
     }
@@ -176,13 +186,14 @@ export const RegularSection = styled.div`
       justify-content: space-between;
     }
     .accountStatus {
-      margin-top: 5rem;
+      margin-top: 2rem;
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row;
       flex-wrap: wrap;
       width: 100%;
 
-      h5 {
+      h2 {
+        font-size: 1.25rem;
         text-align: center;
         width: 100%;
       }

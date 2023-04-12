@@ -5,6 +5,8 @@ import Hero from "../components/Hero/Hero";
 import NewsCard from "../components/NewsCard/NewsCard";
 import Loading from "../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRss } from "@fortawesome/free-solid-svg-icons";
 
 const News = () => {
   const [news, setNews] = useState();
@@ -55,7 +57,9 @@ const News = () => {
   return (
     <>
       <RegularSection>
-        <Hero title="Naujienos" />
+        <Hero title="Naujienos">
+          <FontAwesomeIcon icon={faRss} beatFade />
+        </Hero>
         <div className="newsContainer">
           {news &&
             news.map((newsnew) => (

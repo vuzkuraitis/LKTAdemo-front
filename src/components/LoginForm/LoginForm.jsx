@@ -8,13 +8,17 @@ import Hero from "../Hero/Hero";
 import CardInfo from "../CardInfo/CardInfo";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 const LoginForm = ({ handleSubmit }) => {
   const [loginValues, updateLoginValues] = useState();
   const [loading, setLoading] = useState(false);
   return (
     <S.LoginForm>
-      <Hero title="Asmeninė Paskyra" />
+      <Hero title="Asmeninė Paskyra">
+        <FontAwesomeIcon icon={faArrowRightToBracket} beatFade />
+      </Hero>
       <div className="login">
         <Section>
           {loading && <Loading />}

@@ -5,7 +5,7 @@ import * as S from "./CardUser.styles";
 const CardUser = ({ users, id }) => {
   return (
     <S.CardUser id={id} users={users}>
-      <h5>Licenzijos informacija:</h5>
+      {/* <h5>Licenzijos informacija:</h5> */}
       {users &&
         users.map((user) => (
           <div key={user.id} className="carduser">
