@@ -39,25 +39,65 @@ export const BurgerMenu = styled.div`
   display: flex;
   align-items: center;
 
-  .navbar-item {
-    color: #ffffff;
-    position: relative;
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem;
-  }
   .navbar-item:hover {
     color: #646fd4;
     transition: 0.3s ease-in-out;
+    svg {
+      color: #646fd4;
+    }
+  }
+  .navbarlinks {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    margin: 1rem auto;
+    width: 80%;
+  }
+
+  svg {
+    color: #009cde;
+  }
+
+  svg:hover {
+    color: #646fd4;
+  }
+
+  @media screen and (min-width: 768px) {
+    .navbar-item {
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 0.75rem;
+      width: 7rem;
+      svg {
+        height: 1.5rem;
+        margin-bottom: 0.5rem;
+        width: 2rem;
+      }
+    }
+    .navbarlinks {
+      margin: 0.5rem auto;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .navbar-item {
+      width: 9rem;
+    }
+    .navbarlinks {
+      margin: 0.5rem auto;
+    }
   }
 
   @media screen and (max-width: 768px) {
     flex-flow: column nowrap;
     background: #000000;
     transform: ${({ active }) =>
-      active ? "translateX(0)" : "translateX(100%)"};
+      active ? "translateY(0)" : "translateY(-130%)"};
     position: absolute;
-    top: 5rem;
+    top: 6rem;
     left: 0;
     width: 100%;
 
@@ -67,7 +107,18 @@ export const BurgerMenu = styled.div`
     }
 
     .navbar-item {
-      margin: 0.75rem;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      position: relative;
+      text-decoration: none;
+      width: 100%;
+
+      svg {
+        margin-right: 2rem;
+        height: 2rem;
+        width: 2rem;
+      }
     }
     .navbar-item:nth-last-child(1) {
       margin-right: 1rem;

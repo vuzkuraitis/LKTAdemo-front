@@ -6,6 +6,11 @@ import Button from "../Button/Button";
 import Logo from "../../assets/LogoNew.png";
 import Logo2 from "../../assets/LKTA.jpeg";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+library.add(fas);
 
 const Nav = () => {
   const [active, setActive] = useState(false);
@@ -15,22 +20,27 @@ const Nav = () => {
     {
       url: "/",
       title: "Pradžia",
+      icon: "house",
     },
     {
       url: "/news",
       title: "Naujienos",
+      icon: "rss",
     },
     {
       url: "/license",
       title: "Licenzijos",
+      icon: "magnifying-glass",
     },
     {
       url: "/studies",
       title: "Studijos",
+      icon: "building-columns",
     },
     {
       url: "/register",
       title: "Registracija",
+      icon: "user-plus",
     },
   ];
 
@@ -38,18 +48,22 @@ const Nav = () => {
     {
       url: "/account",
       title: "Paskyra",
+      icon: "user",
     },
     {
       url: "/account/material",
       title: "Metodinė Medžiaga",
+      icon: "book-open",
     },
     {
       url: "/account/clinics",
       title: "Kursai ir Seminarai",
+      icon: "school",
     },
     {
       url: "/account/settings",
       title: "Nustatymai",
+      icon: "gear",
     },
   ];
 
@@ -116,15 +130,19 @@ const Nav = () => {
           : links && (
               <S.BurgerMenu active={active}>
                 {links.map((link) => (
-                  <Link
-                    to={link.url}
-                    key={link.title}
-                    className="navbar-item"
-                    onClick={() => setActive(null)}
-                  >
-                    {link.title}
-                  </Link>
+                  <div className="navbarlinks">
+                    <Link
+                      to={link.url}
+                      key={link.title}
+                      className="navbar-item"
+                      onClick={() => setActive(null)}
+                    >
+                      <FontAwesomeIcon icon={link.icon} />
+                      {link.title}
+                    </Link>
+                  </div>
                 ))}
+
                 {localStorage.getItem("token") ? (
                   <Button
                     handleClick={() => {
