@@ -126,10 +126,6 @@ export const CardClinicsPayment = styled.div`
 
   @media screen and (min-width: 1024px) {
     width: 100%;
-    .cliniccard {
-      /* align-items: flex-start; */
-      /* flex-direction: row; */
-    }
     .cliniccards {
       width: 100%;
     }
