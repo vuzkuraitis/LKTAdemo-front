@@ -10,7 +10,6 @@ export const CardCheckOut = styled.div`
   z-index: 9998;
   border-radius: 4px;
   display: ${({ active }) => (active ? "block" : "none")};
-  padding-top: 2rem;
   box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);

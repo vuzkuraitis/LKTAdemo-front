@@ -115,6 +115,7 @@ export const RegularSection = styled.div`
     height: calc(100% - (6rem));
     width: 70%;
     .account {
+      margin-top: 0;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
@@ -141,7 +142,6 @@ export const RegularSection = styled.div`
       }
 
       .clinicSwiper {
-        margin-top: 5rem;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -153,17 +153,17 @@ export const RegularSection = styled.div`
           width: 100%;
         }
         .swiper {
-          height: 55vh;
-          width: 50%;
-          border-radius: 0 0.5rem 0.5rem 0;
-          margin-top: 0;
+          height: 40vh;
+          width: 80%;
+          border-radius: 0.5rem;
+          margin-top: 2;
           box-shadow: 5px 0px 14px -2px rgba(0, 0, 0, 0.75);
           -webkit-box-shadow: 5px 0px 14px -2px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: 5px 0px 14px -2px rgba(0, 0, 0, 0.75);
         }
         .logodiv {
           img {
-            width: 80%;
+            width: 40%;
           }
         }
       }

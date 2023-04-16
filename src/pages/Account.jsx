@@ -151,7 +151,6 @@ const Account = () => {
         </Hero>
         <div className="account">
           <div className="accountStatus">
-            <h2>Licenzijos informacija ir statusas</h2>
             <CardUser users={users} />
             <CardPayment
               payments={payments}
@@ -179,7 +178,6 @@ const Account = () => {
             }}
           />
           <div className="clinicSwiper">
-            <h2>Informacija treneriui</h2>
             <CardClinics clinics={clinics} />
             <Swiper
               modules={[Autoplay, Navigation, EffectFade]}

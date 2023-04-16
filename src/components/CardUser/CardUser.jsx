@@ -1,14 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./CardUser.styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faIdCard } from "@fortawesome/free-solid-svg-icons";
 
 const CardUser = ({ users, id }) => {
   return (
     <S.CardUser id={id} users={users}>
-      {/* <h5>Licenzijos informacija:</h5> */}
       {users &&
         users.map((user) => (
           <div key={user.id} className="carduser">
+            <div className="cardusersvg">
+              <FontAwesomeIcon icon={faIdCard} />
+            </div>
             <h3>
               Vardas, Pavardė
               <span>

@@ -5,6 +5,7 @@ export const CardUser = styled.div`
     background: #ffffff;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     font-size: 0.75rem;
     justify-content: center;
     color: #000000;
@@ -15,9 +16,18 @@ export const CardUser = styled.div`
     box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
+  }
 
-    :hover {
-      background: #e8e8e8;
+  .cardusersvg {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+
+    svg {
+      color: #009cde;
+      height: 3rem;
     }
   }
 
@@ -28,10 +38,11 @@ export const CardUser = styled.div`
   h3 {
     color: #012169;
     font-weight: 400;
+    font-size: 0.75rem;
     display: flex;
     flex-direction: column;
-    margin: 0.5rem auto;
-    width: 80%;
+    text-align: left;
+    width: 70%;
   }
   input {
     display: flex;
@@ -44,18 +55,41 @@ export const CardUser = styled.div`
     font-weight: 700;
   }
 
+  @media screen and (min-width: 768px) {
+    .carduser {
+      background: #f0f0f0;
+      border-bottom: 1px solid #808080;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      font-size: 1rem;
+      justify-content: center;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+    .cardusersvg {
+      justify-content: flex-start;
+      svg {
+        height: 4rem;
+      }
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 1rem;
+      span {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     display: flex;
     flex-direction: column;
-    width: 50%;
-
-    .carduser {
-      border-radius: 0.5rem 0 0 0.5rem;
-      padding: 0;
-      height: 50vh;
-      box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
-      -webkit-box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
+    width: 100%;
+    .cardusersvg {
+      width: 10%;
     }
   }
 `;

@@ -39,52 +39,56 @@ const CardClinicPayment = ({
                 key={selectedClinicData[0].id}
                 className="cliniccard"
               >
-                <img
-                  src="https://ltu.basketball/wp-content/uploads/2022/09/LKTA.jpg"
-                  alt="LKTRALogo"
-                ></img>
-                <div className="cliniccarditem">
-                  <h4>Miestas:</h4>
-                  <p>{selectedClinicData[0].name}</p>
+                <div className="clinicsimg">
+                  <img
+                    src="https://ltu.basketball/wp-content/uploads/2022/09/LKTA.jpg"
+                    alt="LKTRALogo"
+                  ></img>
                 </div>
-                <div className="cliniccarditem">
-                  <h4>Vieta:</h4>
-                  <p>{selectedClinicData[0].place}</p>
-                </div>
-                <div className="cliniccarditem">
-                  <h4>Adresas:</h4>
-                  <p>{selectedClinicData[0].address}</p>
-                </div>
-                <div className="cliniccarditem">
-                  <h4>Trukmė:</h4>
-                  <p>{selectedClinicData[0].hours} h</p>
-                </div>
-                <div className="cliniccarditem">
-                  <h4>Kaina:</h4>
-                  <p>{selectedClinicData[0].price} EUR</p>
-                </div>
+                <div className="cliniccarditemwrapper">
+                  <div className="cliniccarditem">
+                    <h4>Miestas:</h4>
+                    <p>{selectedClinicData[0].name}</p>
+                  </div>
+                  <div className="cliniccarditem">
+                    <h4>Vieta:</h4>
+                    <p>{selectedClinicData[0].place}</p>
+                  </div>
+                  <div className="cliniccarditem">
+                    <h4>Adresas:</h4>
+                    <p>{selectedClinicData[0].address}</p>
+                  </div>
+                  <div className="cliniccarditem">
+                    <h4>Trukmė:</h4>
+                    <p>{selectedClinicData[0].hours} h</p>
+                  </div>
+                  <div className="cliniccarditem">
+                    <h4>Kaina:</h4>
+                    <p>{selectedClinicData[0].price} EUR</p>
+                  </div>
 
-                {active !== true ? (
-                  <PaymentButton
-                    type="button"
-                    id={selectedClinicData[0].id}
-                    value={selectedClinicData[0].id}
-                    key={selectedClinicData[0].id}
-                    handleClick={handleClick}
-                  >
-                    Mokėti
-                  </PaymentButton>
-                ) : (
-                  <Button
-                    type="button"
-                    handleClick={() => {
-                      setActive(active);
-                      navigate("/account/clinics");
-                    }}
-                  >
-                    Uždaryti
-                  </Button>
-                )}
+                  {active !== true ? (
+                    <PaymentButton
+                      type="button"
+                      id={selectedClinicData[0].id}
+                      value={selectedClinicData[0].id}
+                      key={selectedClinicData[0].id}
+                      handleClick={handleClick}
+                    >
+                      Mokėti
+                    </PaymentButton>
+                  ) : (
+                    <Button
+                      type="button"
+                      handleClick={() => {
+                        setActive(active);
+                        navigate("/account/clinics");
+                      }}
+                    >
+                      Uždaryti
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           ) : (

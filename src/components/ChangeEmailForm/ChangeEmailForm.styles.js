@@ -15,18 +15,67 @@ export const ChangeEmailForm = styled.div`
     -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
 
-    :hover {
-      background: #e8e8e8;
-    }
     margin: 0 auto;
     padding: 1rem;
+
+    label {
+      color: #012169;
+    }
   }
 
-  h5 {
-    color: #808080;
+  h3 {
+    color: #012169;
+  }
+
+  .changeemailsvg {
+    margin-bottom: 1rem;
+    svg {
+      color: #009cde;
+      height: 3rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    .settingsSection {
+      background: #f0f0f0;
+      border-bottom: 1px solid #808080;
+      border-radius: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      font-size: 1rem;
+      justify-content: flex-start;
+      margin-top: 2rem;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+
+      form {
+        width: 70%;
+      }
+    }
+    .changeemailsvg {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      width: 30%;
+    }
   }
 
   @media screen and (min-width: 1024px) {
-    width: 45%;
+    .settingsSection {
+      .changeemailsvg {
+        width: 20%;
+        svg {
+          height: 4rem;
+        }
+      }
+      form {
+        width: 50%;
+      }
+    }
   }
 `;

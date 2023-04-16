@@ -1,41 +1,66 @@
 import styled from "styled-components";
 
 export const CardClinics = styled.div`
-  .carduser {
+  .usercliniccard {
     background: #ffffff;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     font-size: 0.75rem;
-    justify-content: center;
     border-radius: 0.5rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
-
-    :hover {
-      background: #e8e8e8;
+  }
+  .usercliniccardsvg {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    svg {
+      color: #009cde;
+      height: 3rem;
     }
+  }
+
+  .usercliniclistwrapper {
+    height: 100%;
+    width: 70%;
+  }
+  .clinicslist {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    width: 100%;
+
+    li {
+      font-size: 0.5rem;
+    }
+  }
+  h3 {
+    color: #012169;
+    font-weight: 700;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    width: 100%;
+    span {
+      font-size: 1rem;
+      color: #009cde;
+    }
+  }
+  .userclinicoption {
+    width: 100%;
   }
 
   h5 {
     color: #808080;
   }
 
-  h3 {
-    color: #012169;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem auto;
-    width: 80%;
-    span {
-      color: #009cde;
-    }
-  }
   input {
     display: flex;
     align-self: flex-start;
@@ -54,19 +79,60 @@ export const CardClinics = styled.div`
     }
   }
 
-  @media screen and (min-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+  @media screen and (min-width: 476px) {
+    .clinicslist {
+      ul {
+        width: 90%;
+      }
+      li {
+        font-size: 0.75rem;
+      }
+    }
+  }
 
-    .carduser {
-      height: 55vh;
-      padding-top: 0;
-      padding-bottom: 0;
-      border-radius: 0.5rem 0 0 0.5rem;
-      box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
-      -webkit-box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: -5px 0px 14px -2px rgba(0, 0, 0, 0.75);
+  @media screen and (min-width: 768px) {
+    .usercliniccard {
+      background: #f0f0f0;
+      border-bottom: 1px solid #808080;
+      border-radius: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      font-size: 1rem;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    .usercliniccardsvg {
+      justify-content: flex-start;
+      svg {
+        height: 4rem;
+      }
+    }
+    .clinicslist {
+      h3 {
+        text-align: left;
+      }
+      li {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100%;
+    .usercliniccardsvg {
+      width: 20%;
+    }
+    .clinicslist {
+      li {
+        font-size: 1rem;
+      }
     }
   }
 `;

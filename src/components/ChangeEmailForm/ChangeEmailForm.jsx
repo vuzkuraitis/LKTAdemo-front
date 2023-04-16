@@ -3,13 +3,18 @@ import * as S from "./ChangeEmailForm.styles";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
 
 const ChangeEmailForm = ({ handleSubmit }) => {
   const [changeemailValues, updateChangeemailValues] = useState();
   return (
     <S.ChangeEmailForm>
-      <h5>Pakeisti El paštą:</h5>
+      <h3>Pakeisti El paštą:</h3>
       <div className="settingsSection">
+        <div className="changeemailsvg">
+          <FontAwesomeIcon icon={faAt} />
+        </div>
         <form
           onSubmit={(e) => {
             e.preventDefault();

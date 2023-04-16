@@ -30,52 +30,56 @@ const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
                     key={clinic.id}
                     className="cliniccard"
                   >
-                    <img
-                      src="https://ltu.basketball/wp-content/uploads/2022/09/LKTA.jpg"
-                      alt="LKTRALogo"
-                    ></img>
-                    <div className="cliniccarditem">
-                      <h4>Miestas:</h4>
-                      <p>{clinic.name}</p>
+                    <div className="clinicsimg">
+                      <img
+                        src="https://ltu.basketball/wp-content/uploads/2022/09/LKTA.jpg"
+                        alt="LKTRALogo"
+                      ></img>
                     </div>
-                    <div className="cliniccarditem">
-                      <h4>Vieta:</h4>
-                      <p>{clinic.place}</p>
-                    </div>
-                    <div className="cliniccarditem">
-                      <h4>Adresas:</h4>
-                      <p>{clinic.address}</p>
-                    </div>
-                    <div className="cliniccarditem">
-                      <h4>Trukmė:</h4>
-                      <p>{clinic.hours} h</p>
-                    </div>
-                    <div className="cliniccarditem">
-                      <h4>Kaina:</h4>
-                      <p>{clinic.price} EUR</p>
-                    </div>
-                    {clinic.clinicData.length > 0 &&
-                    clinic.clinicData[0].status === "completed" ? (
-                      <div className="completed">
-                        <FontAwesomeIcon
-                          icon={faCheck}
-                          className="icon"
-                          id={clinic.id}
-                        />
+                    <div className="cliniccarditemwrapper">
+                      <div className="cliniccarditem">
+                        <h4>Miestas:</h4>
+                        <p>{clinic.name}</p>
                       </div>
-                    ) : (
-                      <PaymentButton
-                        type="button"
-                        id={clinic.id}
-                        value={clinic.id}
-                        key={clinic.id}
-                        handleClick={(e) => {
-                          initiatePayment(Number(e.currentTarget.value));
-                        }}
-                      >
-                        Registruotis
-                      </PaymentButton>
-                    )}
+                      <div className="cliniccarditem">
+                        <h4>Vieta:</h4>
+                        <p>{clinic.place}</p>
+                      </div>
+                      <div className="cliniccarditem">
+                        <h4>Adresas:</h4>
+                        <p>{clinic.address}</p>
+                      </div>
+                      <div className="cliniccarditem">
+                        <h4>Trukmė:</h4>
+                        <p>{clinic.hours} h</p>
+                      </div>
+                      <div className="cliniccarditem">
+                        <h4>Kaina:</h4>
+                        <p>{clinic.price} EUR</p>
+                      </div>
+                      {clinic.clinicData.length > 0 &&
+                      clinic.clinicData[0].status === "completed" ? (
+                        <div className="completed">
+                          <FontAwesomeIcon
+                            icon={faCheck}
+                            className="icon"
+                            id={clinic.id}
+                          />
+                        </div>
+                      ) : (
+                        <PaymentButton
+                          type="button"
+                          id={clinic.id}
+                          value={clinic.id}
+                          key={clinic.id}
+                          handleClick={(e) => {
+                            initiatePayment(Number(e.currentTarget.value));
+                          }}
+                        >
+                          Registruotis
+                        </PaymentButton>
+                      )}
+                    </div>
                   </div>
                 ))}
             </div>

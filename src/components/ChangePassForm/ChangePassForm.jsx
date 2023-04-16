@@ -3,13 +3,18 @@ import * as S from "./ChangePassForm.styles";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUnlock } from "@fortawesome/free-solid-svg-icons";
 
 const ChangePassForm = ({ handleSubmit, exercises }) => {
   const [changepassValues, updateChangepassValues] = useState();
   return (
     <S.ChangePassForm>
-      <h5>Pakeisti slaptažodį:</h5>
+      <h3>Pakeisti slaptažodį:</h3>
       <div className="settingsSection">
+        <div className="changepasssvg">
+          <FontAwesomeIcon icon={faUnlock} />
+        </div>
         <form
           onSubmit={(e) => {
             e.preventDefault();

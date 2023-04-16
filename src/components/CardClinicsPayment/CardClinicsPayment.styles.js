@@ -24,23 +24,30 @@ export const CardClinicsPayment = styled.div`
     box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
-
-    :hover {
-      background: #e8e8e8;
+  }
+  .cliniccarditemwrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    .cliniccarditem {
+      font-size: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    button {
+      margin: 0 auto;
+      width: 6rem;
     }
   }
-  .cliniccarditem {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-  }
+
   .completed {
-    border-radius: 2rem;
-    /* width: 0.75rem;
-    height: 0.75rem; */
+    border-radius: 0.5rem;
     background: #14d500;
     border: 1px solid #808080;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
+    margin: 0 auto;
+    width: 4rem;
   }
   .icon {
     color: #ffffff;
@@ -78,36 +85,62 @@ export const CardClinicsPayment = styled.div`
     width: 80%;
   }
 
-  @media screen and (min-width: 768px) {
-    .cliniccards {
-      img {
-        height: 10rem;
+  @media screen and (min-width: 476px) {
+    .cliniccarditemwrapper {
+      .cliniccarditem {
+        font-size: 0.75rem;
       }
     }
   }
 
-  @media screen and (min-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    h5 {
-      text-align: center;
-    }
-
-    .cliniccards {
+  @media screen and (min-width: 768px) {
+    .cliniccard {
+      align-items: flex-start;
+      justify-content: center;
+      background: #f0f0f0;
+      border-bottom: 1px solid #808080;
+      border-radius: 0;
       display: flex;
       flex-wrap: wrap;
+      margin: 0;
+      height: 15rem;
+      padding-bottom: 0.5rem;
       width: 100%;
-      justify-content: space-around;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+    .clinicsimg {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    .cliniccarditem {
+      align-self: flex-start;
+      width: 60%;
+    }
+    img {
+      height: 10rem;
+    }
+  }
 
-      img {
-        height: 15rem;
+  @media screen and (min-width: 1024px) {
+    width: 100%;
+    .cliniccard {
+      /* align-items: flex-start; */
+      /* flex-direction: row; */
+    }
+    .cliniccards {
+      width: 100%;
+    }
+    .cliniccarditemwrapper {
+      width: 60%;
+      .cliniccarditem {
+        font-size: 1rem;
       }
     }
-
-    .cliniccard {
-      display: flex;
-      width: 45%;
+    img {
+      height: 12rem;
     }
   }
 `;
