@@ -46,13 +46,14 @@ export const CardPayment = styled.div`
   .licensestatus {
   }
   h3 {
+    display: flex;
     color: #012169;
     font-weight: 400;
     font-size: 0.75rem;
     width: 100%;
 
     button {
-      width: 100%;
+      width: 80%;
     }
   }
   input {

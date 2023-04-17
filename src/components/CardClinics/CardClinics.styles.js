@@ -18,6 +18,7 @@ export const CardClinics = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-top: 5rem;
     width: 30%;
     svg {
       color: #009cde;
@@ -109,6 +110,7 @@ export const CardClinics = styled.div`
       font-size: 1rem;
     }
     .usercliniccardsvg {
+      margin-top: 4rem;
       justify-content: flex-start;
       svg {
         height: 4rem;
@@ -128,11 +130,6 @@ export const CardClinics = styled.div`
     width: 100%;
     .usercliniccardsvg {
       width: 20%;
-    }
-    .clinicslist {
-      li {
-        font-size: 1rem;
-      }
     }
   }
 `;
