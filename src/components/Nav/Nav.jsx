@@ -35,7 +35,7 @@ const Nav = () => {
     {
       url: "/studies",
       title: "Studijos",
-      icon: "building-columns",
+      icon: "graduation-cap",
     },
     {
       url: "/register",

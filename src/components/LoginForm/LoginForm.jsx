@@ -32,7 +32,7 @@ const LoginForm = ({ handleSubmit }) => {
                 handleSubmit(loginValues);
                 setTimeout(() => {
                   setLoading(false);
-                }, 2000);
+                }, 5000);
               }}
             >
               <TextInput
@@ -75,9 +75,9 @@ const LoginForm = ({ handleSubmit }) => {
           <p>Prisijungę į savo asmeninę paskyrą jūs galėsite:</p>
           <ul>
             <li>Patikrinti savo licenzijos galiojimo laiką</li>
-            <li>Registruotis į būsimus seminarus</li>
-            <li>Iškart susimokėti už savo licenziją ir seminarus</li>
-            <li>Nepraleisti galimybės dalyvauti naujausiuose seminaruose</li>
+            <li>Greita regitracija į būsimus seminarus</li>
+            <li>Paprastas ir greitas už savo licenziją ir seminarus</li>
+            <li>Registracija i krepšinio studijas</li>
           </ul>
         </CardInfo>
       </div>
