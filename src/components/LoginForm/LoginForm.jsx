@@ -76,7 +76,9 @@ const LoginForm = ({ handleSubmit }) => {
           <ul>
             <li>Patikrinti savo licenzijos galiojimo laiką</li>
             <li>Greita regitracija į būsimus seminarus</li>
-            <li>Paprastas ir greitas už savo licenziją ir seminarus</li>
+            <li>
+              Paprastas ir greitas atsiskaitymas už savo licenziją ir seminarus
+            </li>
             <li>Registracija i krepšinio studijas</li>
           </ul>
         </CardInfo>

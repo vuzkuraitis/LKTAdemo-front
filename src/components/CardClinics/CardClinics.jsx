@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import * as S from "./CardClinics.styles";
 import SubmitClinicForm from "../SubmitClinicForm/SubmitClinicForm";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRectangleList } from "@fortawesome/free-solid-svg-icons";
 
-const CardClinics = ({ clinics }) => {
-  const navigate = useNavigate();
+const CardClinics = ({ clinics, initiatePayment }) => {
+  // const navigate = useNavigate();
   const [selectedClinicId, updateSelectedClinicId] = useState(null);
   console.log(selectedClinicId);
 
@@ -42,8 +42,9 @@ const CardClinics = ({ clinics }) => {
             handleChange={(id) => {
               updateSelectedClinicId(id);
             }}
-            handleClick={() => {
-              navigate("/account/clinics");
+            handleClick={(id) => {
+              initiatePayment(selectedClinic.id);
+              // navigate(`/clinics/clinic?id=${selectedClinic.id}`);
             }}
             selectedClinic={selectedClinic}
           />

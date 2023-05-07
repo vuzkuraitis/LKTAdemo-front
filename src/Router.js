@@ -35,7 +35,6 @@ const Studies = lazy(() => import("./pages/Studies"));
 const SelectedNews = lazy(() => import("./pages/SelectedNews"));
 
 const Router = () => {
-  console.log("router");
   function RequireAuth({ children }) {
     const token = localStorage.getItem("token");
     let location = useLocation();

@@ -27,7 +27,7 @@ const Account = () => {
   const [payments, setPayments] = useState([]);
   const [clinics, setClinics] = useState([]);
   const [active, setActive] = useState(false);
-  // const [paymentCard, setPaymentCard] = useState(false);
+  const [clinicPayments, setClinicPayments] = useState([]);
 
   const clinicPhotos = [
     { id: 1, name: Clinic1 },
@@ -88,6 +88,37 @@ const Account = () => {
   useEffect(() => {
     getClinics();
   }, []);
+
+  const initiatePayment = async (id) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic-payment?id=${id}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+
+      if (data.err) {
+        return setError(data.err);
+      }
+
+      data[0].urlNotify = MyPOSEmbedded.IPC_URL + "/client/ipcNotify";
+      setClinicPayments(data);
+
+      navigate(`/clinics/clinic?id=${id}`, {
+        state: data,
+      });
+
+      return console.log(clinicPayments);
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
 
   const callbackParams = {
     isSandbox: true,
@@ -178,7 +209,11 @@ const Account = () => {
             }}
           />
           <div className="clinicSwiper">
-            <CardClinics clinics={clinics} />
+            <CardClinics
+              clinics={clinics}
+              clinicPayments={clinicPayments}
+              initiatePayment={initiatePayment}
+            />
             <Swiper
               modules={[Autoplay, Navigation, EffectFade]}
               navigation
