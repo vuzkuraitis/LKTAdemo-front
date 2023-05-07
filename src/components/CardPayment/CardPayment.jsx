@@ -29,7 +29,9 @@ const CardPayment = ({ payments, id, handleClick, active, setActive }) => {
                     <span>Apmokėta</span>
                   </h3>
                   <h3>
-                    Galioja: <span>{payment.year}</span> metams
+                    Galioja:{" "}
+                    <span className="licensestatusyear">{payment.year}</span>
+                    metams
                   </h3>
                 </div>
               ) : (

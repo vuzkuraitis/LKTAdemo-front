@@ -24,6 +24,7 @@ const ClinicPayment = lazy(() => import("./pages/ClinicPayment"));
 const Clinics = lazy(() => import("./pages/Clinics"));
 const Clinic = lazy(() => import("./pages/Clinic"));
 const Cookies = lazy(() => import("./pages/Cookies"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Material = lazy(() => import("./pages/Material"));
 const News = lazy(() => import("./pages/News"));
 const Admin = lazy(() => import("./pages/Admin"));
@@ -148,6 +149,7 @@ const Router = () => {
               </RequireAuth>
             }
           />
+          <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route exact path="/cookie-policy" element={<Cookies />} />
           <Route exact path="/news" element={<News />} />
           <Route exact path="/news/selected-news" element={<SelectedNews />} />

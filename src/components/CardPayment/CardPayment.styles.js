@@ -45,6 +45,9 @@ export const CardPayment = styled.div`
 
   .licensestatus {
   }
+  .licensestatusyear {
+    margin: 0 0.2rem;
+  }
   h3 {
     display: flex;
     color: #012169;

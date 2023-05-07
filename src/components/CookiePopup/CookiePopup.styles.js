@@ -4,7 +4,7 @@ export const CookiePopup = styled.div`
   .CookieConsent {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    /* align-items: flex-end; */
     border-radius: 1rem;
     padding: 1rem 1.5rem;
     background: #7373f2;
@@ -20,6 +20,10 @@ export const CookiePopup = styled.div`
     text-align: justify;
     width: 80%;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .coockiepolicylink {
+    margin: 0 0.2rem;
   }
 
   .overlayclass {
@@ -62,6 +66,10 @@ export const CookiePopup = styled.div`
   @media screen and (min-width: 1024px) {
     .CookieConsent {
       width: 90%;
+      div:nth-child(2) {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 `;

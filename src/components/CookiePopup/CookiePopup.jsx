@@ -10,21 +10,21 @@ const CookiePopup = ({ handleClick }) => {
       <CookieConsent
         disableStyles
         location="none"
-        buttonText="Accept"
+        buttonText="Sutinku"
         cookieName="myCookie"
         overlay
         overlayClasses="overlayclass"
         enableDeclineButton
-        declineButtonText="Decline"
+        declineButtonText="Atmesti"
         declineCookieValue={false}
         expires={150}
       >
-        We use essential cookies to make our site work. With your consent, we
-        may also use non-essential cookies to improve user experience and
-        analyse website traffic. By clicking 'Accept', you agree to our
-        website's cookie use as described in our{" "}
+        Kad mūsų svetainė veiktų, naudojame esminius slapukus. Jūsų sutikimu mes
+        taip pat gali naudoti neesminius slapukus, kad pagerintų vartotojo
+        patirtį ir analizuoti svetainės srautą. Spustelėdami „Sutinku“ sutinkate
+        su mūsų svetainės slapukų naudojimas, kaip aprašyta mūsų
         <Link to="/cookie-policy">
-          <span>Cookie Policy</span>
+          <span className="coockiepolicylink">Slapukų politikoje</span>
         </Link>
         .
       </CookieConsent>
