@@ -20,7 +20,6 @@ const Home = () => {
     const data = await res.json();
 
     setUsers(data);
-    console.log(data);
   };
 
   const getSelectedUser = async (id) => {
@@ -35,7 +34,6 @@ const Home = () => {
     const data = await res.json();
 
     setSelectedUsers(data);
-    console.log(data);
   };
 
   return (

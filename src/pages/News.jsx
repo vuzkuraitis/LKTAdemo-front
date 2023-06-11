@@ -10,7 +10,6 @@ import { faRss } from "@fortawesome/free-solid-svg-icons";
 
 const News = () => {
   const [news, setNews] = useState();
-  // const [selectedNews, setSelectedNews] = useState([]);
 
   const navigate = useNavigate();
 

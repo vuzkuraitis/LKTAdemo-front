@@ -4,7 +4,6 @@ import Hero from "../components/Hero/Hero";
 import CardClinicsPayment from "../components/CardClinicsPayment/CardClinicsPayment";
 import Loading from "../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-import * as MyPOSEmbedded from "mypos-embedded-checkout";
 import Notification from "../components/Notification/Notification";
 import CardClinicsSwiper from "../components/CardClinicsSwiper/CardClinicsSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -84,13 +83,10 @@ const Clinics = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
 
       if (data.err) {
         return setError(data.err);
       }
-
-      data[0].urlNotify = MyPOSEmbedded.IPC_URL + "/client/ipcNotify";
       setClinicPayments(data);
 
       navigate(`/clinics/clinic?id=${id}`, {

@@ -20,6 +20,7 @@ const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const NewPassword = lazy(() => import("./pages/NewPassword"));
 const Settings = lazy(() => import("./pages/Settings"));
 const Payment = lazy(() => import("./pages/Payment"));
+const PaymentErr = lazy(() => import("./pages/PaymentErr"));
 const ClinicPayment = lazy(() => import("./pages/ClinicPayment"));
 const Clinics = lazy(() => import("./pages/Clinics"));
 const Clinic = lazy(() => import("./pages/Clinic"));
@@ -96,6 +97,15 @@ const Router = () => {
             element={
               <RequireAuth>
                 <Payment />
+              </RequireAuth>
+            }
+          />
+          <Route
+            exact
+            path="/paymenterr"
+            element={
+              <RequireAuth>
+                <PaymentErr />
               </RequireAuth>
             }
           />

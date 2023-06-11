@@ -168,17 +168,6 @@ export const RegularSection = styled.div`
         }
       }
     }
-    .redirect {
-      display: flex;
-
-      p {
-        margin: 0.3rem 1rem 0.3rem 0;
-      }
-      button {
-        font-size: 0.75rem;
-        padding: 0 0.5rem;
-      }
-    }
     .settings {
       display: flex;
       flex-wrap: wrap;

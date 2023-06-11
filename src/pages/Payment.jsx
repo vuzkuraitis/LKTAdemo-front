@@ -1,28 +1,20 @@
 import React, { useState, useEffect } from "react";
 import RegularSection from "../components/RegularSection/RegularSection";
-import Notification from "../components/Notification/Notification";
-import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
-import Countdown from "react-countdown";
-import Button from "../components/Button/Button";
+import PaymentCard from "../components/PaymentCard/PaymentCard";
+import Notification from "../components/Notification/Notification";
 
 const Payment = () => {
   const queryParams = new URLSearchParams(window.location.search);
-  const paymentId = queryParams.get("paymentId");
-  const status = queryParams.get("status");
-  const statusGroup = queryParams.get("statusGroup");
+  const session_id = queryParams.get("session_id");
 
   const newParams = {
-    paymentId: paymentId,
-    status: status,
-    statusGroup: statusGroup,
+    session_id: session_id,
   };
-  console.log(newParams);
 
   const [error, setError] = useState();
-  const navigate = useNavigate();
 
-  const checkParams = async () => {
+  const postParams = async () => {
     try {
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/v1/license/account-payment-verification`,
@@ -46,74 +38,27 @@ const Payment = () => {
     }
   };
   useEffect(() => {
-    checkParams();
+    postParams();
   });
 
   if (!error) {
     <Loading />;
   }
 
-  const renderer = ({ seconds, completed }) => {
-    if (completed) {
-      // Render a completed state
-      return navigate("/account");
-    } else {
-      // Render a countdown
-      return <span>{seconds}</span>;
-    }
-  };
-
   return (
     <>
       <RegularSection>
-        {error && newParams.statusGroup === "failed" ? (
-          <div className="paymenterror">
-            <Notification
-              handleClick={() => {
-                setError(null);
-              }}
-            >
+        <div>
+          {error && (
+            <Notification handleClick={() => setError(null)}>
               {error}
             </Notification>
-            <h1>Payment Error</h1>
-            <div className="redirect">
-              <p>You will be redirected to your Account Page in </p>
-              <Button
-                type="button"
-                handleClick={() => {
-                  navigate("/account");
-                }}
-              >
-                (<Countdown date={Date.now() + 9000} renderer={renderer} />)
-                Back
-              </Button>
-            </div>
-          </div>
-        ) : null}
-        {error && newParams.statusGroup === "completed" ? (
-          <div>
-            <Notification
-              handleClick={() => {
-                setError(null);
-              }}
-            >
-              {error}
-            </Notification>
-            <h1>Payment Succesfull</h1>
-            <div className="redirect">
-              <p>You will be redirected to your Account Page in </p>
-              <Button
-                type="button"
-                handleClick={() => {
-                  navigate("/account");
-                }}
-              >
-                (<Countdown date={Date.now() + 9000} renderer={renderer} />)
-                Back
-              </Button>
-            </div>
-          </div>
-        ) : null}
+          )}
+          <PaymentCard
+            title="Mokėjimas atliktas sėkmingai"
+            subtitle="Būsite gražinti į paskyrą už"
+          />
+        </div>
       </RegularSection>
     </>
   );

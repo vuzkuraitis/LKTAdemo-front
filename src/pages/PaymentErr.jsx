@@ -4,7 +4,7 @@ import Loading from "../components/Loading/Loading";
 import PaymentCard from "../components/PaymentCard/PaymentCard";
 import Notification from "../components/Notification/Notification";
 
-const ClinicPayment = () => {
+const PaymentErr = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const session_id = queryParams.get("session_id");
 
@@ -14,10 +14,10 @@ const ClinicPayment = () => {
 
   const [error, setError] = useState();
 
-  const checkParamsClinic = async () => {
+  const postParams = async () => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic-payment-verification`,
+        `${process.env.REACT_APP_BACKEND_URL}/v1/license/account-payment-verification`,
         {
           method: "POST",
           headers: {
@@ -38,7 +38,7 @@ const ClinicPayment = () => {
     }
   };
   useEffect(() => {
-    checkParamsClinic();
+    postParams();
   });
 
   if (!error) {
@@ -49,13 +49,15 @@ const ClinicPayment = () => {
     <>
       <RegularSection>
         <div>
-          {error && (
-            <Notification handleClick={() => setError(null)}>
-              {error}
-            </Notification>
-          )}
+          <Notification
+            handleClick={() => {
+              setError(null);
+            }}
+          >
+            {error}
+          </Notification>
           <PaymentCard
-            title="Mokėjimas atliktas sėkmingai"
+            title="Mokėjimo Klaida. Prašome bandyti iš naujo."
             subtitle="Būsite gražinti į paskyrą už"
           />
         </div>
@@ -64,4 +66,4 @@ const ClinicPayment = () => {
   );
 };
 
-export default ClinicPayment;
+export default PaymentErr;

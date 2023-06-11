@@ -10,8 +10,6 @@ import { faRss } from "@fortawesome/free-solid-svg-icons";
 const SelectedNews = () => {
   const { state } = useLocation();
 
-  console.log(state);
-
   if (!state) {
     <Loading />;
   }

@@ -5,12 +5,12 @@ import Button from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileInvoice } from "@fortawesome/free-solid-svg-icons";
 
-const CardPayment = ({ payments, id, handleClick, active, setActive }) => {
+const CardPayment = ({ payments, id }) => {
   return (
     <S.CardPayment id={id} payments={payments}>
       {payments &&
         payments.map((payment) => (
-          <div key={1} className="cardpayment">
+          <div key={payment.id} className="cardpayment">
             <div className="carduserpayment">
               <FontAwesomeIcon icon={faFileInvoice} />
             </div>
@@ -36,21 +36,9 @@ const CardPayment = ({ payments, id, handleClick, active, setActive }) => {
                 </div>
               ) : (
                 <h3>
-                  {active !== true ? (
-                    <Button handleClick={handleClick} type="button">
-                      Mokėti
-                    </Button>
-                  ) : (
-                    <Button
-                      type="button"
-                      handleClick={() => {
-                        setActive(active);
-                        window.location.reload();
-                      }}
-                    >
-                      Uždaryti
-                    </Button>
-                  )}
+                  <a href={payment.url}>
+                    <Button type="button">Mokėti</Button>
+                  </a>
                 </h3>
               )}
               <div className="paymentexpl">

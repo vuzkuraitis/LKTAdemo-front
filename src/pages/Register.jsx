@@ -24,7 +24,6 @@ const Home = () => {
     const data = await res.json();
 
     setUsers(data);
-    console.log(data);
   };
   useEffect(() => {
     getUsers();
@@ -78,11 +77,6 @@ const Home = () => {
         {popupOpen && (
           <Popup handleClick={togglePopup}>
             <PopupInfo />
-            {/* {error && (
-              <Notification handleClick={() => setError(null)}>
-                {error}
-              </Notification>
-            )} */}
           </Popup>
         )}
       </RegularSection>

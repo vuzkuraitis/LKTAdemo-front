@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import * as S from "./CardClinicPayment.styles";
 import PaymentButton from "../PaymentButton/PaymentButton";
 import Loading from "../Loading/Loading";
-import Button from "../Button/Button";
-import { useNavigate } from "react-router-dom";
 
 const CardClinicPayment = ({
   clinics,
@@ -12,19 +10,13 @@ const CardClinicPayment = ({
   newParams,
   state,
   handleClick,
-  active,
-  setActive,
 }) => {
-  const navigate = useNavigate();
   const selectedClinicData = clinics
     .map((clinic) => ({
       ...clinic,
       clinicData: clinicData.filter((it) => it.clinics_id === clinic.id),
     }))
     .filter((item) => item.id === Number(newParams.id));
-
-  console.log(selectedClinicData);
-  console.log(state);
 
   return (
     <S.CardClinicPayment>
@@ -66,8 +58,7 @@ const CardClinicPayment = ({
                     <h4>Kaina:</h4>
                     <p>{selectedClinicData[0].price} EUR</p>
                   </div>
-
-                  {active !== true ? (
+                  <a href={state[0].url}>
                     <PaymentButton
                       type="button"
                       id={selectedClinicData[0].id}
@@ -77,17 +68,7 @@ const CardClinicPayment = ({
                     >
                       Mokėti
                     </PaymentButton>
-                  ) : (
-                    <Button
-                      type="button"
-                      handleClick={() => {
-                        setActive(active);
-                        navigate("/account/clinics");
-                      }}
-                    >
-                      Uždaryti
-                    </Button>
-                  )}
+                  </a>
                 </div>
               </div>
             </div>

@@ -22,7 +22,6 @@ const ClinicAddForm = ({ handleSubmit }) => {
               setLoading(true);
               e.preventDefault();
               e.target.reset();
-              console.log(registerValues);
 
               handleSubmit(registerValues);
               setTimeout(() => {

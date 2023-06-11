@@ -13,8 +13,6 @@ import CardUser from "../components/CardUser/CardUser";
 import CardPayment from "../components/CardPayment/CardPayment";
 import CardClinics from "../components/CardClinics/CardClinics";
 import Loading from "../components/Loading/Loading";
-import CardCheckOut from "../components/CardCheckOut/CardCheckOut";
-import * as MyPOSEmbedded from "mypos-embedded-checkout";
 import { useNavigate } from "react-router";
 import Notification from "../components/Notification/Notification";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,11 +20,9 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Account = () => {
   const [error, setError] = useState();
-  const [paymentError, setPaymentError] = useState();
   const [users, setUsers] = useState([]);
   const [payments, setPayments] = useState([]);
   const [clinics, setClinics] = useState([]);
-  const [active, setActive] = useState(false);
   const [clinicPayments, setClinicPayments] = useState([]);
 
   const clinicPhotos = [
@@ -64,9 +60,6 @@ const Account = () => {
       }
     );
     const data = await res.json();
-
-    data[0].urlNotify = MyPOSEmbedded.IPC_URL + "/client/ipcNotify";
-    console.log(data);
     setPayments(data);
   };
   useEffect(() => {
@@ -101,13 +94,10 @@ const Account = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
 
       if (data.err) {
         return setError(data.err);
       }
-
-      data[0].urlNotify = MyPOSEmbedded.IPC_URL + "/client/ipcNotify";
       setClinicPayments(data);
 
       navigate(`/clinics/clinic?id=${id}`, {
@@ -118,51 +108,6 @@ const Account = () => {
     } catch (err) {
       return setError(err.message);
     }
-  };
-
-  const callbackParams = {
-    isSandbox: true,
-    onSuccess: function (data) {
-      const updatePayment = async () => {
-        try {
-          const res = await fetch(
-            `${process.env.REACT_APP_BACKEND_URL}/v1/license/account-payment-verification`,
-            {
-              method: "POST",
-              headers: {
-                authorization: `Bearer ${localStorage.getItem("token")}`,
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(data),
-            }
-          );
-          const returnData = await res.json();
-
-          if (returnData.dataerror) {
-            return setError(returnData.err);
-          }
-          return setError(returnData.msg);
-        } catch (err) {
-          return setError(err.message);
-        }
-      };
-      updatePayment();
-
-      // navigate("/payment");
-      console.log("success callback");
-      console.log(data);
-    },
-    onError: function (data) {
-      console.log(data.message.event);
-      console.log("error");
-      if (data.message.event === "error") {
-        return setPaymentError("Mokėjimo klaida. Prašome pabandyti iš naujo");
-      }
-    },
-  };
-  const customization = {
-    payButtonBackgroundColor: "#7373f2",
-    payButtonBorderColor: "#000000",
   };
 
   if (users.length < 0 || payments.length < 0) {
@@ -183,31 +128,8 @@ const Account = () => {
         <div className="account">
           <div className="accountStatus">
             <CardUser users={users} />
-            <CardPayment
-              payments={payments}
-              active={active}
-              setActive={setActive}
-              handleClick={() => {
-                MyPOSEmbedded.createPayment(
-                  "embeddedCheckout",
-                  payments[0],
-                  callbackParams,
-                  customization
-                );
-                setActive(!active);
-                console.log(active);
-              }}
-            />
+            <CardPayment payments={payments} />
           </div>
-          <CardCheckOut
-            id="embeddedCheckout"
-            active={active}
-            paymentError={paymentError}
-            handleClick={() => {
-              setActive(!active);
-              navigate(0);
-            }}
-          />
           <div className="clinicSwiper">
             <CardClinics
               clinics={clinics}

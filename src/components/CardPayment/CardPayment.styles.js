@@ -55,8 +55,12 @@ export const CardPayment = styled.div`
     font-size: 0.75rem;
     width: 100%;
 
-    button {
-      width: 80%;
+    a {
+      width: 50%;
+
+      button {
+        width: 100%;
+      }
     }
   }
   input {
