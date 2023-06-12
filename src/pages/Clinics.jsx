@@ -49,6 +49,7 @@ const Clinics = () => {
       }
     );
     const data = await res.json();
+    console.log(data);
     setClinicData(data);
   };
   useEffect(() => {

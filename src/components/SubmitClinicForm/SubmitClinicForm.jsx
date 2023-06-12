@@ -3,6 +3,8 @@ import * as S from "./SubmitClinicForm.styles";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import SelectInput from "../SelectInput/SelectInput";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const SubmitClinicForm = ({
   handleChange,
@@ -25,9 +27,15 @@ const SubmitClinicForm = ({
             }
           />
           {selectedClinic ? (
-            <Button type="button" handleClick={handleClick}>
-              Registruotis
-            </Button>
+            selectedClinic.status === "completed" ? (
+              <div className="completed">
+                <FontAwesomeIcon icon={faCheck} className="icon" />
+              </div>
+            ) : (
+              <Button type="button" handleClick={handleClick}>
+                Registruotis
+              </Button>
+            )
           ) : null}
         </form>
       </div>
