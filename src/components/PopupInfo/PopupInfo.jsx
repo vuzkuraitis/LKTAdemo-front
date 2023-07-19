@@ -2,16 +2,27 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./PopupInfo.styles";
 
-const PopupInfo = ({ className }) => {
+const PopupInfo = ({ className, terms }) => {
   return (
     <S.PopupInfo className={className}>
-      <h4>Terms and Contitions</h4>
+      <h4>{terms[0].terms_title}</h4>
+      <p>{terms[0].terms_text}</p>
+      <p>{terms[0].terms_terms}</p>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
-        perferendis, autem libero quo, deleniti dolore, assumenda reiciendis
-        itaque quis consequuntur quasi quas aspernatur nobis. Blanditiis ipsam
-        facilis doloribus maxime laboriosam!
+        <ol>
+          <li>{terms[0].terms_term1}</li>
+          <li>{terms[0].terms_term2}</li>
+          <li>{terms[0].terms_term3}</li>
+        </ol>
       </p>
+      <p>{terms[0].terms_conditions}</p>
+      <p>
+        <ol>
+          <li>{terms[0].terms_condition1}</li>
+          <li>{terms[0].terms_condition2}</li>
+        </ol>
+      </p>
+      <p>{terms[0].terms_footer}</p>
     </S.PopupInfo>
   );
 };

@@ -75,7 +75,7 @@ const Cookies = () => {
             Santakos g. 11, LT-44279 Kaunas,
             <br />
             <br />
-            Telefonas: (+370 3) 778 7766,
+            Telefonas: +370 611 28871,
             <br />
             <br />
             El. paštas: treneris@lktra.lt

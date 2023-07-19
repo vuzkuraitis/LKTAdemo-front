@@ -15,25 +15,17 @@ export const Popup = styled.div`
     background-color: #ffffff;
     margin: 5rem auto;
     overflow: scroll;
-  }
-
-  .close-btn {
-    cursor: pointer;
-    color: #808080;
-    border: 1px solid #808080;
-    border-radius: 50%;
-    position: fixed;
-    right: 8%;
-    top: 4rem;
-
-    :hover {
-      background: #707070;
-      color: #000000;
-    }
+    padding: 1rem;
   }
 
   img {
     display: block;
+    width: 100%;
+  }
+
+  .popbutton {
+    display: flex;
+    justify-content: center;
     width: 100%;
   }
 
@@ -44,23 +36,13 @@ export const Popup = styled.div`
     .inner-popup {
       width: 60%;
     }
-    .close-btn {
-      right: 18%;
-    }
   }
   @media screen and (min-width: 768px) {
     .inner-popup {
       width: 45%;
     }
-    .close-btn {
-      right: 26%;
-    }
   }
   @media screen and (min-width: 1024px) {
-    .close-btn {
-      top: 9rem;
-      right: 4%;
-    }
     .inner-popup {
       width: 90%;
       margin: 10rem auto;
@@ -74,10 +56,6 @@ export const Popup = styled.div`
     }
   }
   @media screen and (min-width: 1201px) {
-    .close-btn {
-      top: 7rem;
-      right: 14%;
-    }
     .inner-popup {
       width: 70%;
       margin: 8rem auto;

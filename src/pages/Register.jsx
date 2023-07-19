@@ -11,6 +11,7 @@ const Home = () => {
   const [users, setUsers] = useState();
   const [checked, setChecked] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
+  const [terms, setTerms] = useState([]);
 
   const getUsers = async (name) => {
     const res = await fetch(
@@ -27,6 +28,24 @@ const Home = () => {
   };
   useEffect(() => {
     getUsers();
+  }, []);
+
+  const getTerms = async (name) => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/users/terms`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await res.json();
+
+    setTerms(data);
+    console.log(data);
+  };
+  useEffect(() => {
+    getTerms();
   }, []);
 
   const togglePopup = () => {
@@ -76,7 +95,7 @@ const Home = () => {
         />
         {popupOpen && (
           <Popup handleClick={togglePopup}>
-            <PopupInfo />
+            <PopupInfo terms={terms} />
           </Popup>
         )}
       </RegularSection>
