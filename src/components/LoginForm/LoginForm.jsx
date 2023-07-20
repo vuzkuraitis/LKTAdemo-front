@@ -19,71 +19,78 @@ const LoginForm = ({ handleSubmit }) => {
       <Hero title="Asmeninė Paskyra">
         <FontAwesomeIcon icon={faArrowRightToBracket} beatFade />
       </Hero>
-      <Section>
-        <div className="login">
-          {loading && <Loading />}
-          <div className="formSection">
-            <form
-              onSubmit={(e) => {
-                setLoading(true);
-                e.preventDefault();
-                e.target.reset();
+      {loading ? (
+        <Loading />
+      ) : (
+        <Section>
+          <div className="login">
+            <div className="formSection">
+              <form
+                onSubmit={(e) => {
+                  setLoading(true);
+                  e.preventDefault();
+                  e.target.reset();
 
-                handleSubmit(loginValues);
-                setTimeout(() => {
-                  setLoading(false);
-                }, 5000);
-              }}
-            >
-              <TextInput
-                type="email"
-                label="@ Paštas"
-                placeholder="email@email.com"
-                handleChange={(emailValue) =>
-                  updateLoginValues({ ...loginValues, email: emailValue })
-                }
-              />
-              <TextInput
-                type="password"
-                label="Slaptažodis"
-                placeholder="Slaptažodis"
-                handleChange={(passwordValue) =>
-                  updateLoginValues({ ...loginValues, password: passwordValue })
-                }
-              />
-              <Button type="submit">Įeiti</Button>
-            </form>
-            <p>
-              Neturite paskyros?
-              <Link to="/register" title="Register" className="loginLink">
-                Registruotis
-              </Link>
-            </p>
-            <p>
-              Pamiršote slaptažodį?
-              <Link
-                to="/forgot-password"
-                title="Forgot Password"
-                className="forgotPassLink"
+                  handleSubmit(loginValues);
+                  setTimeout(() => {
+                    setLoading(false);
+                  }, 5000);
+                }}
               >
-                Spausti čia
-              </Link>
-            </p>
+                <TextInput
+                  type="email"
+                  label="@ Paštas"
+                  placeholder="email@email.com"
+                  handleChange={(emailValue) =>
+                    updateLoginValues({ ...loginValues, email: emailValue })
+                  }
+                />
+                <TextInput
+                  type="password"
+                  label="Slaptažodis"
+                  placeholder="Slaptažodis"
+                  handleChange={(passwordValue) =>
+                    updateLoginValues({
+                      ...loginValues,
+                      password: passwordValue,
+                    })
+                  }
+                />
+                <Button type="submit">Įeiti</Button>
+              </form>
+              <p>
+                Neturite paskyros?
+                <Link to="/register" title="Register" className="loginLink">
+                  Registruotis
+                </Link>
+              </p>
+              <p>
+                Pamiršote slaptažodį?
+                <Link
+                  to="/forgot-password"
+                  title="Forgot Password"
+                  className="forgotPassLink"
+                >
+                  Spausti čia
+                </Link>
+              </p>
+            </div>
           </div>
-        </div>
 
-        <CardInfo>
-          <p>Prisijungę į savo asmeninę paskyrą jūs galėsite:</p>
-          <ul>
-            <li>Patikrinti savo licenzijos galiojimo laiką</li>
-            <li>Greita regitracija į būsimus seminarus</li>
-            <li>
-              Paprastas ir greitas atsiskaitymas už savo licenziją ir seminarus
-            </li>
-            <li>Registracija į krepšinio studijas</li>
-          </ul>
-        </CardInfo>
-      </Section>
+          <CardInfo>
+            <p>Prisijungę į savo asmeninę paskyrą jūs galėsite:</p>
+            <ul>
+              <li>Patikrinti savo licenzijos galiojimo laiką</li>
+              <li>Greita regitracija į būsimus seminarus</li>
+              <li>
+                Paprastas ir greitas atsiskaitymas už savo licenziją ir
+                seminarus
+              </li>
+              <li>Registracija į krepšinio studijas</li>
+            </ul>
+          </CardInfo>
+        </Section>
+      )}
     </S.LoginForm>
   );
 };
