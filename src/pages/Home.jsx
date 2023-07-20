@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Home1 from "../assets/LKTA5.jpeg";
-import Home2 from "../assets/LKTA4.jpeg";
+import Home1 from "../assets/Vaikinai.jpeg";
+import Home2 from "../assets/merginos.jpeg";
 import Home3 from "../assets/LKTAnew.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectFade } from "swiper";

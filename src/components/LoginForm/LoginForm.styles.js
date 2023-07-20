@@ -26,11 +26,12 @@ export const LoginForm = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    .formSection {
-      width: 100%;
-    }
     .login {
+      width: 48%;
       display: flex;
+      .formSection {
+        width: 100%;
+      }
     }
   }
 `;

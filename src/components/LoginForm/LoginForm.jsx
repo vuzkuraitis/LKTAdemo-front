@@ -19,8 +19,8 @@ const LoginForm = ({ handleSubmit }) => {
       <Hero title="Asmeninė Paskyra">
         <FontAwesomeIcon icon={faArrowRightToBracket} beatFade />
       </Hero>
-      <div className="login">
-        <Section>
+      <Section>
+        <div className="login">
           {loading && <Loading />}
           <div className="formSection">
             <form
@@ -37,7 +37,7 @@ const LoginForm = ({ handleSubmit }) => {
             >
               <TextInput
                 type="email"
-                label="El Paštas"
+                label="@ Paštas"
                 placeholder="email@email.com"
                 handleChange={(emailValue) =>
                   updateLoginValues({ ...loginValues, email: emailValue })
@@ -70,7 +70,8 @@ const LoginForm = ({ handleSubmit }) => {
               </Link>
             </p>
           </div>
-        </Section>
+        </div>
+
         <CardInfo>
           <p>Prisijungę į savo asmeninę paskyrą jūs galėsite:</p>
           <ul>
@@ -79,10 +80,10 @@ const LoginForm = ({ handleSubmit }) => {
             <li>
               Paprastas ir greitas atsiskaitymas už savo licenziją ir seminarus
             </li>
-            <li>Registracija i krepšinio studijas</li>
+            <li>Registracija į krepšinio studijas</li>
           </ul>
         </CardInfo>
-      </div>
+      </Section>
     </S.LoginForm>
   );
 };

@@ -24,7 +24,7 @@ export const CardInfo = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    margin: 3rem 0 1rem 0;
-    width: 50%;
+    /* margin: 3rem 0 1rem 0; */
+    width: 48%;
   }
 `;

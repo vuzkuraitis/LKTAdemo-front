@@ -30,7 +30,7 @@ const Home = () => {
     getUsers();
   }, []);
 
-  const getTerms = async (name) => {
+  const getTerms = async () => {
     const res = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/v1/users/terms`,
       {
