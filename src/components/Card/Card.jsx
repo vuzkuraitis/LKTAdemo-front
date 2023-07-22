@@ -12,10 +12,10 @@ const Card = ({ className, name, surname, email, license_nr, id }) => {
         </span>
       </h3>
       <h3>
-        El Paštas<span>{email}</span>
+        @ Paštas<span>{email}</span>
       </h3>
       <h3>
-        Licenzijos Nr.<span>{license_nr}</span>
+        Pažymėjimo Nr.<span>{license_nr}</span>
       </h3>
     </S.Card>
   );

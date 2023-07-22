@@ -29,7 +29,7 @@ const Nav = () => {
     },
     {
       url: "/license",
-      title: "Licenzijos",
+      title: "Pažymėjimai",
       icon: "magnifying-glass",
     },
     {

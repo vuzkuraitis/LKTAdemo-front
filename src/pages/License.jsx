@@ -3,6 +3,13 @@ import RegularSection from "../components/RegularSection/RegularSection";
 import Table from "../components/Table/Table";
 import SearchForm from "../components/SearchForm/SearchForm";
 import CardList from "../components/CardList/CardList";
+import Hero from "../components/Hero/Hero";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import CardAbout from "../components/CardAbout/CardAbout";
+import Paz from "../assets/Paz.jpg";
+import Button from "../components/Button/Button";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [users, setUsers] = useState();
@@ -39,10 +46,24 @@ const Home = () => {
   return (
     <>
       <RegularSection>
-        <SearchForm
-          handleSubmit={getUsers}
-          setSelectedUsers={setSelectedUsers}
-        />
+        <Hero title="Surasti Trenerio Pažymėjimą">
+          <FontAwesomeIcon icon={faMagnifyingGlass} beatFade />
+        </Hero>
+        <div className="licenseAboutSearch">
+          <h4>Krepšinio Trenerio Pažymėjimo Įgijimo Tvarka</h4>
+          <div className="licenseAbout">
+            <CardAbout>
+              <img className="pazymejimas" src={Paz} alt="Pazymejimas" />
+              <Link to="/docs" className="linktodocs">
+                <Button>Spausti Čia</Button>
+              </Link>
+            </CardAbout>
+            <SearchForm
+              handleSubmit={getUsers}
+              setSelectedUsers={setSelectedUsers}
+            />
+          </div>
+        </div>
         <h2>Paieškos rezultatai</h2>
         {users &&
           users.length === 0 &&

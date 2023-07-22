@@ -35,6 +35,7 @@ const AdminNews = lazy(() => import("./pages/AdminNews"));
 const Studies = lazy(() => import("./pages/Studies"));
 const SelectedNews = lazy(() => import("./pages/SelectedNews"));
 const Docs = lazy(() => import("./pages/Docs"));
+const About = lazy(() => import("./pages/About"));
 
 const Router = () => {
   function RequireAuth({ children }) {
@@ -162,6 +163,7 @@ const Router = () => {
           <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route exact path="/cookie-policy" element={<Cookies />} />
           <Route exact path="/docs" element={<Docs />} />
+          <Route exact path="/about" element={<About />} />
           <Route exact path="/news" element={<News />} />
           <Route exact path="/news/selected-news" element={<SelectedNews />} />
           <Route exact path="/studies" element={<Studies />} />

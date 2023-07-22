@@ -80,10 +80,10 @@ const LoginForm = ({ handleSubmit }) => {
           <CardInfo>
             <p>Prisijungę į savo asmeninę paskyrą jūs galėsite:</p>
             <ul>
-              <li>Patikrinti savo licenzijos galiojimo laiką</li>
+              <li>Patikrinti savo pažymėjimo galiojimo laiką</li>
               <li>Greita regitracija į būsimus seminarus</li>
               <li>
-                Paprastas ir greitas atsiskaitymas už savo licenziją ir
+                Paprastas ir greitas atsiskaitymas už savo pažymėjimą ir
                 seminarus
               </li>
               <li>Registracija į krepšinio studijas</li>

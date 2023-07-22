@@ -9,7 +9,7 @@ const Table = ({ options, type, users, setUsers, getSelectedUser }) => {
         <thead>
           <tr>
             <th>Vardas, Pavardė</th>
-            <th>Licenzijos Nr.</th>
+            <th>Pažymėjimo Nr.</th>
           </tr>
         </thead>
         <tbody>

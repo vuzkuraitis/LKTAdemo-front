@@ -23,7 +23,7 @@ const CardUser = ({ users, id }) => {
               El Paštas<span>{user.email}</span>
             </h3>
             <h3>
-              Licenzijos Nr.<span>{user.license_nr}</span>
+              Pažymėjimo Nr.<span>{user.license_nr}</span>
             </h3>
           </div>
         ))}

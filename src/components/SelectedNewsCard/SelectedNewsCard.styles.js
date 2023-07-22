@@ -8,14 +8,23 @@ export const SelectedNewsCard = styled.div`
   margin: 2rem auto;
   padding-bottom: 1rem;
   width: 100%;
+
+  a {
+    color: #7373f2;
+
+    text-decoration: none;
+  }
+
   p {
     text-align: left;
     white-space: pre-wrap;
   }
-  h2 {
-    text-align: left;
-    color: #009cde;
-    font-size: 1rem;
+  .licenserequestintro {
+    h2 {
+      text-align: left;
+      color: #009cde;
+      font-size: 1rem;
+    }
   }
 
   .newsDate {
@@ -26,17 +35,24 @@ export const SelectedNewsCard = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    h2 {
-      font-size: 1.25rem;
-    }
-    p {
-      font-size: 1rem;
+    .licenserequestintro {
+      h2 {
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 1rem;
+      }
     }
   }
 
   @media screen and (min-width: 1024px) {
-    h2 {
-      font-size: 1.5rem;
+    .licenserequestintro {
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
     }
   }
 `;

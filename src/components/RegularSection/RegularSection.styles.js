@@ -100,12 +100,86 @@ export const RegularSection = styled.div`
     color: #808080;
   }
 
+  .about {
+    width: 100%;
+    .aboutinfo {
+      width: 100%;
+    }
+  }
+
+  .licenseAbout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    a {
+      align-self: center;
+    }
+  }
+  table {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    thead {
+      font-size: 0.4rem;
+    }
+    tbody {
+      font-size: 0.4rem;
+
+      /* th,
+      td {
+        width: 15%;
+      } */
+      /* td:nth-child(4) {
+        width: 30%;
+      } */
+      .big {
+        width: 30%;
+      }
+      .tooL {
+        font-size: 0.35rem;
+      }
+    }
+  }
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+    border: 2px solid #808080;
+  }
+
   @media screen and (min-width: 768px) {
     width: 70%;
     .clinicSwiper {
       .logodiv {
         img {
           width: 50%;
+        }
+      }
+    }
+    .about {
+      .aboutpic {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .licenseAbout {
+      flex-direction: row;
+    }
+    table {
+      thead {
+        font-size: 0.55rem;
+      }
+      tbody {
+        font-size: 0.55rem;
+        td:nth-child(4) {
+          width: 40%;
+        }
+        td:nth-child(5) {
+          width: 20%;
+        }
+        .tooL {
+          font-size: 0.55rem;
         }
       }
     }
@@ -185,6 +259,17 @@ export const RegularSection = styled.div`
         font-size: 1.25rem;
         text-align: center;
         width: 100%;
+      }
+    }
+    table {
+      thead {
+        font-size: 0.75rem;
+      }
+      tbody {
+        font-size: 0.75rem;
+        .tooL {
+          font-size: 0.75rem;
+        }
       }
     }
   }

@@ -20,7 +20,12 @@ const SelectedNews = () => {
         <Hero title="Naujienos">
           <FontAwesomeIcon icon={faRss} beatFade />
         </Hero>
-        <SelectedNewsCard title={state[0].title} subtitle={state[0].text}>
+        <SelectedNewsCard
+          title={state[0].title}
+          subtitle={state[0].text}
+          link={state[0].linkto}
+          href={state[0].linkto}
+        >
           <div className="newsContainer">
             <p className="newsDate">{state[0].date.slice(0, 10)}</p>
           </div>
