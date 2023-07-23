@@ -25,7 +25,7 @@ const Checkbox = ({
           <label className="label" htmlFor={label}>
             {label}
           </label>
-          <span onClick={handleClick}> Sąlygomis ir Nustatymais*</span>
+          <span onClick={handleClick}> su LKTrA narystės sąlygomis*</span>
         </div>
       </div>
     </S.Checkbox>

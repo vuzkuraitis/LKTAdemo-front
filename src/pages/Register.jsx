@@ -42,7 +42,6 @@ const Home = () => {
     const data = await res.json();
 
     setTerms(data);
-    console.log(data);
   };
   useEffect(() => {
     getTerms();

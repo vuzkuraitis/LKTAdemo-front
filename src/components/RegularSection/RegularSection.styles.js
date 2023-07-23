@@ -124,17 +124,9 @@ export const RegularSection = styled.div`
     }
     tbody {
       font-size: 0.4rem;
-
-      /* th,
-      td {
-        width: 15%;
-      } */
-      /* td:nth-child(4) {
+      /* .big {
         width: 30%;
       } */
-      .big {
-        width: 30%;
-      }
       .tooL {
         font-size: 0.35rem;
       }

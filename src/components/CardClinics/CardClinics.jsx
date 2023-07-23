@@ -6,31 +6,41 @@ import SubmitClinicForm from "../SubmitClinicForm/SubmitClinicForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRectangleList } from "@fortawesome/free-solid-svg-icons";
 
-const CardClinics = ({ clinics, initiatePayment }) => {
+const CardClinics = ({ clinics, initiatePayment, licensePrice, payments }) => {
   // const navigate = useNavigate();
   const [selectedClinicId, updateSelectedClinicId] = useState(null);
-  console.log(selectedClinicId);
 
   const selectedClinic = clinics.find((item) => item.id === selectedClinicId);
-  console.log(selectedClinic);
 
   return (
-    <S.CardClinics>
+    <S.CardClinics licensePrice={licensePrice}>
       <div className="usercliniccard">
         <div className="usercliniccardsvg">
           <FontAwesomeIcon icon={faRectangleList} />
         </div>
         <div className="usercliniclistwrapper">
-          <h3>
-            Metinis licenzijos mokestis: <span>0.01 EUR</span>
-          </h3>
+          {licensePrice &&
+            licensePrice.map((licensePric) => (
+              <h3 key={licensePric.id}>
+                Metinis licenzijos mokestis:
+                <span>{licensePric.licensePrice} EUR</span>
+              </h3>
+            ))}
           <div className="clinicslist">
             <h3>Seminarai</h3>
             <ul>
               {clinics &&
                 clinics.map((clinic) => (
                   <li id={clinic.id} value={clinic.id} key={clinic.id}>
-                    {clinic.name} <span>Kaina: {clinic.price} EUR</span>
+                    {clinic.name}{" "}
+                    {payments &&
+                      payments.map((payment) => (
+                        <span key={payment.id}>
+                          {payment.status === "success"
+                            ? "Seminaras LKTrA nariams nemokamas"
+                            : `Kaina: ${clinic.price} EUR`}
+                        </span>
+                      ))}
                   </li>
                 ))}
             </ul>

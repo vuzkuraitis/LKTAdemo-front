@@ -10,6 +10,8 @@ const CardClinicPayment = ({
   newParams,
   state,
   handleClick,
+  payments,
+  initiateRegistration,
 }) => {
   const selectedClinicData = clinics
     .map((clinic) => ({
@@ -56,19 +58,49 @@ const CardClinicPayment = ({
                   </div>
                   <div className="cliniccarditem">
                     <h4>Kaina:</h4>
-                    <p>{selectedClinicData[0].price} EUR</p>
+                    {payments &&
+                      payments.map((payment) => (
+                        <p key={payment.id}>
+                          {payment.status === "success"
+                            ? "Seminaras  LKTrA nariams nemokamas"
+                            : `Kaina: ${selectedClinicData[0].price} EUR`}
+                        </p>
+                      ))}
                   </div>
-                  <a href={state[0].url}>
-                    <PaymentButton
-                      type="button"
-                      id={selectedClinicData[0].id}
-                      value={selectedClinicData[0].id}
-                      key={selectedClinicData[0].id}
-                      handleClick={handleClick}
-                    >
-                      Mokėti
-                    </PaymentButton>
-                  </a>
+                  {payments &&
+                    payments.map((payment) => (
+                      <div key={payment.id}>
+                        {payment.status === "success" ? (
+                          <a href="/account/clinics">
+                            <PaymentButton
+                              type="button"
+                              id={selectedClinicData[0].id}
+                              value={selectedClinicData[0].id}
+                              key={selectedClinicData[0].id}
+                              handleClick={(e) => {
+                                initiateRegistration(
+                                  Number(e.currentTarget.value)
+                                );
+                              }}
+                            >
+                              Registruotis
+                            </PaymentButton>
+                          </a>
+                        ) : (
+                          <a href={state[0].url}>
+                            <PaymentButton
+                              type="button"
+                              id={selectedClinicData[0].id}
+                              value={selectedClinicData[0].id}
+                              key={selectedClinicData[0].id}
+                              handleClick={handleClick}
+                            >
+                              Mokėti
+                            </PaymentButton>
+                          </a>
+                        )}
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>

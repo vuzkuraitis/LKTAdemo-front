@@ -6,7 +6,7 @@ export const Checkbox = styled.div`
     flex-direction: row;
     align-items: center;
     font-family: "Roboto", sans-serif;
-    font-size: 0.75rem;
+    /* font-size: 0.75rem; */
   }
 
   .label {

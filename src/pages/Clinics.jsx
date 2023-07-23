@@ -20,6 +20,7 @@ const Clinics = () => {
   const [clinics, setClinics] = useState([]);
   const [clinicData, setClinicData] = useState([]);
   const [clinicPayments, setClinicPayments] = useState([]);
+  const [payments, setPayments] = useState([]);
 
   const navigate = useNavigate();
 
@@ -49,7 +50,7 @@ const Clinics = () => {
       }
     );
     const data = await res.json();
-    console.log(data);
+
     setClinicData(data);
   };
   useEffect(() => {
@@ -70,6 +71,22 @@ const Clinics = () => {
   };
   useEffect(() => {
     getClinics();
+  }, []);
+
+  const getUserPaymentData = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/license/account-payment`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const data = await res.json();
+    setPayments(data);
+  };
+  useEffect(() => {
+    getUserPaymentData();
   }, []);
 
   const initiatePayment = async (id) => {
@@ -100,7 +117,7 @@ const Clinics = () => {
     }
   };
 
-  if (!users || !clinics || !clinicData) {
+  if (users.length < 0 || clinics.length < 0 || clinicData.length < 0) {
     <Loading />;
   }
 
@@ -153,6 +170,7 @@ const Clinics = () => {
             </Swiper>
           </div>
           <CardClinicsPayment
+            payments={payments}
             clinics={clinics}
             clinicPayments={clinicPayments}
             clinicData={clinicData}

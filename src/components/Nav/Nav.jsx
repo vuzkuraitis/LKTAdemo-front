@@ -18,26 +18,31 @@ const Nav = () => {
 
   const publicLinks = [
     {
+      id: 1,
       url: "/",
       title: "Pradžia",
       icon: "house",
     },
     {
+      id: 2,
       url: "/news",
       title: "Naujienos",
       icon: "rss",
     },
     {
+      id: 3,
       url: "/license",
       title: "Pažymėjimai",
       icon: "magnifying-glass",
     },
     {
+      id: 4,
       url: "/studies",
       title: "Studijos",
       icon: "graduation-cap",
     },
     {
+      id: 5,
       url: "/register",
       title: "Registracija",
       icon: "user-plus",
@@ -46,21 +51,25 @@ const Nav = () => {
 
   const privateLinks = [
     {
+      id: 1,
       url: "/account",
       title: "Paskyra",
       icon: "user",
     },
     {
+      id: 2,
       url: "/account/material",
       title: "Metodinė Medžiaga",
       icon: "book-open",
     },
     {
+      id: 3,
       url: "/account/clinics",
       title: "Kursai ir Seminarai",
       icon: "school",
     },
     {
+      id: 4,
       url: "/account/settings",
       title: "Nustatymai",
       icon: "gear",
@@ -69,14 +78,17 @@ const Nav = () => {
 
   const adminLinks = [
     {
+      id: 1,
       url: "/admin/admin-account",
       title: "Account",
     },
     {
+      id: 2,
       url: "/admin/admin-clinics",
       title: "Clinics",
     },
     {
+      id: 3,
       url: "/admin/admin-news",
       title: "News",
     },
@@ -108,7 +120,7 @@ const Nav = () => {
                 {adminLinks.map((adminlink) => (
                   <Link
                     to={adminlink.url}
-                    key={adminlink.title}
+                    key={adminlink.id}
                     className="navbar-item"
                     onClick={() => setActive(null)}
                   >
@@ -130,10 +142,10 @@ const Nav = () => {
           : links && (
               <S.BurgerMenu active={active}>
                 {links.map((link) => (
-                  <div className="navbarlinks">
+                  <div className="navbarlinks" key={link.id}>
                     <Link
                       to={link.url}
-                      key={link.title}
+                      key={link.id}
                       className="navbar-item"
                       onClick={() => setActive(null)}
                     >

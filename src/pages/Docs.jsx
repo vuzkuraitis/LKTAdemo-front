@@ -14,13 +14,13 @@ const Docs = () => {
         <div className="cookies">
           <h4>Krepšinio trenerio pažymėjimo įgijimo tvarka</h4>
           <Link to={TrenerioPaz} target="_blank" download>
-            <Button>Parsisiūsti</Button>
+            <Button>Parsisiųsti</Button>
           </Link>
         </div>
         <div className="cookies">
           <h4>LKTrA Įstatai</h4>
           <Link to={LKTrAIst} target="_blank" download>
-            <Button>Parsisiūsti</Button>
+            <Button>Parsisiųsti</Button>
           </Link>
         </div>
       </RegularSection>

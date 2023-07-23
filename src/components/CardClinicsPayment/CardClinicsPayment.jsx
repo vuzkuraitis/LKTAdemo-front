@@ -6,7 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Loading from "../Loading/Loading";
 
-const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
+const CardClinicsPayment = ({
+  clinics,
+  clinicData,
+  initiatePayment,
+  payments,
+}) => {
   const newClinicData = clinics.map((clinic) => ({
     ...clinic,
     clinicData: clinicData.filter((it) => it.clinics_id === clinic.id),
@@ -55,7 +60,14 @@ const CardClinicsPayment = ({ clinics, clinicData, initiatePayment }) => {
                       </div>
                       <div className="cliniccarditem">
                         <h4>Kaina:</h4>
-                        <p>{clinic.price} EUR</p>
+                        {payments &&
+                          payments.map((payment) => (
+                            <p key={payment.id}>
+                              {payment.status === "success"
+                                ? "Seminaras LKTrA nariams nemokamas"
+                                : `Kaina: ${clinic.price} EUR`}
+                            </p>
+                          ))}
                       </div>
                       {clinic.clinicData.length > 0 &&
                       clinic.clinicData[0].status === "completed" ? (

@@ -20,6 +20,7 @@ const Clinic = () => {
   const [error, setError] = useState();
   const [clinics, setClinics] = useState([]);
   const [clinicData, setClinicData] = useState([]);
+  const [payments, setPayments] = useState([]);
 
   const getUserClinicsData = async () => {
     const res = await fetch(
@@ -35,6 +36,22 @@ const Clinic = () => {
   };
   useEffect(() => {
     getUserClinicsData();
+  }, []);
+
+  const getUserPaymentData = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/license/account-payment`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const data = await res.json();
+    setPayments(data);
+  };
+  useEffect(() => {
+    getUserPaymentData();
   }, []);
 
   const getClinics = async () => {
@@ -53,6 +70,29 @@ const Clinic = () => {
     getClinics();
   }, []);
 
+  const initiateRegistration = async (id) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic-registration-members?id=${id}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(),
+        }
+      );
+      const data = await res.json();
+
+      if (data.err) {
+        return setError(data.err);
+      }
+
+      return res.send(data);
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
+
   if (clinicData.length === 0 || clinics.length === 0) {
     <Loading />;
   }
@@ -70,10 +110,12 @@ const Clinic = () => {
         </Hero>
         <div className="account">
           <CardClinicPayment
+            payments={payments}
             clinics={clinics}
             clinicData={clinicData}
             newParams={newParams}
             state={state}
+            initiateRegistration={initiateRegistration}
           />
         </div>
       </RegularSection>

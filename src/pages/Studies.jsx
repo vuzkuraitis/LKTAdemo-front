@@ -20,11 +20,13 @@ const Studies = () => {
           <p>Pasiekimų sportas</p>
           <table>
             <thead>
-              <th>Aukštoji mokykla</th>
-              <th>Studijų programa</th>
-              <th>Kvalifikacinis laipsnis</th>
-              <th>Specializacija</th>
-              <th>Nuoroda</th>
+              <tr>
+                <th>Aukštoji mokykla</th>
+                <th>Studijų programa</th>
+                <th>Kvalifikacinis laipsnis</th>
+                <th>Specializacija</th>
+                <th>Nuoroda</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
@@ -77,11 +79,13 @@ const Studies = () => {
           <p>Laisvalaikio sportas</p>
           <table>
             <thead>
-              <th>Aukštoji mokykla</th>
-              <th>Studijų programa</th>
-              <th>Kvalifikacinis laipsnis</th>
-              <th>Specializacija</th>
-              <th>Nuoroda</th>
+              <tr>
+                <th>Aukštoji mokykla</th>
+                <th>Studijų programa</th>
+                <th>Kvalifikacinis laipsnis</th>
+                <th>Specializacija</th>
+                <th>Nuoroda</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
@@ -119,10 +123,12 @@ const Studies = () => {
           </h4>
           <table>
             <thead>
-              <th>Aukštoji mokykla</th>
-              <th>Studijų programa</th>
-              <th>Kvalifikacinis laipsnis</th>
-              <th>Nuoroda</th>
+              <tr>
+                <th>Aukštoji mokykla</th>
+                <th>Studijų programa</th>
+                <th>Kvalifikacinis laipsnis</th>
+                <th>Nuoroda</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
@@ -160,9 +166,11 @@ const Studies = () => {
           <h4>NEFORMALUS MOKYMAS</h4>
           <table>
             <thead>
-              <th>Universitetas</th>
-              <th>Kursų pavadinimas</th>
-              <th>Nuoroda</th>
+              <tr>
+                <th>Universitetas</th>
+                <th>Kursų pavadinimas</th>
+                <th>Nuoroda</th>
+              </tr>
             </thead>
             <tbody>
               <tr>

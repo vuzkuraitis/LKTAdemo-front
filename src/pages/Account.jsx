@@ -24,6 +24,7 @@ const Account = () => {
   const [payments, setPayments] = useState([]);
   const [clinics, setClinics] = useState([]);
   const [clinicPayments, setClinicPayments] = useState([]);
+  const [licensePrice, setLicensePrice] = useState([]);
 
   const clinicPhotos = [
     { id: 1, name: Clinic1 },
@@ -48,6 +49,22 @@ const Account = () => {
   };
   useEffect(() => {
     getUserData();
+  }, []);
+
+  const getPriceData = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/users/price`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const data = await res.json();
+    setLicensePrice(data);
+  };
+  useEffect(() => {
+    getPriceData();
   }, []);
 
   const getUserPaymentData = async () => {
@@ -110,7 +127,7 @@ const Account = () => {
     }
   };
 
-  if (users.length < 0 || payments.length < 0) {
+  if (users.length < 0 || payments.length < 0 || licensePrice.length < 0) {
     <Loading />;
   }
 
@@ -132,6 +149,8 @@ const Account = () => {
           </div>
           <div className="clinicSwiper">
             <CardClinics
+              payments={payments}
+              licensePrice={licensePrice}
               clinics={clinics}
               clinicPayments={clinicPayments}
               initiatePayment={initiatePayment}
