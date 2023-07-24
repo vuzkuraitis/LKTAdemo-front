@@ -29,9 +29,11 @@ const CardPayment = ({ payments, id }) => {
                     <span>Apmokėta</span>
                   </h3>
                   <h3>
-                    Galioja:
-                    <span className="licensestatusyear">{payment.year}</span>
-                    metams
+                    Galioja iki:
+                    <span className="licensestatusyear">
+                      {new Date().getFullYear() + 1}
+                    </span>
+                    metų
                   </h3>
                 </div>
               ) : (
@@ -46,14 +48,14 @@ const CardPayment = ({ payments, id }) => {
                   <span>
                     Statusas: <span className="red"></span>
                   </span>
-                  Licenzija yra neaktyvi todėl, kad yra neapmokėta, arba
+                  Pažymėjimas yra neaktyvus todėl, kad yra neapmokėta, arba
                   mokėjimas vis dar vykdomas.
                 </p>
                 <p>
                   <span>
                     Statusas: <span className="green"></span>
                   </span>
-                  Licenzija yra aktyvi.
+                  Pažymėjimas yra aktyvus.
                 </p>
               </div>
             </div>

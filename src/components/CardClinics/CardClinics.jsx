@@ -22,7 +22,7 @@ const CardClinics = ({ clinics, initiatePayment, licensePrice, payments }) => {
           {licensePrice &&
             licensePrice.map((licensePric) => (
               <h3 key={licensePric.id}>
-                Metinis licenzijos mokestis:
+                Metinis pažymėjimo mokestis:
                 <span>{licensePric.licensePrice} EUR</span>
               </h3>
             ))}

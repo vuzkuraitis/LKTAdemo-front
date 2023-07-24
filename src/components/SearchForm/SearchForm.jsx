@@ -15,18 +15,17 @@ const SearchForm = ({ handleSubmit, setSelectedUsers }) => {
             e.preventDefault();
             e.target.reset();
 
-            handleSubmit(cardValues.name);
+            handleSubmit(cardValues.surname);
             setSelectedUsers([]);
-            console.log(cardValues.name);
           }}
         >
           <TextInput
             className="always"
             type="text"
             label="Paieška"
-            placeholder="Paieška pagal Vardą..."
-            handleChange={(nameValue) =>
-              updateCardValues({ ...cardValues, name: nameValue })
+            placeholder="Paieška pagal Pavardę..."
+            handleChange={(surnameValue) =>
+              updateCardValues({ ...cardValues, surname: surnameValue })
             }
           />
           <Button type="submit">Ieškoti</Button>

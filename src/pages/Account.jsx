@@ -17,6 +17,7 @@ import { useNavigate } from "react-router";
 import Notification from "../components/Notification/Notification";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import CardClinicsHistory from "../components/CardClinicsHistory/CardClinicsHistory";
 
 const Account = () => {
   const [error, setError] = useState();
@@ -25,6 +26,7 @@ const Account = () => {
   const [clinics, setClinics] = useState([]);
   const [clinicPayments, setClinicPayments] = useState([]);
   const [licensePrice, setLicensePrice] = useState([]);
+  const [clinicHistory, setClinicHistory] = useState([]);
 
   const clinicPhotos = [
     { id: 1, name: Clinic1 },
@@ -81,6 +83,23 @@ const Account = () => {
   };
   useEffect(() => {
     getUserPaymentData();
+  }, []);
+
+  const getClinicHistory = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/clinics/clinic-history`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const data = await res.json();
+    console.log(data);
+    setClinicHistory(data);
+  };
+  useEffect(() => {
+    getClinicHistory();
   }, []);
 
   const getClinics = async () => {
@@ -155,6 +174,7 @@ const Account = () => {
               clinicPayments={clinicPayments}
               initiatePayment={initiatePayment}
             />
+            <CardClinicsHistory clinicHistory={clinicHistory} />
             <Swiper
               modules={[Autoplay, Navigation, EffectFade]}
               navigation

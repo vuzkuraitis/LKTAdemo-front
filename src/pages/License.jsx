@@ -15,9 +15,9 @@ const Home = () => {
   const [users, setUsers] = useState();
   const [selectedUsers, setSelectedUsers] = useState([]);
 
-  const getUsers = async (name) => {
+  const getUsers = async (surname) => {
     const res = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/v1/users?name=${name}`,
+      `${process.env.REACT_APP_BACKEND_URL}/v1/users?surname=${surname}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +42,6 @@ const Home = () => {
 
     setSelectedUsers(data);
   };
-
   return (
     <>
       <RegularSection>

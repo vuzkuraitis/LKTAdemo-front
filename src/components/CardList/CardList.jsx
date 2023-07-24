@@ -15,6 +15,7 @@ const CardList = ({ cards, className }) => {
             surname={card.surname}
             email={card.email}
             license_nr={card.license_nr}
+            status={card.status}
           />
         ))}
     </S.CardList>
