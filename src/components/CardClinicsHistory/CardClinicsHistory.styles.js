@@ -57,7 +57,7 @@ export const CardClinicsHistory = styled.div`
   }
 
   ol {
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     color: #012169;
     text-align: left;
   }
