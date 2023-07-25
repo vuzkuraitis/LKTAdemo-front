@@ -95,7 +95,6 @@ const Account = () => {
       }
     );
     const data = await res.json();
-    console.log(data);
     setClinicHistory(data);
   };
   useEffect(() => {
