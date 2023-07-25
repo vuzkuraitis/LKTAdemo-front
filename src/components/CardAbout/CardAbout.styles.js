@@ -5,7 +5,7 @@ export const CardAbout = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 0.75rem;
-  justify-content: center;
+  align-items: center;
   color: #808080;
   border-radius: 0.5rem;
   font-family: "Roboto", sans-serif;
@@ -16,10 +16,15 @@ export const CardAbout = styled.div`
   -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.75);
 
   .aboutper {
-    img {
-      margin: 0 auto 1rem;
-      display: block;
-      width: 80%;
+    .img {
+      display: flex;
+      margin: 0 auto;
+      height: 260px;
+      width: 260px;
+      img {
+        background-size: cover;
+        display: block;
+      }
     }
   }
 
@@ -33,11 +38,27 @@ export const CardAbout = styled.div`
     margin-bottom: 0.5rem;
   }
 
+  li {
+    text-align: left;
+  }
+
   @media screen and (min-width: 768px) {
     width: 48%;
+    .aboutper {
+      .img {
+        height: 250px;
+        width: 250px;
+      }
+    }
   }
 
   @media screen and (min-width: 1024px) {
     width: 48%;
+    .aboutper {
+      .img {
+        height: 280px;
+        width: 280px;
+      }
+    }
   }
 `;

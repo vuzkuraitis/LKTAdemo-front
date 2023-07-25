@@ -53,7 +53,11 @@ const Footer = ({ children }) => {
       </div>
       <p>Sekite mus:</p>
       <div className="socialMedia">
-        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.facebook.com/people/Lietuvos-krep%C5%A1inio-treneri%C5%B3-asociacija/100030635756362/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon icon={faFacebook} className="footer-item" />
         </a>
       </div>
