@@ -25,7 +25,7 @@ const CardClinicsHistory = ({ clinicHistory }) => {
               <ol>
                 {clinicHistory &&
                   clinicHistory.map((clinic) => (
-                    <li>
+                    <li key={clinic.id}>
                       {clinic.name} <span>Valandos: {clinic.hours}h</span>
                     </li>
                   ))}

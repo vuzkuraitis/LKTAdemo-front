@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import * as S from "./CardClinics.styles";
 import SubmitClinicForm from "../SubmitClinicForm/SubmitClinicForm";
-// import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRectangleList } from "@fortawesome/free-solid-svg-icons";
 
 const CardClinics = ({ clinics, initiatePayment, licensePrice, payments }) => {
-  // const navigate = useNavigate();
   const [selectedClinicId, updateSelectedClinicId] = useState(null);
-
   const selectedClinic = clinics.find((item) => item.id === selectedClinicId);
 
   return (
@@ -66,9 +63,15 @@ const CardClinics = ({ clinics, initiatePayment, licensePrice, payments }) => {
               <h3>
                 <span>Vieta</span> {selectedClinic.place}
               </h3>
-              <h3>
-                <span>Kaina</span> {selectedClinic.price} EUR
-              </h3>
+              {payments &&
+                payments.map((payment) => (
+                  <h3 key={payment.id}>
+                    <span>Kaina</span>
+                    {payment.status === "success"
+                      ? "Seminaras LKTrA nariams nemokamas"
+                      : `${selectedClinic.price} EUR`}
+                  </h3>
+                ))}
             </div>
           ) : null}
         </div>
