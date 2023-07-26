@@ -54,9 +54,9 @@ const Material = () => {
               <div>
                 {material &&
                   material.map((materials) => (
-                    <div>
-                      <a href="http://www.basketballstudies.com/">
-                        http://www.basketballstudies.com/
+                    <div key={materials.id}>
+                      <a href="https://ibuvideo.com/my-account/">
+                        https://ibuvideo.com/my-account/
                       </a>
                       <p>
                         Login: <span>{materials.login}</span>

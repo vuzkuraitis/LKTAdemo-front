@@ -35,6 +35,7 @@ const Docs = () => {
             <CardAbout className="aboutCard">
               <div className="aboutper">
                 <h4>LKTrA Prezidentas</h4>
+                <h3>Rimantas Grigas</h3>
                 <div className="img">
                   <img src={Rg} alt="Rg" />
                 </div>
@@ -92,6 +93,7 @@ const Docs = () => {
             <CardAbout className="aboutCard">
               <div className="aboutper">
                 <h4>LKTrA Generalinis sekretorius</h4>
+                <h3>Algirdas Paulauskas</h3>
                 <div className="img">
                   <img src={Ap} alt="Ap" />
                 </div>
