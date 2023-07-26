@@ -55,7 +55,7 @@ const Material = () => {
                 {material &&
                   material.map((materials) => (
                     <div key={materials.id}>
-                      <a href="https://ibuvideo.com/my-account/">
+                      <a href="https://ibuvideo.com/my-account/" target="blank">
                         https://ibuvideo.com/my-account/
                       </a>
                       <p>
@@ -81,7 +81,7 @@ const Material = () => {
                 platforma:
               </h3>
               <div>
-                <a href="https://wabc.fiba.com/videos/">
+                <a href="https://wabc.fiba.com/videos/" target="blank">
                   https://wabc.fiba.com/videos/
                 </a>
               </div>
@@ -96,7 +96,7 @@ const Material = () => {
             <div className="materialContent">
               <h3>Australijos krepšinio trenerių mokymo video platforma:</h3>
               <div>
-                <a href="https://coach.basketball.net.au/video/">
+                <a href="https://coach.basketball.net.au/video/" target="blank">
                   https://coach.basketball.net.au/video/
                 </a>
               </div>

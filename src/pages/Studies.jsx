@@ -51,7 +51,10 @@ const Studies = () => {
                   slidinėjimas, biatlonas, snieglentės); žirginis sportas
                 </td>
                 <td>
-                  <a href="https://www.lsu.lt/studijos/studiju-programos/pirmosios-pakopos-bakalauro-studijos/treniravimo-sistemos/">
+                  <a
+                    href="https://www.lsu.lt/studijos/studiju-programos/pirmosios-pakopos-bakalauro-studijos/treniravimo-sistemos/"
+                    target="blank"
+                  >
                     https://www.lsu.lt/studijos/studiju-programos/pirmosios-pakopos-bakalauro-studijos/treniravimo-sistemos/
                   </a>
                 </td>
@@ -68,7 +71,10 @@ const Studies = () => {
                   gilinamuosius modulius.
                 </td>
                 <td>
-                  <a href="https://www.vdu.lt/lt/studiju-programa/sporto-studijos/">
+                  <a
+                    href="https://www.vdu.lt/lt/studiju-programa/sporto-studijos/"
+                    target="blank"
+                  >
                     https://www.vdu.lt/lt/studiju-programa/sporto-studijos/
                   </a>
                 </td>
@@ -99,7 +105,10 @@ const Studies = () => {
                   Specializacijos – futbolas, krepšinis, laisvalaikio sportas
                 </td>
                 <td>
-                  <a href="https://www.ku.lt/lt/bakalauro-studijos-2/sportas/laisvalaikio-sportas">
+                  <a
+                    href="https://www.ku.lt/lt/bakalauro-studijos-2/sportas/laisvalaikio-sportas"
+                    target="blank"
+                  >
                     https://www.ku.lt/lt/bakalauro-studijos-2/sportas/laisvalaikio-sportas
                   </a>
                 </td>
@@ -110,7 +119,10 @@ const Studies = () => {
                 <td>Sporto bakalauro kvalifikacinis laipsnis</td>
                 <td> - </td>
                 <td>
-                  <a href="https://www.lsu.lt/studijos/studiju-programos/pirmosios-pakopos-bakalauro-studijos/pratimai-mityba-ir-stresas/">
+                  <a
+                    href="https://www.lsu.lt/studijos/studiju-programos/pirmosios-pakopos-bakalauro-studijos/pratimai-mityba-ir-stresas/"
+                    target="blank"
+                  >
                     https://www.lsu.lt/studijos/studiju-programos/pirmosios-pakopos-bakalauro-studijos/pratimai-mityba-ir-stresas/
                   </a>
                 </td>
@@ -136,7 +148,10 @@ const Studies = () => {
                 <td>Treniravimo sistemos</td>
                 <td>Sporto magistro kvalifikacinis laipsnis</td>
                 <td>
-                  <a href="https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/treniravimo-sistemos/">
+                  <a
+                    href="https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/treniravimo-sistemos/"
+                    target="blank"
+                  >
                     https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/treniravimo-sistemos/
                   </a>
                 </td>
@@ -146,7 +161,10 @@ const Studies = () => {
                 <td>Sportinės veiklos analizė</td>
                 <td>Sporto magistro kvalifikacinis laipsnis</td>
                 <td>
-                  <a href="https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/sportines-veiklos-analize-international-master-performance-analysis-sport/">
+                  <a
+                    href="https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/sportines-veiklos-analize-international-master-performance-analysis-sport/"
+                    target="blank"
+                  >
                     https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/sportines-veiklos-analize-international-master-performance-analysis-sport/
                   </a>
                 </td>
@@ -156,7 +174,10 @@ const Studies = () => {
                 <td>Krepšinio treniravimas ir valdymas</td>
                 <td>Sporto magistro kvalifikacinis laipsnis</td>
                 <td>
-                  <a href="https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/krepsinio-treniravimas-ir-valdymas/">
+                  <a
+                    href="https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/krepsinio-treniravimas-ir-valdymas/"
+                    target="blank"
+                  >
                     https://www.lsu.lt/studijos/studiju-programos/antrosios-pakopos-magistranturos-studijos/krepsinio-treniravimas-ir-valdymas/
                   </a>
                 </td>
@@ -177,7 +198,10 @@ const Studies = () => {
                 <td>Internation Basketball University (IBU)</td>
                 <td>Kursai krepšinio treneriams</td>
                 <td className="tooL">
-                  <a href="http://www.basketballstudies.com/avada_portfolio/basketball_courses/">
+                  <a
+                    href="http://www.basketballstudies.com/avada_portfolio/basketball_courses/"
+                    target="blank"
+                  >
                     http://www.basketballstudies.com/avada_portfolio/basketball_courses/
                   </a>
                 </td>
@@ -186,7 +210,10 @@ const Studies = () => {
                 <td>Internation Basketball University (IBU)</td>
                 <td>Kursai krepšinio vadybininkams</td>
                 <td className="tooL">
-                  <a href="http://www.basketballstudies.com/avada_portfolio/basketball_courses-2/">
+                  <a
+                    href="http://www.basketballstudies.com/avada_portfolio/basketball_courses-2/"
+                    target="blank"
+                  >
                     http://www.basketballstudies.com/avada_portfolio/basketball_courses-2/
                   </a>
                 </td>
