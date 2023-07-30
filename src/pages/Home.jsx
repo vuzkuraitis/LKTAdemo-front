@@ -11,6 +11,7 @@ import "swiper/css/effect-fade";
 import InfoCard from "../components/InfoCard/InfoCard";
 import Button from "../components/Button/Button";
 import CookiePopup from "../components/CookiePopup/CookiePopup";
+import Seo from "../components/Seo/Seo";
 
 const Home = () => {
   const photos = [
@@ -21,6 +22,12 @@ const Home = () => {
 
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Titulinis"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <div className="intro">
         <CookiePopup />
         <div className="homeswiper">
