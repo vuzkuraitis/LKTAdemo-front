@@ -5,7 +5,7 @@ export const PopupInfo = styled.div`
   font-size: 0.75rem;
   text-align: center;
 
-  p {
+  ol {
     text-align: justify;
 
     li {

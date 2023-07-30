@@ -53,8 +53,12 @@ const Home = () => {
           </Swiper>
         </div>
         <div className="lktalogo">
-          <h2>Lietuvos Krepšinio Trenerių Asociacija</h2>
-          <img src={lktalogo1} alt="lktalogo" className="imagelogo" />
+          <div className="lktalogoinner">
+            <div className="lktalogoinnercontainer">
+              <h2>Lietuvos Krepšinio Trenerių Asociacija</h2>
+              <img src={lktalogo1} alt="lktalogo" className="imagelogo" />
+            </div>
+          </div>
         </div>
       </div>
       <InfoCard

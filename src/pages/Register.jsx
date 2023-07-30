@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import RegularSection from "../components/RegularSection/RegularSection";
 import Loading from "../components/Loading/Loading";
-import Notification from "../components/Notification/Notification";
 import RegisterForm from "../components/RegisterForm/RegisterForm";
 import Popup from "../components/Popup/Popup";
 import PopupInfo from "../components/PopupInfo/PopupInfo";
 import Seo from "../components/Seo/Seo";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [error, setError] = useState();
@@ -13,6 +13,8 @@ const Home = () => {
   const [checked, setChecked] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
   const [terms, setTerms] = useState([]);
+
+  const navigate = useNavigate();
 
   const getUsers = async (name) => {
     const res = await fetch(
@@ -89,9 +91,20 @@ const Home = () => {
       />
       <RegularSection>
         {error && (
-          <Notification handleClick={() => setError(null)}>
-            {error}
-          </Notification>
+          <Popup
+            error={error}
+            handleClick={() => {
+              setError(null);
+              navigate(
+                error === "Registration Successful" ? "/login" : "/register"
+              );
+            }}
+          >
+            <p>
+              Registracija{" "}
+              {error === "Registration Successful" ? "Sėkminga" : "Nesėkminga"}
+            </p>
+          </Popup>
         )}
         <RegisterForm
           checked={checked}

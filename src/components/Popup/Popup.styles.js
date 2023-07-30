@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const Popup = styled.div`
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   left: 0;
   top: 0;
@@ -11,9 +14,10 @@ export const Popup = styled.div`
 
   .inner-popup {
     position: relative;
+    min-height: 10%;
     width: 80%;
     background-color: #ffffff;
-    margin: 5rem auto;
+    /* margin: 5rem auto; */
     overflow: scroll;
     padding: 1rem;
   }
@@ -31,6 +35,10 @@ export const Popup = styled.div`
 
   .popup-info > .field > label {
     color: #ffffff;
+  }
+
+  p {
+    text-align: center;
   }
   @media screen and (min-width: 530px) {
     .inner-popup {
