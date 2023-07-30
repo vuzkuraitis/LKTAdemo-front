@@ -23,8 +23,8 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="Lietuvos Krepšinio Trenerių Asociacija"
-        description="Titulinis"
+        title="Lietuvos Krepšinio Trenerių Asociacija | Pradžia"
+        description="Pradžia"
         type="webapp"
         name="Krepšinio Treneris"
       />
@@ -58,8 +58,8 @@ const Home = () => {
         </div>
       </div>
       <InfoCard
-        title="Licenzijos Galiojimas"
-        subtitle="Jeigu jau esate prisiregistravęs, čia galite labai lengvai patikrinti savo lincezijos statusą."
+        title="Pažymėjimo Galiojimas"
+        subtitle="Jeigu jau esate prisiregistravęs, čia galite labai lengvai patikrinti savo pažymėjimo galiojimo laiką."
       >
         <Link to="/license">
           <Button type="button">Tikrinti</Button>
