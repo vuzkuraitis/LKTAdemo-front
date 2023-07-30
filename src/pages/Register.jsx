@@ -5,6 +5,7 @@ import Notification from "../components/Notification/Notification";
 import RegisterForm from "../components/RegisterForm/RegisterForm";
 import Popup from "../components/Popup/Popup";
 import PopupInfo from "../components/PopupInfo/PopupInfo";
+import Seo from "../components/Seo/Seo";
 
 const Home = () => {
   const [error, setError] = useState();
@@ -80,6 +81,12 @@ const Home = () => {
 
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Registracija"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <RegularSection>
         {error && (
           <Notification handleClick={() => setError(null)}>

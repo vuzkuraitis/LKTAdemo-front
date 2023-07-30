@@ -4,10 +4,17 @@ import Hero from "../components/Hero/Hero";
 import Rg from "../assets/RG.JPG";
 import Ap from "../assets/AP.JPG";
 import CardAbout from "../components/CardAbout/CardAbout";
+import Seo from "../components/Seo/Seo";
 
 const Docs = () => {
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Apie"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <RegularSection>
         <Hero title="Apie mus" />
         <div className="about">

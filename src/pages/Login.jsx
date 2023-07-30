@@ -3,6 +3,7 @@ import RegularSection from "../components/RegularSection/RegularSection";
 import Notification from "../components/Notification/Notification";
 import LoginForm from "../components/LoginForm/LoginForm";
 import { useNavigate } from "react-router-dom";
+import Seo from "../components/Seo/Seo";
 
 const Login = () => {
   const [error, setError] = useState();
@@ -36,6 +37,12 @@ const Login = () => {
 
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Prisijungti"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <RegularSection className="login">
         {error && (
           <Notification handleClick={() => setError(null)}>

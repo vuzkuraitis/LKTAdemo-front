@@ -23,10 +23,10 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="From Helmet trys"
+        title="Lietuvos Krepšinio Trenerių Asociacija"
         description="Pradžia"
         type="webapp"
-        name="From Helmet trys"
+        name="Krepšinio Treneris"
       />
       <div className="intro">
         <CookiePopup />

@@ -8,6 +8,7 @@ import CardMaterial from "../components/CardMaterial/CardMaterial";
 import ibu from "../assets/Ibu.png";
 import wab from "../assets/WAB.png";
 import BbAustralia from "../assets/BbAustralia.png";
+import Seo from "../components/Seo/Seo";
 
 const Material = () => {
   const [error, setError] = useState();
@@ -32,6 +33,12 @@ const Material = () => {
 
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Medžiaga"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <RegularSection>
         {error && (
           <Notification handleClick={() => setError(null)}>

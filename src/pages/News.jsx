@@ -7,6 +7,7 @@ import Loading from "../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRss } from "@fortawesome/free-solid-svg-icons";
+import Seo from "../components/Seo/Seo";
 
 const News = () => {
   const [news, setNews] = useState();
@@ -55,6 +56,12 @@ const News = () => {
 
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Naujienos"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <RegularSection>
         <Hero title="Naujienos">
           <FontAwesomeIcon icon={faRss} beatFade />

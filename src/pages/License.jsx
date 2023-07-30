@@ -10,6 +10,7 @@ import CardAbout from "../components/CardAbout/CardAbout";
 import Paz from "../assets/Paz.jpg";
 import Button from "../components/Button/Button";
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo/Seo";
 
 const Home = () => {
   const [users, setUsers] = useState();
@@ -44,6 +45,12 @@ const Home = () => {
   };
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Pažymėjimai"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <RegularSection>
         <Hero title="Surasti Trenerio Pažymėjimą">
           <FontAwesomeIcon icon={faMagnifyingGlass} beatFade />

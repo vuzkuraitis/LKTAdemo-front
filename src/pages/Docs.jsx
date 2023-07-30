@@ -5,10 +5,17 @@ import TrenerioPaz from "../files/Trenerio_pazymejimas.pdf";
 import LKTrAIst from "../files/LKTrA_istatai.pdf";
 import { Link } from "react-router-dom";
 import Button from "../components/Button/Button";
+import Seo from "../components/Seo/Seo";
 
 const Docs = () => {
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Dokumentai"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <RegularSection>
         <Hero title="Dokumentai" />
         <div className="cookies">

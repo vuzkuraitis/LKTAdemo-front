@@ -3,10 +3,17 @@ import RegularSection from "../components/RegularSection/RegularSection";
 import Hero from "../components/Hero/Hero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
+import Seo from "../components/Seo/Seo";
 
 const Studies = () => {
   return (
     <>
+      <Seo
+        title="Lietuvos Krepšinio Trenerių Asociacija"
+        description="Studijos"
+        type="webapp"
+        name="Krepšinio Treneris"
+      />
       <RegularSection>
         <Hero title="Studijos">
           <FontAwesomeIcon icon={faBuildingColumns} beatFade />
