@@ -7,9 +7,6 @@ const Popup = ({ handleClick, children }) => {
   return (
     <S.Popup>
       <div className="inner-popup">
-        {/* <button className="close-btn" onClick={handleClick}>
-          x
-        </button> */}
         {children}
         <div className="popbutton">
           <Button handleClick={handleClick}>Uždaryti</Button>

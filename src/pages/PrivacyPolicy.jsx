@@ -13,12 +13,12 @@ const Cookies = () => {
             Ši Privatumo politika taikoma visiems asmens duomenims, kuriuos jūs
             pateikiate mums arba kuriuos mes renkame ir tvarkome jums
             naudojantis Lietuvos krepšinio federacijos internetine svetaine
-            lktra.lt /ltu.basketball / shop.ltu.basketball Jūsų duomenis,
-            kuriuos mes renkame mūsų svetainėje, tvarko Lietuvos krepšinio
-            federacija (adresas: Santakos g. 11, LT-44279 Kaunas, Lietuva),
-            veikianti kaip duomenų valdytoja atitinkamoje šalyje. Mes gerbiame
-            jūsų privatumą ir saugome jūsų asmens duomenis, kuriuos pateikiate
-            mums per šią svetainę.
+            www.treneriai.com / ltu.basketball / shop.ltu.basketball Jūsų
+            duomenis, kuriuos mes renkame mūsų svetainėje, tvarko Lietuvos
+            krepšinio federacija (adresas: Santakos g. 11, LT-44279 Kaunas,
+            Lietuva), veikianti kaip duomenų valdytoja atitinkamoje šalyje. Mes
+            gerbiame jūsų privatumą ir saugome jūsų asmens duomenis, kuriuos
+            pateikiate mums per šią svetainę.
             <br />
             <br />
             Šioje Privatumo politikoje paaiškinama, kodėl mes renkame jūsų
@@ -78,7 +78,7 @@ const Cookies = () => {
             Telefonas: +370 611 28871,
             <br />
             <br />
-            El. paštas: treneris@lktra.lt
+            El. paštas: krepsinio@treneriai.com
           </p>
         </div>
       </RegularSection>

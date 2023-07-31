@@ -14,6 +14,9 @@ import CookiePopup from "../components/CookiePopup/CookiePopup";
 import Seo from "../components/Seo/Seo";
 
 const Home = () => {
+  // window.onbeforeunload = () => {
+  //   localStorage.removeItem("token");
+  // };
   const photos = [
     { id: 1, name: Home1 },
     { id: 2, name: Home2 },

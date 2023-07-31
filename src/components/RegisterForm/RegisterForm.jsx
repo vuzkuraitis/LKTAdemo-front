@@ -10,7 +10,13 @@ import Loading from "../Loading/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
-const RegisterForm = ({ handleSubmit, togglePopup, setChecked, checked }) => {
+const RegisterForm = ({
+  handleSubmit,
+  togglePopup,
+  setChecked,
+  checked,
+  terms,
+}) => {
   const [registerValues, updateRegisterValues] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -100,54 +106,27 @@ const RegisterForm = ({ handleSubmit, togglePopup, setChecked, checked }) => {
               <Button type="submit">Registruotis</Button>
             </form>
           </div>
-          <div className="termsconditions">
-            <h4>
-              NARYSTĖS LIETUVOS KREPŠINIO TRENERIŲ ASOCIACIJOJE (LKTrA)
-              REGLAMENTAS 2023 m. Liepos 1 d.
-            </h4>
-            <p>
-              Lietuvos krepšinio trenerių asociacijos tikraisiais nariais
-              (toliau nariais) gali būti Lietuvos Respublikos piliečiai:
-              Lietuvos sporto mokyklų, lygų, klubų ir kitų krepšinio komandų
-              treneriai.
-            </p>
-            <p>Asociacijos narių teisės:</p>
-            <ol>
-              <li>
-                Asociacijos nariai turi teisę teikti pasiūlymus dėl veiklos
-                organizavimo gerinimo, teikti pretenzijas, pareikalauti
-                finansinės atskaitomybės už Asociacijos lėšų panaudojimą ir
-                kitokiomis Lietuvos Respublikos įstatymams neprieštaraujančiomis
-                formomis dalyvauti Asociacijos veikloje.
-              </li>
-              <li>
-                Asociacijos nariai turi balsavimo teisę Asociacijos
-                konferencijoje. Apie konferenciją jiems turi būti pranešta
-                raštu, ne vėliau kaip prieš 30 dienų.
-              </li>
-              <li>
-                Asociacijos nariai turi teisę dalyvauti Asociacijos
-                organizuojamuose seminaruose ir kursuose, nemokamai gauti LKTrA
-                metodinę medžiagą - informaciją.
-              </li>
-            </ol>
-            <p>Asociacijos narių pareigos:</p>
-            <ol>
-              <li>
-                Asociacijos nariai turi nustatyta tvarka mokėti Asociacijos
-                rengiamo seminaro nario mokestį.
-              </li>
-              <li>
-                Nariai ar Asociacijos veikloje dalyvaujantys asmenys gali bet
-                kada išstoti iš Asociacijos. Tokiu atveju nario mokesčiai ar
-                kitaip organizacijai perduotos lėšos ir turtas negrąžinami.
-                Asociacijos narys pašalinamas iš jos, jei 2 metus nesumoka
-                nustatyto nario mokesčio, prieš tai jį perspėjus.
-              </li>
-            </ol>
+          {terms &&
+            terms.map((term) => (
+              <div className="termsconditions" key={term.id}>
+                <h4>{term.terms_title}</h4>
+                <p>{term.terms_text}</p>
+                <p>{term.terms_terms}</p>
+                <ol>
+                  <li>{term.terms_term1}</li>
+                  <li>{term.terms_term2}</li>
+                  <li>{term.terms_term3}</li>
+                  <li>{term.terms_term4}</li>
+                </ol>
+                <p>{term.terms_conditions}</p>
+                <ol>
+                  <li>{term.terms_condition1}</li>
+                  <li>{term.terms_condition2}</li>
+                </ol>
 
-            <p>LKTrA prezidentas Rimantas Grigas</p>
-          </div>
+                <p>{term.terms_footer}</p>
+              </div>
+            ))}
         </Section>
       )}
     </S.RegisterForm>

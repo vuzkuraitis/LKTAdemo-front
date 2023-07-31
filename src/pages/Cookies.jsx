@@ -8,7 +8,7 @@ const Cookies = () => {
       <RegularSection>
         <Hero title="LKTRA Gerbia jūsų privatumą" />
         <div className="cookies">
-          <p>Slapukai LKTRA, prieinami www.lktra.lt</p>
+          <p>Slapukai LKTrA, prieinami www.treneriai.com</p>
           <h4>Kas yra slapukai</h4>
           <p>
             Kaip įprasta beveik visose profesionaliose svetainėse, tai svetainė

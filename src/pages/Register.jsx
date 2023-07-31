@@ -111,6 +111,7 @@ const Home = () => {
           setChecked={setChecked}
           togglePopup={togglePopup}
           handleSubmit={registerUser}
+          terms={terms}
         />
         {popupOpen && (
           <Popup handleClick={togglePopup}>

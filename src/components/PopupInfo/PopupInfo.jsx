@@ -12,6 +12,7 @@ const PopupInfo = ({ className, terms }) => {
         <li>{terms[0].terms_term1}</li>
         <li>{terms[0].terms_term2}</li>
         <li>{terms[0].terms_term3}</li>
+        <li>{terms[0].terms_term4}</li>
       </ol>
       <p>{terms[0].terms_conditions}</p>
       <ol>
