@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import RegularSection from "../components/RegularSection/RegularSection";
-import Notification from "../components/Notification/Notification";
 import LoginForm from "../components/LoginForm/LoginForm";
 import { useNavigate } from "react-router-dom";
 import Seo from "../components/Seo/Seo";
+import Popup from "../components/Popup/Popup";
 
 const Login = () => {
   const [error, setError] = useState();
@@ -27,6 +27,7 @@ const Login = () => {
       if (data.err) {
         return setError(data.err);
       }
+
       localStorage.setItem("token", data.token);
 
       navigate("/account");
@@ -45,9 +46,9 @@ const Login = () => {
       />
       <RegularSection className="login">
         {error && (
-          <Notification handleClick={() => setError(null)}>
-            {error}
-          </Notification>
+          <Popup error={error} handleClick={() => setError(null)}>
+            <p>Neteisingas prisijungimo @ paštas arba slaptažodis</p>
+          </Popup>
         )}
         <LoginForm handleSubmit={loginUser} />
       </RegularSection>
