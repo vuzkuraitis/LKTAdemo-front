@@ -36,7 +36,12 @@ const Footer = ({ children }) => {
           <div>
             <h5>Mus rasite:</h5>
             <p>Santakos g. 11, LT-44279 Kaunas</p>
-            <p>El paštas: krepsinio@treneriai.com</p>
+            <p>
+              El paštas:{" "}
+              <a href="mailto:krepsinio@treneriai.com?">
+                krepsinio@treneriai.com
+              </a>
+            </p>
           </div>
         </div>
         <div className="footerAbout">

@@ -12,7 +12,7 @@ import Button from "../components/Button/Button";
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo/Seo";
 
-const Home = () => {
+const License = () => {
   const [users, setUsers] = useState();
   const [selectedUsers, setSelectedUsers] = useState([]);
 
@@ -96,4 +96,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default License;

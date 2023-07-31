@@ -8,10 +8,6 @@ export const Footer = styled.div`
   flex-direction: column;
   padding: 1rem 0;
   text-align: center;
-  /* position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0; */
   width: 100%;
 
   .socialMedia {
@@ -57,6 +53,10 @@ export const Footer = styled.div`
     p {
       line-height: 1.5rem;
     }
+  }
+  a {
+    text-decoration: none;
+    color: #ffffff;
   }
   .imgFooter {
     background: #f0f0f0;

@@ -7,31 +7,13 @@ import PopupInfo from "../components/PopupInfo/PopupInfo";
 import Seo from "../components/Seo/Seo";
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const Register = () => {
   const [error, setError] = useState();
-  const [users, setUsers] = useState();
   const [checked, setChecked] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
   const [terms, setTerms] = useState([]);
 
   const navigate = useNavigate();
-
-  const getUsers = async (name) => {
-    const res = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/v1/users?name=${name}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const data = await res.json();
-
-    setUsers(data);
-  };
-  useEffect(() => {
-    getUsers();
-  }, []);
 
   const getTerms = async () => {
     const res = await fetch(
@@ -77,7 +59,7 @@ const Home = () => {
     }
   };
 
-  if (!users) {
+  if (!terms) {
     return <Loading />;
   }
 
@@ -123,4 +105,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Register;
