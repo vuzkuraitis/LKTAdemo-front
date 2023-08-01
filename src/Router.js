@@ -39,9 +39,9 @@ const About = lazy(() => import("./pages/About"));
 const Committee = lazy(() => import("./pages/Committee"));
 
 const Router = () => {
-  window.onbeforeunload = () => {
-    localStorage.removeItem("token");
-  };
+  // window.onbeforeunload = () => {
+  //   localStorage.removeItem("token");
+  // };
   function RequireAuth({ children }) {
     const token = localStorage.getItem("token");
     let location = useLocation();
