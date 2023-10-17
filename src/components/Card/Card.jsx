@@ -11,9 +11,9 @@ const Card = ({ className, name, surname, email, license_nr, id, status }) => {
           {name} {surname}
         </span>
       </h3>
-      <h3>
+      {/* <h3>
         @ Paštas<span>{email}</span>
-      </h3>
+      </h3> */}
       <h3>
         Pažymėjimo Nr.<span>{license_nr}</span>
       </h3>

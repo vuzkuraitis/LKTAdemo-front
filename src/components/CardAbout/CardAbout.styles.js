@@ -28,6 +28,20 @@ export const CardAbout = styled.div`
     }
   }
 
+  .aboutcomittee {
+    .imgcomittee {
+      display: flex;
+      justify-content: center;
+      height: 260px;
+      width: 260px;
+      margin-bottom: 1rem;
+      img {
+        background-size: cover;
+        display: block;
+      }
+    }
+  }
+
   .pazymejimas {
     border-radius: 0.5rem;
     display: block;

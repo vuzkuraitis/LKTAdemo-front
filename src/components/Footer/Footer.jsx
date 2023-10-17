@@ -38,8 +38,8 @@ const Footer = ({ children }) => {
             <p>Santakos g. 11, LT-44279 Kaunas</p>
             <p>
               El paštas:{" "}
-              <a href="mailto:krepsinio@treneriai.com?">
-                krepsinio@treneriai.com
+              <a href="mailto:treneris@ltu.basketball?">
+                treneris@ltu.basketball
               </a>
             </p>
           </div>

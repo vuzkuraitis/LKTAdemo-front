@@ -13,7 +13,7 @@ const CardList = ({ cards, className }) => {
             id={card.id}
             name={card.name}
             surname={card.surname}
-            email={card.email}
+            // email={card.email}
             license_nr={card.license_nr}
             status={card.status}
           />

@@ -154,6 +154,12 @@ export const RegularSection = styled.div`
         justify-content: space-between;
       }
     }
+    .aboutpiccomittee {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
 
     .licenseAbout {
       flex-direction: row;
