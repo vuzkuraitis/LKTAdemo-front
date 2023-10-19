@@ -7,6 +7,8 @@ import Vs from "../assets/VS.jpeg";
 import En from "../assets/EN.jpeg";
 import Sk from "../assets/SK.jpeg";
 import Tt from "../assets/TT.jpg";
+import Rg from "../assets/RG.JPG";
+import Ap from "../assets/AP.JPG";
 import CardAbout from "../components/CardAbout/CardAbout";
 
 const Committee = () => {
@@ -25,6 +27,24 @@ const Committee = () => {
             <h4>VYKDOMOJO KOMITETO NARIAI</h4>
           </div>
           <div className="aboutpiccomittee">
+            <CardAbout className="aboutCard">
+              <div className="aboutper aboutcomittee">
+                <h4>LKTrA Vykdomojo Komiteto Narys</h4>
+                <h3>Rimantas Grigas</h3>
+                <div className="imgcomittee">
+                  <img src={Rg} alt="Rg" />
+                </div>
+              </div>
+            </CardAbout>
+            <CardAbout className="aboutCard">
+              <div className="aboutper aboutcomittee">
+                <h4>LKTrA Vykdomojo Komiteto Narys</h4>
+                <h3>Algirdas Paulauskas</h3>
+                <div className="imgcomittee">
+                  <img src={Ap} alt="Ap" />
+                </div>
+              </div>
+            </CardAbout>
             <CardAbout className="aboutCard">
               <div className="aboutper aboutcomittee">
                 <h4>LKTrA Vykdomojo Komiteto Narė</h4>
