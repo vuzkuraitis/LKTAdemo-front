@@ -3,6 +3,7 @@ import RegularSection from "../components/RegularSection/RegularSection";
 import Hero from "../components/Hero/Hero";
 import TrenerioPaz from "../files/Trenerio_pazymejimas.pdf";
 import LKTrAIst from "../files/LKTrA_istatai.pdf";
+import Seminaras2024 from "../files/Krepsinio_seminaras_2024.pdf";
 import { Link } from "react-router-dom";
 import Button from "../components/Button/Button";
 import Seo from "../components/Seo/Seo";
@@ -27,6 +28,12 @@ const Docs = () => {
         <div className="cookies">
           <h4>LKTrA Įstatai</h4>
           <Link to={LKTrAIst} target="_blank" download>
+            <Button>Parsisiųsti</Button>
+          </Link>
+        </div>
+        <div className="cookies">
+          <h4>Seminaras</h4>
+          <Link to={Seminaras2024} target="_blank" download>
             <Button>Parsisiųsti</Button>
           </Link>
         </div>
