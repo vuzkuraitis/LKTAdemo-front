@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRss } from "@fortawesome/free-solid-svg-icons";
 import Seo from "../components/Seo/Seo";
+import Seminaras2024 from "../files/Krepsinio_seminaras_2024.pdf";
 
 const News = () => {
   const [news, setNews] = useState();
