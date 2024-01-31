@@ -17,23 +17,20 @@ const CardPayment = ({ payments, id }) => {
             <div className="cardpaymentwrapper">
               <h3 className="status">
                 Statusas:
-                {payment.status === "success" ? (
+                {payment.newstatus === "success" ? (
                   <div className="green"></div>
                 ) : (
                   <div className="red"></div>
                 )}
               </h3>
-              {payment.status === "success" ? (
+              {payment.newstatus === "success" ? (
                 <div key={payment.id} className="licensestatus">
                   <h3>
                     <span>Apmokėta</span>
                   </h3>
                   <h3>
                     Galioja iki:
-                    <span className="licensestatusyear">
-                      {new Date().getFullYear() + 1}
-                    </span>
-                    metų
+                    <span className="licensestatusyear">{payment.year}</span>
                   </h3>
                 </div>
               ) : (

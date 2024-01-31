@@ -28,6 +28,8 @@ const Account = () => {
   const [licensePrice, setLicensePrice] = useState([]);
   const [clinicHistory, setClinicHistory] = useState([]);
 
+  console.log(payments);
+
   const clinicPhotos = [
     { id: 1, name: Clinic1 },
     { id: 2, name: Clinic2 },

@@ -2,7 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./Card.styles";
 
-const Card = ({ className, name, surname, email, license_nr, id, status }) => {
+const Card = ({
+  className,
+  name,
+  surname,
+  email,
+  license_nr,
+  id,
+  status,
+  year,
+}) => {
   return (
     <S.Card id={id} className={className}>
       <h3>
@@ -21,7 +30,7 @@ const Card = ({ className, name, surname, email, license_nr, id, status }) => {
         <h3>Pažymėjimas negalioja</h3>
       ) : (
         <h3>
-          Galioja iki<span>{new Date().getFullYear() + 1}m.</span>
+          Galioja iki<span>{year}</span>
         </h3>
       )}
     </S.Card>

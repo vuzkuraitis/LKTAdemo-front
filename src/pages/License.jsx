@@ -15,6 +15,7 @@ import Seo from "../components/Seo/Seo";
 const License = () => {
   const [users, setUsers] = useState();
   const [selectedUsers, setSelectedUsers] = useState([]);
+  console.log(selectedUsers);
 
   const getUsers = async (surname) => {
     const res = await fetch(

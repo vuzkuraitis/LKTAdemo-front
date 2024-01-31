@@ -16,6 +16,7 @@ const CardList = ({ cards, className }) => {
             // email={card.email}
             license_nr={card.license_nr}
             status={card.status}
+            year={card.year}
           />
         ))}
     </S.CardList>
