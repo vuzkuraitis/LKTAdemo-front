@@ -18,6 +18,7 @@ export const CoachesTable = styled.div`
   }
 
   tr {
+    height: 2rem;
     width: 100%;
   }
 

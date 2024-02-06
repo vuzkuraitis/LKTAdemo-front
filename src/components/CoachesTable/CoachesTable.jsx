@@ -1,8 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./CoachesTable.styles";
+import Button from "../Button/Button";
 
-const CoachesTable = ({ users, id }) => {
+const CoachesTable = ({ users, id, years, setSelectedUser }) => {
+  const getBackgroundColorTable = {
+    success: "green",
+    pending: "red",
+  };
   return (
     <S.CoachesTable id={id} className="coachtable">
       <table>
@@ -11,10 +16,11 @@ const CoachesTable = ({ users, id }) => {
             <th>Id</th>
             <th>Name</th>
             <th>Surname</th>
-            <th className="notvisible">Email</th>
+            <th>Email</th>
             <th>License Nr</th>
-            <th className="notvisible">Year</th>
+            <th>Year</th>
             <th>Status</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -24,10 +30,41 @@ const CoachesTable = ({ users, id }) => {
                 <td>{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.surname}</td>
-                <td className="notvisible">{user.email}</td>
+                <td>{user.email}</td>
                 <td>{user.license_nr}</td>
-                <td className="notvisible">{user.year}</td>
-                <td>{user.status}</td>
+                <td
+                  style={{
+                    background: getBackgroundColorTable[user.status],
+                  }}
+                >
+                  {user.year}
+                </td>
+                <td
+                  style={{
+                    background: getBackgroundColorTable[user.status],
+                  }}
+                >
+                  {user.status}
+                </td>
+                <td>
+                  {user.year === years && user.status === "success" ? null : (
+                    <Button
+                      value={user.id}
+                      handleClick={(e) => {
+                        setSelectedUser({
+                          id: e.target.value,
+                          name: user.name,
+                          surname: user.surname,
+                          license_nr: user.license_nr,
+                          year: user.year,
+                          status: user.status,
+                        });
+                      }}
+                    >
+                      Edit
+                    </Button>
+                  )}
+                </td>
               </tr>
             ))}
         </tbody>
