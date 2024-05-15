@@ -20,7 +20,7 @@ const News = () => {
       `${process.env.REACT_APP_BACKEND_URL}/v1/users/news`,
       {
         headers: {
-          authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
         },
       }
     );
