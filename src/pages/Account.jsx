@@ -34,6 +34,8 @@ const Account = () => {
     { id: 3, name: Clinic3 },
   ];
 
+  console.log(payments);
+
   const navigate = useNavigate();
 
   const getUserData = async () => {

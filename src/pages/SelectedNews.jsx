@@ -21,6 +21,7 @@ const SelectedNews = () => {
           <FontAwesomeIcon icon={faRss} beatFade />
         </Hero>
         <SelectedNewsCard
+          id={state[0].id}
           title={state[0].title}
           subtitle={state[0].text}
           link={state[0].linkto}
