@@ -65,7 +65,7 @@ const Home = () => {
         </div>
       </div>
       <InfoCard
-        title="Pažymėjimo Galiojimas"
+        title="Pažymėjimo galiojimas"
         subtitle="Jeigu jau esate prisiregistravęs, čia galite labai lengvai patikrinti savo pažymėjimo galiojimo laiką."
       >
         <Link to="/license">

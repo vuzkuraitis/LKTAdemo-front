@@ -15,6 +15,8 @@ const SelectedNewsCard = ({ id, title, subtitle, children, link, href }) => {
       return Seminaras20242;
     }
   };
+
+  console.log(subtitle);
   return (
     <S.SelectedNewsCard>
       <div className="licenserequestintro">
@@ -22,7 +24,7 @@ const SelectedNewsCard = ({ id, title, subtitle, children, link, href }) => {
 
         <p
           dangerouslySetInnerHTML={{
-            __html: { subtitle },
+            __html: subtitle,
           }}
         ></p>
         {link === null ? (

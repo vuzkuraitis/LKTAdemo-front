@@ -15,7 +15,7 @@ const Footer = ({ children }) => {
     },
     {
       url: "/committee",
-      title: "Vykdomasis Komitetas",
+      title: "Vykdomasis komitetas",
     },
     {
       url: "/docs",
